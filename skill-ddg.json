@@ -1,0 +1,26 @@
+{
+  "name": "DuckDuckGo",
+  "skillname": "skill-ddg",
+  "authorname": "JarbasSkills",
+  "foldername": "",
+  "url": "https://github.com/JarbasSkills/skill-ddg",
+  "branch": "master",
+  "desktopFile": false,
+  "warning": "",
+  "systemDeps": false,
+  "platforms": [
+    "arm",
+    "arm64",
+    "i386",
+    "x86_64",
+    "ia64"
+  ],
+  "examples": [
+    "when was stephen hawking born",
+    "ask the duck about the big bang",
+    "tell me more",
+    "who is elon musk",
+    "continue",
+    "tell me more"
+  ]
+}
