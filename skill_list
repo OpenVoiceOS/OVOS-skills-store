@@ -1,0 +1,90 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "OpenVoiceOS skills store",
+    "description": "Welcome to OpenVoiceOS skills store",
+    "home_page_url": "https://openvoiceos.github.io/OVOS-skills-store",
+    "feed_url": "https://openvoiceos.github.io/OVOS-skills-store/skill_list",
+    "items": [
+        {
+            "skillname": "DuckDuckGo",
+            "authorname": "JarbasSkills",
+            "foldername": "skill-ddg",
+            "url": "https://github.com/JarbasSkills/skill-ddg",
+            "branch": "v0.1.0",
+            "desktopFile": false,
+            "warning": "",
+            "systemDeps": false,
+            "platforms": [
+                "i386",
+                "x86_64",
+                "ia64",
+                "arm64",
+                "arm"
+            ],
+            "examples": [
+                "ask the duck about the big bang",
+                "who is elon musk",
+                "tell me more",
+                "when was stephen hawking born",
+                "continue"
+            ],
+            "license": "apache-2.0",
+            "requirements": {
+                "python": [
+                    "google_trans_new",
+                    "requests",
+                    "RAKEkeywords"
+                ],
+                "system": {},
+                "skill": []
+            },
+            "download_url": "https://github.com/JarbasSkills/skill-ddg/archive/v0.1.0.tar.gz",
+            "icon": "./res/icon/ddg.png",
+            "description": "Uses the [DuckDuckGo API](https://duckduckgo.com/api) to provide information. \n\nNOTE: this is meant a better alternative to the official duck duck go skill, it will be blacklisted",
+            "short_description": "Use DuckDuckGo to answer questions",
+            "category": "Information",
+            "categories": [
+                "Information"
+            ],
+            "tags": [
+                "searchengine",
+                "search-engine",
+                "duckduckgo",
+                "query",
+                "Information",
+                "permissive-license"
+            ]
+        },
+        {
+            "name": "Wolfram Alpha",
+            "skillname": "skill-wolfie",
+            "authorname": "JarbasSkills",
+            "foldername": "skill-wolfie",
+            "url": "https://github.com/JarbasSkills/skill-wolfie",
+            "branch": "v0.1",
+            "desktopFile": false,
+            "warning": "",
+            "systemDeps": false,
+            "platforms": [
+                "arm",
+                "arm64",
+                "i386",
+                "x86_64",
+                "ia64"
+            ],
+            "download_url": "https://github.com/JarbasSkills/skill-wolfie/archive/v0.1.tar.gz",
+            "examples": [
+                "ask the wolf what is the speed of light",
+                "How tall is Mount Everest?",
+                "When was The Rocky Horror Picture Show released?",
+                "What is Madonna's real name?",
+                "What's 18 times 4?",
+                "How many inches in a meter?"
+            ]
+        },
+        {
+            "url": "https://github.com/JarbasSkills/skill-icanhazdadjokes",
+            "branch": "v0.1.0"
+        }
+    ]
+}
