@@ -28,10 +28,10 @@ jobs:
     - name: Commit files # transfer the new file back into the repository
       run: |
         git config --local user.name "JarbasAl"
-        git add skill_list
+        git add skills.json
         git commit -m "Updating skills list in repository GitHub pages"
     - name: Push changes # push the output folder to your repo
-      uses: ad-m/github-push-action@gh-pages
+      uses: ad-m/github-push-action@gh-pages  # gh-pages branch
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         force: true
