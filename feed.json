@@ -3,7 +3,7 @@
     "title": "OpenVoiceOS skills store",
     "description": "Welcome to OpenVoiceOS skills store",
     "home_page_url": "https://openvoiceos.github.io/OVOS-skills-store",
-    "feed_url": "https://openvoiceos.github.io/OVOS-skills-store/skills.json",
+    "feed_url": "https://openvoiceos.github.io/OVOS-skills-store/feed.json",
     "items": [
         {
             "skillname": "DuckDuckGo",
