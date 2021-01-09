@@ -1,0 +1,33 @@
+{
+    "title": "Speed Test",
+    "url": "https://github.com/NeonGeckoCom/speed-test.neon",
+    "summary": "Skill used to test your internet speed",
+    "short_description": "Skill used to test your internet speed",
+    "description": "This skill uses speedtest.net to check your internet speed",
+    "examples": [
+        "run a speed test"
+    ],
+    "desktopFile": false,
+    "warning": "",
+    "systemDeps": false,
+    "platforms": [
+        "i386",
+        "x86_64",
+        "ia64",
+        "arm64",
+        "arm"
+    ],
+    "branch": "v0.1.0",
+    "license": "NeonAI Licensed",
+    "icon": "https://0000.us/klatchat/app/files/neon_images/icons/neon_paw.png",
+    "category": null,
+    "categories": [
+        ""
+    ],
+    "tags": [
+        ""
+    ],
+    "skillname": "Speed Test",
+    "authorname": "NeonGeckoCom",
+    "foldername": "speed-test.neon"
+}
