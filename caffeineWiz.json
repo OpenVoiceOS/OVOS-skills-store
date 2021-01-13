@@ -21,7 +21,7 @@
     ],
     "branch": "v0.1.1",
     "license": "NeonAI License v1.0",
-    "icon": "logo.svg",
+    "icon": "https://raw.githubusercontent.com/NeonGeckoCom/CaffeineWiz.neon/master/logo.svg",
     "category": "Information",
     "categories": [
         "Information",
