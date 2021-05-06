@@ -20,8 +20,8 @@ On the JSON file:
 
 * `branch` refers to the git tag mentioned above, and can be omitted if the tag is in the URL.
 * `desktop_file` should be `true` if your Skill is associated with a FreeDesktop-compliant desktop entry. Most Skills should leave this `false`.
-* `systemDeps` refers to operating system packages, which should be expressed as a list
-* `icon` can be omitted if the Skill's icon can be resolved another way by OSM
-* `folder` should be omitted unless you know your target device requires it
+* `systemDeps` should be `true` if your skill requirements include system packages, or `false` if not.
+* `icon` can be omitted if the Skill's icon can be resolved another way by OSM.
+* `folder` should be omitted unless you know your target device requires it.
 * `categories` can list as many categories as you like, and the Skill will appear under each in the Skills Store.`category` refers to the Skill's *primary* category, which is the one that will appear next to its entry when clicked.
 * `tags` refers to other search terms you'd like to apply to this Skill. You are encouraged to add as many tags as you feel are appropriate. These will be carefully checked as part of the review process.
