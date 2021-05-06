@@ -12,7 +12,7 @@ output = {
 }
 dir_to_check = dirname(__file__) or join(getcwd(), "main")
 for skill in [f for f in listdir(dir_to_check) if f.endswith(".json")]:
-    with open(skill) as f:
+    with open(join(dir_to_check, skill)) as f:
         output["items"].append(json.load(f))
 
 with open("skills.json", "w") as f:
