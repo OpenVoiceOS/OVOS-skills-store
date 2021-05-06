@@ -10,9 +10,7 @@ output = {
     "feed_url": "https://openvoiceos.github.io/OVOS-skills-store/skills.json",
     "items": []
 }
-print(dirname(__file__))
 dir_to_check = dirname(__file__) or getcwd()
-print(dir_to_check)
 for skill in [f for f in listdir(dir_to_check) if f.endswith(".json")]:
     with open(skill) as f:
         output["items"].append(json.load(f))
