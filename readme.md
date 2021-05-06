@@ -19,7 +19,7 @@ Once your Skill has been reviewed, and the pull request is merged, your Skill sh
 On the JSON file:
 
 * `branch` refers to the git tag mentioned above, and can be omitted if the tag is in the URL.
-* `desktop_file` should be `true` if your Skill is associated with a FreeDesktop-compliant desktop entry. Most Skills should leave this `false`; Plasma BigScreen skills *must* include one
+* `desktop_file` should be `true` if your Skill is associated with a FreeDesktop-compliant desktop entry. Most Skills should leave this `false`.
 * `systemDeps` refers to operating system packages, which should be expressed as a list
 * `icon` can be omitted if the Skill's icon can be resolved another way by OSM
 * `folder` should be omitted unless you know your target device requires it
