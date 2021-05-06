@@ -25,3 +25,11 @@ On the JSON file:
 * `folder` should be omitted unless you know your target device requires it.
 * `categories` can list as many categories as you like, and the Skill will appear under each in the Skills Store.`category` refers to the Skill's *primary* category, which is the one that will appear next to its entry when clicked.
 * `tags` refers to other search terms you'd like to apply to this Skill. You are encouraged to add as many tags as you feel are appropriate. These will be carefully checked as part of the review process.
+
+
+---
+
+Review Checklist:
+- does the skill.json contain a valid github release
+- if `desktop_file` is True, does the skill implement a valid homescreen
+- are the `tags` accurate
