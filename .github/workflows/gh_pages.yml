@@ -1,0 +1,21 @@
+# This workflow will generate updated metadata when changes are merged into the main branch
+
+name: Build GH Pages
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update_metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: generate-json
+        run: |
+          python gen_skill_list.py
+      - uses: EndBug/add-and-commit@v7
+        with:
+          add: skills.json
+          branch: gh-pages
+          message: "Automated Metadata Update"

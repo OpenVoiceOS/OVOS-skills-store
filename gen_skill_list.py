@@ -1,4 +1,4 @@
-from os import listdir
+from os import listdir, getcwd
 from os.path import dirname
 import json
 
@@ -10,8 +10,8 @@ output = {
     "feed_url": "https://openvoiceos.github.io/OVOS-skills-store/skills.json",
     "items": []
 }
-
-for skill in [f for f in listdir(dirname(__file__)) if f.endswith(".json")]:
+dir_to_check = dirname(__file__) or getcwd()
+for skill in [f for f in listdir(dir_to_check) if f.endswith(".json")]:
     with open(skill) as f:
         output["items"].append(json.load(f))
 
