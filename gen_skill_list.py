@@ -10,7 +10,8 @@ output = {
     "feed_url": "https://openvoiceos.github.io/OVOS-skills-store/skills.json",
     "items": []
 }
-
+print(dirname(__file__))
+print(listdir(dirname(__file__)))
 for skill in [f for f in listdir(dirname(__file__)) if f.endswith(".json")]:
     with open(skill) as f:
         output["items"].append(json.load(f))
