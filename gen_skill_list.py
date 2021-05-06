@@ -15,5 +15,5 @@ for skill in [f for f in listdir(dir_to_check) if f.endswith(".json")]:
     with open(join(dir_to_check, skill)) as f:
         output["items"].append(json.load(f))
 
-with open("skills.json", "w") as f:
+with open(join(dir_to_check, "skills.json"), "w") as f:
     json.dump(output, f, indent=4)
