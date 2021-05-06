@@ -1,6 +1,6 @@
 Welcome to the OVOS Skills Store!
 
-This is OpenVoiceOS' Skill Store, and is one of the app stores enabled by default with [OSM](OpenVoiceOS/ovos_skill_manager). This is where OVOS community developers can submit their skills. It's also where the OVOS dev team hosts our own skills!
+This is OpenVoiceOS' Skill Store, and is one of the app stores enabled by default with [OSM](https://github.com/OpenVoiceOS/ovos_skill_manager). This is where OVOS community developers can submit their skills. It's also where the OVOS dev team hosts our own skills!
 
 Submitting a Skill is easy, and relatively painless, though a few steps need to be completed before your Skill can be accepted:
 
