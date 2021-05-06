@@ -1,0 +1,196 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "OpenVoiceOS skills store",
+    "description": "Welcome to OpenVoiceOS skills store",
+    "home_page_url": "https://openvoiceos.github.io/OVOS-skills-store",
+    "feed_url": "https://openvoiceos.github.io/OVOS-skills-store/skills.json",
+    "items": [
+        {
+            "title": "Launcher",
+            "url": "https://github.com/NeonGeckoCom/launcher.neon",
+            "summary": "Skill used to launch programs in Ubuntu",
+            "short_description": "Skill used to launch programs in Ubuntu",
+            "description": "This example skill is used to launch desktop applications.",
+            "examples": [
+                "launch chrome",
+                "avigate to google.com"
+            ],
+            "desktopFile": false,
+            "warning": "",
+            "systemDeps": false,
+            "platforms": [
+                "i386",
+                "x86_64",
+                "ia64",
+                "arm64",
+                "arm"
+            ],
+            "branch": "v0.1.0",
+            "license": "NeonAI Licensed",
+            "icon": "https://0000.us/klatchat/app/files/neon_images/icons/neon_paw.png",
+            "category": null,
+            "categories": [
+                ""
+            ],
+            "tags": [
+                ""
+            ],
+            "skillname": "Launcher",
+            "authorname": "NeonGeckoCom",
+            "foldername": "launcher.neon"
+        },
+        {
+            "title": "CaffeineWiz",
+            "url": "https://github.com/NeonGeckoCom/caffeinewiz.neon",
+            "summary": "Provides the caffeine content of various drinks on request. Multiple drinks in a row are possible.",
+            "short_description": "Provides the caffeine content of various drinks on request. Multiple drinks in a row are possible.",
+            "description": "The skill provides the functionality to inform the user of the caffeine content of the requested drink by collecting the required information from two data sources: 1.  [http://caffeinewiz.com/](http://caffeinewiz.com/) - the main source of information for the drink\u2019s database 2.  [https://www.caffeineinformer.com/the-caffeine-database](https://www.caffeineinformer.com/the-caffeine-database) - secondary source for any non-duplicate drinks CaffeineWiz uses [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) to pull the tables from the websites above, then strips the html tags, and later formats the results into the comprehensive list. That object is pickled for the future use. The skill will check for updates periodically. You can modify that time period by changing `TIME_TO_CHECK` parameter on top of the file in the init.",
+            "examples": [
+                "tell me caffeine content of pepsi.",
+                "how much caffeine is in starbucks blonde?",
+                "tell me caffeine content of rocket chocolate."
+            ],
+            "desktopFile": false,
+            "warning": "",
+            "systemDeps": false,
+            "platforms": [
+                "i386",
+                "x86_64",
+                "ia64",
+                "arm64",
+                "arm"
+            ],
+            "branch": "v0.1.1",
+            "license": "NeonAI License v1.0",
+            "icon": "https://raw.githubusercontent.com/NeonGeckoCom/CaffeineWiz.neon/v0.1.1/logo.svg",
+            "category": "Information",
+            "categories": [
+                "Information",
+                "Daily"
+            ],
+            "tags": [
+                "NeonGecko",
+                "NeonAI",
+                "caffeine",
+                "coffee"
+            ],
+            "skillname": "CaffeineWiz",
+            "authorname": "NeonGeckoCom",
+            "foldername": "caffeinewiz.neon"
+        },
+        {
+            "skillname": "DuckDuckGo",
+            "authorname": "JarbasSkills",
+            "foldername": "skill-ddg",
+            "url": "https://github.com/JarbasSkills/skill-ddg",
+            "branch": "v0.1.0",
+            "desktopFile": false,
+            "warning": "",
+            "systemDeps": false,
+            "platforms": [
+                "i386",
+                "x86_64",
+                "ia64",
+                "arm64",
+                "arm"
+            ],
+            "examples": [
+                "ask the duck about the big bang",
+                "who is elon musk",
+                "tell me more",
+                "when was stephen hawking born",
+                "continue"
+            ],
+            "license": "apache-2.0",
+            "requirements": {
+                "python": [
+                    "google_trans_new",
+                    "requests",
+                    "RAKEkeywords"
+                ],
+                "system": {},
+                "skill": []
+            },
+            "download_url": "https://github.com/JarbasSkills/skill-ddg/archive/v0.1.0.tar.gz",
+            "icon": "./res/icon/ddg.png",
+            "description": "Uses the [DuckDuckGo API](https://duckduckgo.com/api) to provide information. \n\nNOTE: this is meant a better alternative to the official duck duck go skill, it will be blacklisted",
+            "short_description": "Use DuckDuckGo to answer questions",
+            "category": "Information",
+            "categories": [
+                "Information"
+            ],
+            "tags": [
+                "searchengine",
+                "search-engine",
+                "duckduckgo",
+                "query",
+                "Information",
+                "permissive-license"
+            ]
+        },
+        {
+            "name": "Wolfram Alpha",
+            "skillname": "skill-wolfie",
+            "authorname": "JarbasSkills",
+            "foldername": "skill-wolfie",
+            "url": "https://github.com/JarbasSkills/skill-wolfie",
+            "branch": "v0.1",
+            "desktopFile": false,
+            "warning": "",
+            "systemDeps": false,
+            "platforms": [
+                "arm",
+                "arm64",
+                "i386",
+                "x86_64",
+                "ia64"
+            ],
+            "download_url": "https://github.com/JarbasSkills/skill-wolfie/archive/v0.1.tar.gz",
+            "examples": [
+                "ask the wolf what is the speed of light",
+                "How tall is Mount Everest?",
+                "When was The Rocky Horror Picture Show released?",
+                "What is Madonna's real name?",
+                "What's 18 times 4?",
+                "How many inches in a meter?"
+            ]
+        },
+        {
+            "url": "https://github.com/JarbasSkills/skill-icanhazdadjokes",
+            "branch": "v0.1.0"
+        },
+        {
+            "title": "Speed Test",
+            "url": "https://github.com/NeonGeckoCom/speed-test.neon",
+            "summary": "Skill used to test your internet speed",
+            "short_description": "Skill used to test your internet speed",
+            "description": "This skill uses speedtest.net to check your internet speed",
+            "examples": [
+                "run a speed test"
+            ],
+            "desktopFile": false,
+            "warning": "",
+            "systemDeps": false,
+            "platforms": [
+                "i386",
+                "x86_64",
+                "ia64",
+                "arm64",
+                "arm"
+            ],
+            "branch": "v0.1.0",
+            "license": "NeonAI Licensed",
+            "icon": "https://0000.us/klatchat/app/files/neon_images/icons/neon_paw.png",
+            "category": null,
+            "categories": [
+                ""
+            ],
+            "tags": [
+                ""
+            ],
+            "skillname": "Speed Test",
+            "authorname": "NeonGeckoCom",
+            "foldername": "speed-test.neon"
+        }
+    ]
+}
