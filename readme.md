@@ -6,7 +6,7 @@ Submitting a Skill is easy, and relatively painless, though a few steps need to 
 
 1. The version of your Skill which you intend to publish must be associated with a git tag.
 
-2. You must create a JSON file for your Skill like the ones already present. Simply copy an existing file, and replace all the data with information about your Skill. NOTE: The git tag from step one goes in the field labeled "branch", not the field labeled "tags".
+2. You must create a JSON file for your Skill like the ones already present. Simply copy an existing file, and replace all the data with information about your Skill (see below.)
 
 3. Your skill must be licensed under an OSI-approved open-source license, or released into the public domain, except by special permission from the OVOS dev team. Such permission is unlikely to be granted except in cases where your Skill integrates Mycroft or OVOS with software that is a) extremely valuable to users, b) extremely popular, c) privacy-respecting, and d) cannot be integrated any other way. (We're talking about things like a big-name streaming service, or integrating with a video game console. Big things with no open-source alternative. Submissions containing utility Skills under a proprietary license will be summarily closed as invalid.)
 
@@ -18,10 +18,10 @@ Once your Skill has been reviewed, and the pull request is merged, your Skill sh
 
 On the JSON file:
 
-* `branch` refers to the git tag mentioned above
-* `desktop_file` refers to an XDG-compliant desktop entry. Most Skills should leave this value `false`
+* `branch` refers to the git tag mentioned above, and can be omitted if the tag is in the URL.
+* `desktop_file` should be `true` if your Skill is associated with a FreeDesktop-compliant desktop entry. Most Skills should leave this `false`; Plasma BigScreen skills *must* include one
 * `systemDeps` refers to operating system packages, which should be expressed as a list
-* `icon` should be a web-hosted .png
-* `folder` will literally become the name of the Skill's directory within your device's skills folder. The convention is `skillname.authorname`.
-* `categories` can list as many categories as you like, and the Skill will appear under each in the Skills Store. `category` refers to the Skill's *primary* category, which is the one that will appear next to its entry when clicked.
-* `tags` refers to other search terms you'd like to apply to this Skill
+* `icon` can be omitted if the Skill's icon can be resolved another way by OSM
+* `folder` should be omitted unless you know your target device requires it
+* `categories` can list as many categories as you like, and the Skill will appear under each in the Skills Store.`category` refers to the Skill's *primary* category, which is the one that will appear next to its entry when clicked.
+* `tags` refers to other search terms you'd like to apply to this Skill. You are encouraged to add as many tags as you feel are appropriate. These will be carefully checked as part of the review process.
