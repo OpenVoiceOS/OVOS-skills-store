@@ -1,19 +1,22 @@
 /* styles.css */
 
 body {
-    background-color: #000;
-    color: #fff;
+    background-color: #f2f2f2; /* Light grey background */
+    color: #333; /* Dark text color */
 }
 
 .jumbotron {
-    background-color: #343a40;
+    background-color: #343a40; /* Dark background for the jumbotron */
 }
 
 .card {
-    background-color: #343a40;
-    color: #fff;
+    background-color: #343a40; /* Dark background for the skill cards */
+    color: #fff; /* Light text color */
 }
 
-.card-text {
-    color: #ddd;
+.card-img-top {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
 }
