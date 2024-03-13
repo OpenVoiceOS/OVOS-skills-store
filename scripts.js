@@ -20,6 +20,7 @@ function createSkillCard(skill) {
 
     const icon = document.createElement('img');
     icon.src = skill.icon;
+    icon.classList.add('card-img-top'); // Add Bootstrap class for image resizing
     card.appendChild(icon);
 
     const title = document.createElement('h3');
@@ -35,11 +36,12 @@ function createSkillCard(skill) {
     card.appendChild(examplesTitle);
 
     const examplesList = document.createElement('ul');
-    skill.examples.forEach(example => {
+    // Limit number of example sentences to 3
+    for (let i = 0; i < Math.min(skill.examples.length, 3); i++) {
         const exampleItem = document.createElement('li');
-        exampleItem.textContent = example;
+        exampleItem.textContent = skill.examples[i];
         examplesList.appendChild(exampleItem);
-    });
+    }
     card.appendChild(examplesList);
 
     return card;
