@@ -134,7 +134,7 @@
 <!-- Vue.js library -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 <!-- ggwave.js script -->
-<script type="text/javascript" src="js/ggwave.js"></script>
+<script type="text/javascript" src="ggwave.js"></script>
 <script type='text/javascript'>
     // Ensure variables are properly scoped
     window.AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -189,28 +189,31 @@
         return new type(buffer);
     }
 
-    new Vue({
-        el: '#app',
-        data: {
-            skills: [] // Array to store fetched skills
-        },
-        mounted() {
-            // Fetch skills when the component is mounted
-            this.fetchSkills();
-        },
-        methods: {
-            // Method to fetch skills data
-            fetchSkills() {
-                // Fetch skills JSON data from the specified URL
-                fetch('https://openvoiceos.github.io/OVOS-skills-store/skills.json')
-                    .then(response => response.json()) // Parse response as JSON
-                    .then(data => {
-                        // Assign fetched skills to the data array
-                        this.skills = data.items;
-                    })
-                    .catch(error => console.error('Error fetching skills:', error)); // Handle fetch errors
+    // Vue.js initialization
+    document.addEventListener('DOMContentLoaded', function() {
+        new Vue({
+            el: '#app',
+            data: {
+                skills: [] // Array to store fetched skills
+            },
+            mounted() {
+                // Fetch skills when the component is mounted
+                this.fetchSkills();
+            },
+            methods: {
+                // Method to fetch skills data
+                fetchSkills() {
+                    // Fetch skills JSON data from the specified URL
+                    fetch('https://openvoiceos.github.io/OVOS-skills-store/skills.json')
+                        .then(response => response.json()) // Parse response as JSON
+                        .then(data => {
+                            // Assign fetched skills to the data array
+                            this.skills = data.items;
+                        })
+                        .catch(error => console.error('Error fetching skills:', error)); // Handle fetch errors
+                }
             }
-        }
+        });
     });
 </script>
 </body>
