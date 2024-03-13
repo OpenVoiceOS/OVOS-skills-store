@@ -1,0 +1,24 @@
+{
+  "skill_id": "skill-numbers.openvoiceos",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-numbers",
+  "package_name": "ovos-skill-numbers",
+  "extra_plugins": {},
+  "icon": "",
+  "images": [],
+  "name": "Numbers",
+  "description": "Facts about numbers, math, years and dates from http://numbersapi.com",
+  "examples": [
+    "random math fact",
+    "random number trivia",
+    "random date curiosity",
+    "random year trivia",
+    "fact about number 666",
+    "math fact about number 5",
+    "curiosity about year 1992",
+    "trivia about tomorrow",
+    "trivia about next week",
+    "fact about yesterday",
+    "curiosity about march 13"
+  ],
+  "tags": ["math", "numbers", "trivia"]
+}
