@@ -1,0 +1,28 @@
+/* styles.css */
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.skill-card {
+    width: 300px;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.skill-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.skill-card h3 {
+    margin-top: 0;
+}
+
+.skill-card p {
+    margin: 10px 0;
+}
