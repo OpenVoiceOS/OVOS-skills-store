@@ -37,6 +37,21 @@
         .card-body {
             text-align: center;
         }
+
+        .audio-qr-code-install-button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .audio-qr-code-install-button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -62,6 +77,8 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ skill.name }}</h5> <!-- Skill name -->
                     <p class="card-text">{{ skill.description }}</p> <!-- Skill description -->
+                    <!-- Audio QR Code Install button -->
+                    <button class="audio-qr-code-install-button" @click="transmitPackage(skill.package_name)">Audio QR Code Install</button>
                 </div>
             </div>
         </div>
@@ -92,7 +109,62 @@
 
     <!-- Vue.js library -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <script>
+    <!-- ggwave.js script -->
+    <script type="text/javascript" src="js/ggwave.js"></script>
+    <script type='text/javascript'>
+        // Ensure variables are properly scoped
+        window.AudioContext = window.AudioContext || window.webkitAudioContext;
+        window.OfflineAudioContext = window.OfflineAudioContext || window.webkitOfflineAudioContext;
+
+        var context = null;
+
+        // the ggwave module instance
+        var ggwave = null;
+        var parameters = null;
+        var instance = null;
+
+        // instantiate the ggwave instance
+        // ggwave_factory comes from the ggwave.js module
+        ggwave_factory().then(function(obj) {
+            ggwave = obj;
+        });
+
+        // Initialize audio context and ggwave
+        function init() {
+            if (!context) {
+                context = new AudioContext({sampleRate: 48000});
+
+                parameters = ggwave.getDefaultParameters();
+                parameters.sampleRateInp = context.sampleRate;
+                parameters.sampleRateOut = context.sampleRate;
+                instance = ggwave.init(parameters);
+            }
+        }
+
+        // Transmit data using ggwave
+        function transmitPackage(packageName) {
+            init();
+
+            // Generate audio waveform with the package name
+            var waveform = ggwave.encode(instance, "PIP:" + packageName, ggwave.ProtocolId.GGWAVE_PROTOCOL_AUDIBLE_FAST, 10);
+
+            // Play audio
+            var buf = convertTypedArray(waveform, Float32Array);
+            var buffer = context.createBuffer(1, buf.length, context.sampleRate);
+            buffer.getChannelData(0).set(buf);
+            var source = context.createBufferSource();
+            source.buffer = buffer;
+            source.connect(context.destination);
+            source.start(0);
+        }
+
+        // Helper function to convert typed arrays
+        function convertTypedArray(src, type) {
+            var buffer = new ArrayBuffer(src.byteLength);
+            var baseView = new src.constructor(buffer).set(src);
+            return new type(buffer);
+        }
+
         new Vue({
             el: '#app',
             data: {
