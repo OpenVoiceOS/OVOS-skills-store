@@ -130,6 +130,35 @@
             ]
         },
         {
+            "skill_id": "ovos-skill-confucius-quotes.openvoiceos",
+            "source": "https://github.com/OVOSHatchery/ovos-skill-confucius-quotes",
+            "package_name": "ovos-skill-confucius-quotes",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-confucius-quotes/master/res/icon/confucius.png",
+            "images": [
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-confucius-quotes/master/gui.png"
+            ],
+            "name": "Confucius Quotes",
+            "description": "Quotes from Confucius",
+            "examples": [
+                "Who is Confucius",
+                "Quote from Confucius",
+                "When was Confucius born",
+                "When did Confucius die"
+            ],
+            "tags": [
+                "quotes",
+                "information"
+            ]
+        },
+        {
             "skill_id": "ovos-skill-good-manners.openvoiceos",
             "source": "https://github.com/OVOSHatchery/ovos-skill-good-manners",
             "package_name": "ovos-skill-good-manners",
