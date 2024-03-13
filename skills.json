@@ -184,6 +184,69 @@
             ]
         },
         {
+            "skill_id": "skill-numbers.openvoiceos",
+            "source": "https://github.com/OVOSHatchery/ovos-skill-numbers",
+            "package_name": "ovos-skill-numbers",
+            "extra_plugins": {},
+            "icon": "",
+            "images": [],
+            "name": "Numbers",
+            "description": "Facts about numbers, math, years and dates from http://numbersapi.com",
+            "examples": [
+                "random math fact",
+                "random number trivia",
+                "random date curiosity",
+                "random year trivia",
+                "fact about number 666",
+                "math fact about number 5",
+                "curiosity about year 1992",
+                "trivia about tomorrow",
+                "trivia about next week",
+                "fact about yesterday",
+                "curiosity about march 13"
+            ],
+            "tags": [
+                "math",
+                "numbers",
+                "trivia"
+            ]
+        },
+        {
+            "skill_id": "ovos-skill-daily-blue-marble.openvoiceos",
+            "source": "https://github.com/OVOSHatchery/ovos-skill-daily-blue-marble",
+            "package_name": "ovos-skill-daily-blue-marble",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-daily-blue-marble/master/icon.png",
+            "images": [
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-daily-blue-marble/master/logo.png",
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-daily-blue-marble/master/gui.gif",
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-daily-blue-marble/master/ui.png",
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-daily-blue-marble/master/website.png"
+            ],
+            "name": "Daily Blue Marble",
+            "description": "Earth Polychromatic Imaging Camera provides near real-time pictures of earth from orbit. Can be used as homescreen.",
+            "examples": [
+                "show me earth from space",
+                "Daily Blue Marble",
+                "Blue Marble of the Day",
+                "Animate that",
+                "tell me about Earth Polychromatic Imaging Camera",
+                "open the epic website from nasa",
+                "what is the location of DSCOVR spacecraft"
+            ],
+            "tags": [
+                "nasa",
+                "idle screen"
+            ]
+        },
+        {
             "skill_id": "ovos-skill-good-manners.openvoiceos",
             "source": "https://github.com/OVOSHatchery/ovos-skill-good-manners",
             "package_name": "ovos-skill-good-manners",
