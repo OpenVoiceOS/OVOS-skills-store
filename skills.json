@@ -97,6 +97,64 @@
                 "clock",
                 "permissive-license"
             ]
+        },
+        {
+            "skill_id": "skill-farting.aussiew",
+            "source": "https://github.com/OVOSHatchery/skill-farting",
+            "package_name": "ovos-skill-farting",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githubusercontent.com/OVOSHatchery/skill-farting/master/fart.png",
+            "images": [],
+            "name": "Farting",
+            "description": "OVOS will play a farting sound when requested or at random intervals. Just a fun skill that should generate a laugh or two.",
+            "examples": [
+                "did you fart",
+                "what is that smell",
+                "fart",
+                "make a farting noise",
+                "fart randomly",
+                "stop farting"
+            ],
+            "tags": [
+                "fart",
+                "smell",
+                "fun",
+                "entertainment"
+            ]
+        },
+        {
+            "skill_id": "ovos-skill-good-manners.openvoiceos",
+            "source": "https://github.com/OVOSHatchery/ovos-skill-good-manners",
+            "package_name": "ovos-skill-good-manners",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-good-manners/master/goodmanner.png",
+            "images": [],
+            "name": "Good Manners Enforcer",
+            "description": "Responds to insults and good manners. Monitors utterances and reprimands insults / foul language, while showing appreciation for good manners.",
+            "examples": [
+                "go F#&K yourself",
+                "eat sh1$ and die",
+                "please something (X times in a row)"
+            ],
+            "tags": [
+                "goodmanners",
+                "daily",
+                "entertainment"
+            ]
         }
     ]
 }
