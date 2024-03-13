@@ -4,25 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OVOS Skills Store</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="styles.css"> <!-- Your custom CSS file -->
 </head>
 <body>
-    <div id="intro">
-        <h1>Welcome to the OVOS Skills Store!</h1>
-        <p>This is OpenVoiceOS' Skill Store, where OVOS community developers can submit their skills. It's also where the OVOS dev team hosts our own skills!</p>
-        <p>Below, you'll find a list of available skills:</p>
+    <div class="container">
+        <div id="intro" class="jumbotron">
+            <h1 class="display-4">Welcome to the OVOS Skills Store!</h1>
+            <p class="lead">This is OpenVoiceOS' Skill Store, where OVOS community developers can submit their skills. It's also where the OVOS dev team hosts our own skills!</p>
+            <hr class="my-4">
+            <p>Below, you'll find a list of available skills:</p>
+        </div>
+
+        <div id="skills-container" class="row">
+            <!-- Skill cards will be dynamically added here -->
+        </div>
+
+        <div id="additional-info" class="mt-5">
+            <p>A JSON feed is automatically published at <a href="https://openvoiceos.github.io/OVOS-skills-store/skills.json">https://openvoiceos.github.io/OVOS-skills-store/skills.json</a> to be consumed by 3rd party UIs or applications.</p>
+            <p>Setting up your own marketplace is as easy as <a href="https://github.com/OpenVoiceOS/OVOS-skills-store/fork">forking this repository</a>!</p>
+            <p>Please note that all skills hosted on this store must be licensed under an OSI-approved open-source license, or released into the public domain, except by special permission from the OVOS dev team.</p>
+        </div>
     </div>
 
-    <div id="skills-container" class="skills-container">
-        <!-- Skill cards will be dynamically added here -->
-    </div>
-
-    <script src="scripts.js"></script> <!-- Link to your JavaScript file -->
-
-    <div id="additional-info">
-        <p>A JSON feed is automatically published at <a href="https://openvoiceos.github.io/OVOS-skills-store/skills.json">https://openvoiceos.github.io/OVOS-skills-store/skills.json</a> to be consumed by 3rd party UIs or applications.</p>
-        <p>Setting up your own marketplace is as easy as <a href="https://github.com/OpenVoiceOS/OVOS-skills-store/fork">forking this repository</a>!</p>
-        <p>Please note that all skills hosted on this store must be licensed under an OSI-approved open-source license, or released into the public domain, except by special permission from the OVOS dev team.</p>
-    </div>
+    <script src="scripts.js"></script> <!-- Your JavaScript file -->
 </body>
 </html>

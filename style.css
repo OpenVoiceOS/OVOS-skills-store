@@ -1,5 +1,25 @@
 /* styles.css */
 
+body {
+    background-color: #f8f9fa;
+    padding-top: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+    border: none;
+    transition: all 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    max-height: 200px;
+    object-fit: contain;
+}
+
 .skills-container {
     display: flex;
     flex-wrap: wrap;
