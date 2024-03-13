@@ -1,0 +1,37 @@
+{
+  "skill_id": "ovos-skill-countries.openvoiceos",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-countries",
+  "package_name": "ovos-skill-countries",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-countries/master/icon.png",
+  "images": ["https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-countries/master/logo.png", 
+             "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-countries/master/gui.png", 
+             "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-countries/master/gui2.png",
+             "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-countries/master/gui3.png",
+             "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-countries/master/gui4.png", 
+             "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-countries/master/gui5.png"],
+  "name": "Countries",
+  "description": "Data about countries from http://restcountries.eu/. Provides information about country population, area, language, borders, currency, timezone, capital, denonyms, etc.",
+  "examples": [
+    "what is the size of portugal",
+    "what are the borders of portugal",
+    "what is the capital of portugal",
+    "what is the currency of portugal",
+    "what is the language of portugal",
+    "what is the population of portugal",
+    "what is the timezone of portugal",
+    "what are the people that live in portugal called",
+    "where is portuguese spoken",
+    "where is portugal located at",
+    "how many countries do you know about",
+    "what are the countries in europe"
+  ],
+  "tags": ["countries", "geography", "information", "education"]
+}
