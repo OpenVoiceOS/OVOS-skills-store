@@ -1,0 +1,20 @@
+{
+  "skill_id": "ovos-skill-iss-location.openvoiceos",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-iss-location",
+  "package_name": "ovos-skill-iss-location",
+  "extra_plugins": {},
+  "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-iss-location/master/iss2.png",
+  "images": ["https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-iss-location/master/gui.png", 
+             "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-iss-location/master/gui2.png", 
+             "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-iss-location/master/gui3.png"],
+  "name": "ISS Tracker",
+  "description": "Track the location of the ISS. Can also be used as an idle screen",
+  "examples": [
+    "Where is the ISS",
+    "Who is on board of the space station",
+    "When is the ISS passing over",
+    "Tell me about the ISS",
+    "how many persons on board of the space station"
+  ],
+  "tags": ["nasa", "information"]
+}
