@@ -18,10 +18,16 @@ function createSkillCard(skill) {
     const card = document.createElement('div');
     card.classList.add('skill-card');
 
+    const iconLink = document.createElement('a');
+    iconLink.href = skill.source;
+    iconLink.target = "_blank"; // Open link in a new tab
+    card.appendChild(iconLink);
+
     const icon = document.createElement('img');
     icon.src = skill.icon;
-    icon.classList.add('card-img-top'); // Add Bootstrap class for image resizing
-    card.appendChild(icon);
+    icon.classList.add('card-img-top'); // Add Bootstrap class for image
+    icon.alt = skill.name; // Provide alt text for accessibility
+    iconLink.appendChild(icon);
 
     const title = document.createElement('h3');
     title.textContent = skill.name;
