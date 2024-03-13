@@ -2,6 +2,10 @@
 
 This is OpenVoiceOS' Skill Store, where OVOS community developers can submit their skills. It's also where the OVOS dev team hosts our own skills!
 
+setting up your own marketplace is as easy as forking this repository!
+
+## Submitting a skill
+
 Submitting a Skill is easy, and relatively painless, though a few steps need to be completed before your Skill can be accepted:
 
 1. You must create a JSON file for your Skill. Learn more about the [skill.json specification](https://openvoiceos.github.io/ovos-technical-manual/skill_json/)
@@ -11,3 +15,9 @@ Submitting a Skill is easy, and relatively painless, though a few steps need to 
 Once you have completed these steps, you can create a pull request to this repository, adding your JSON file. Your Skill will be reviewed as soon as possible by one or more OVOS developers or authorized Skill Reviewers.
 
 Once your Skill has been reviewed, and the pull request is merged, your Skill should immediately be listed on the OVOS Skills Store!
+
+## Marketplace
+
+A json feed is automatically published at https://openvoiceos.github.io/OVOS-skills-store/feed.json to be consumed by 3rd party UIs or applications
+
+> **WORK IN PROGRESS** this store gets automatically published at https://openvoiceos.github.io/OVOS-skills-store/ via github pages
