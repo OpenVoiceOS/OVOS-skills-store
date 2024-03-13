@@ -1,0 +1,26 @@
+{
+  "skill_id": "skill-farting.aussiew",
+  "source": "https://github.com/OVOSHatchery/skill-farting",
+  "package_name": "ovos-skill-farting",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githubusercontent.com/OVOSHatchery/skill-farting/master/fart.png",
+  "images": [],
+  "name": "Farting",
+  "description": "OVOS will play a farting sound when requested or at random intervals. Just a fun skill that should generate a laugh or two.",
+  "examples": [
+    "did you fart",
+    "what is that smell",
+    "fart",
+    "make a farting noise",
+    "fart randomly",
+    "stop farting"
+  ],
+  "tags": ["fart", "smell", "fun", "entertainment"]
+}
