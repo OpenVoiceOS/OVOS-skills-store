@@ -1,0 +1,30 @@
+{
+  "skill_id": "ovos-skill-daily-blue-marble.openvoiceos",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-daily-blue-marble",
+  "package_name": "ovos-skill-daily-blue-marble",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-daily-blue-marble/master/icon.png",
+  "images": ["https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-daily-blue-marble/master/logo.png",
+             "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-daily-blue-marble/master/gui.gif", 
+             "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-daily-blue-marble/master/ui.png", 
+             "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-daily-blue-marble/master/website.png"],
+  "name": "Daily Blue Marble",
+  "description": "Earth Polychromatic Imaging Camera provides near real-time pictures of earth from orbit. Can be used as homescreen.",
+  "examples": [
+    "show me earth from space",
+    "Daily Blue Marble",
+    "Blue Marble of the Day",
+    "Animate that",
+    "tell me about Earth Polychromatic Imaging Camera",
+    "open the epic website from nasa",
+    "what is the location of DSCOVR spacecraft"
+  ],
+  "tags": ["nasa", "idle screen"]
+}
