@@ -10,7 +10,7 @@
     "media": [],
     "gui": []
   },
-  "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-countries/master/goodmanner.png",
+  "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-good-manners/master/goodmanner.png",
   "images": [],
   "name": "Good Manners Enforcer",
   "description": "Responds to insults and good manners. Monitors utterances and reprimands insults / foul language, while showing appreciation for good manners.",
