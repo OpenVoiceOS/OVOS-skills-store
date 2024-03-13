@@ -18,6 +18,6 @@ Once your Skill has been reviewed, and the pull request is merged, your Skill sh
 
 ## Marketplace
 
-A json feed is automatically published at https://openvoiceos.github.io/OVOS-skills-store/feed.json to be consumed by 3rd party UIs or applications
+A json feed is automatically published at https://openvoiceos.github.io/OVOS-skills-store/skills.json to be consumed by 3rd party UIs or applications
 
 > **WORK IN PROGRESS** this store gets automatically published at https://openvoiceos.github.io/OVOS-skills-store/ via github pages
