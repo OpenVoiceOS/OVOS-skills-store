@@ -1,0 +1,23 @@
+{
+  "skill_id": "ovos-skill-good-manners.openvoiceos",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-good-manners",
+  "package_name": "ovos-skill-good-manners",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-good-manners/master/goodmanner.png",
+  "images": [],
+  "name": "Good Manners Enforcer",
+  "description": "Responds to insults and good manners. Monitors utterances and reprimands insults / foul language, while showing appreciation for good manners.",
+  "examples": [
+    "go F#&K yourself",
+    "eat sh1$ and die",
+    "please something (X times in a row)"
+  ],
+  "tags": ["goodmanners", "daily", "entertainment"]
+}
