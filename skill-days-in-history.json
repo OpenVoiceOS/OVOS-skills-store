@@ -1,0 +1,29 @@
+{
+  "skill_id": "skill-days-in-history.austin-carnahan",
+  "source": "https://github.com/OVOSHatchery/days-in-history-skill",
+  "package_name": "ovos-skill-days-in-history",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/calendar-day.svg",
+  "images": [],
+  "name": "Today In History",
+  "description": "Informs you of historical tidbits about a given calendar day. Provides historical events for today or any other calendar day using information pulled from Wikipedia.",
+  "examples": [
+    "What happened today in history?",
+    "Tell me about events in history on December 12th",
+    "What historical events happened on June 16th?",
+    "Tell me more",
+    "What's another event?"
+  ],
+  "tags": [
+    "History",
+    "Trivia",
+    "Information"
+  ]
+}
