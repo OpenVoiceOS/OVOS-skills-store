@@ -1,0 +1,29 @@
+{
+  "skill_id": "skill-ovos-ddg.openvoiceos",
+  "source": "https://github.com/OpenVoiceOS/skill-ovos-ddg",
+  "package_name": "ovos-skill-ovos-ddg",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://github.com/OpenVoiceOS/skill-ovos-ddg/raw/main/res/icon/ddg.png",
+  "images": ["https://github.com/OpenVoiceOS/skill-ovos-ddg/raw/main/ui/logo.png"],
+  "name": "DuckDuckGo",
+  "description": "Use DuckDuckGo to answer questions.",
+  "examples": [
+    "when was stephen hawking born",
+    "ask the duck about the big bang",
+    "tell me more",
+    "who is elon musk",
+    "continue"
+  ],
+  "tags": [
+    "duckduckgo",
+    "query",
+    "search-engine"
+  ]
+}
