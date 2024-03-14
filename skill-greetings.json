@@ -1,0 +1,24 @@
+{
+  "skill_id": "ovos-skill-lets-talk.chrison999",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-lets-talk",
+  "package_name": "ovos-skill-lets-talk",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "",
+  "images": [],
+  "name": "Let's Talk",
+  "description": "A skill for OVOS that replies to various greetings.",
+  "examples": [
+    "Mycroft, good morning",
+    "Mycroft, good afternoon",
+    "Mycroft, good evening",
+    "Mycroft, good night"
+  ],
+  "tags": ["greetings", "hello", "time", "conversation"]
+}
