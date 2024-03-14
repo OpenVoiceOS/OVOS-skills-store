@@ -1,0 +1,30 @@
+{
+  "skill_id": "ovos-skill-local-media.openvoiceos",
+  "source": "https://github.com/OpenVoiceOS/skill-ovos-local-media",
+  "package_name": "ovos-skill-local-media",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": [
+      "ovos-plugin-gui"
+    ]
+  },
+  "icon": "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/folder-open.svg",
+  "name": "Local Media",
+  "description": "File Browser For Open Voice OS. For voice search, this skill builds a local index of scanned user media. Your collection needs to be organized in the following fashion to be detected by this skill: ~/OCPMedia/Music, ~/OCPMedia/Movies, ~/OCPMedia/Podcasts, ~/OCPMedia/... ",
+  "category": "Daily",
+  "tags": [
+    "filebrowser",
+    "browser",
+    "file",
+    "manager",
+    "local",
+    "usb"
+  ],
+  "images": [
+    "https://github.com/OpenVoiceOS/skill-ovos-local-media/assets/33701864/d88630f2-3291-410a-a499-1d33ab93415c"
+  ]
+}
