@@ -1,0 +1,29 @@
+{
+  "skill_id": "ovos-skill-laugh.openvoiceos",
+  "source": "https://github.com/OpenVoiceOS/ovos-skill-laugh",
+  "package_name": "ovos-skill-laugh",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-laugh/dev/res/icon/laugh_icon.png",
+  "name": "Laugh",
+  "description": "Makes OVOS laugh like a maniac. Laugh randomly or when requested, gender configurable",
+  "examples": [
+    "Laugh like Alexa",
+    "can you laugh"
+  ],
+  "tags": [
+    "laugh",
+    "funny",
+    "entertainment",
+    "repeating"
+  ],
+  "images": [
+    "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-laugh/dev/sshot.png"
+  ]
+}
