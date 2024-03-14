@@ -1,0 +1,28 @@
+{
+  "skill_id": "skill-ovos-natgeo-pod.openvoiceos",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-natgeo-pod",
+  "package_name": "ovos-skill-natgeo-pod",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://github.com/OVOSHatchery/ovos-skill-natgeo-pod/raw/master/icon.png",
+  "images": [
+    "https://github.com/OVOSHatchery/ovos-skill-natgeo-pod/raw/master/gui.png"
+  ],
+  "name": "National Geographic Picture of the Day",
+  "description": "National Geographic Picture of the Day",
+  "examples": [
+    "National Geographic picture of the day",
+    "explain"
+  ],
+  "tags": [
+    "national geographic",
+    "mark2",
+    "desktop"
+  ]
+}
