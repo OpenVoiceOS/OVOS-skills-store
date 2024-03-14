@@ -1,0 +1,24 @@
+{
+  "skill_id": "skill-pickup-lines.openvoiceos",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-pickup-lines",
+  "package_name": "ovos-skill-pickup-lines",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-pickup-lines/master/logo.png",
+  "images": ["https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-pickup-lines/master/screenie.png", "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-pickup-lines/master/screenie1.png"],
+  "name": "Pickup Lines",
+  "description": "Pickup lines from https://www.pickuplinesgalore.com/. Includes idle screen.",
+  "examples": [
+    "tell me a pickup line",
+    "say a geeky pickup line",
+    "say a lord of the rings pickup line",
+    "where do you get your pickup lines"
+  ],
+  "tags": ["entertainment"]
+}
