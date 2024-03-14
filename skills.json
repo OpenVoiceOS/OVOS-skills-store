@@ -548,6 +548,39 @@
             ]
         },
         {
+            "skill_id": "skill-ovos-wolfie.openvoiceos",
+            "source": "https://github.com/OpenVoiceOS/skill-ovos-wolfie",
+            "package_name": "ovos-skill-ovos-wolfie",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://github.com/OpenVoiceOS/skill-ovos-wolfie/raw/main/res/icon/wolfie.png",
+            "images": [
+                "https://github.com/OpenVoiceOS/skill-ovos-wolfie/raw/main/wolfie.gif"
+            ],
+            "name": "Wolfram Alpha",
+            "description": "Use Wolfram Alpha for general knowledge questions.",
+            "examples": [
+                "ask the wolf what is the speed of light",
+                "How tall is Mount Everest?",
+                "When was The Rocky Horror Picture Show released?",
+                "What is Madonna's real name?",
+                "What's 18 times 4?",
+                "How many inches in a meter?"
+            ],
+            "tags": [
+                "wolfram-alpha",
+                "query",
+                "general-knowledge",
+                "information"
+            ]
+        },
+        {
             "skill_id": "skill-ovos-ddg.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-ddg",
             "package_name": "ovos-skill-ovos-ddg",
