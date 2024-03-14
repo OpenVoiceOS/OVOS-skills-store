@@ -1,0 +1,22 @@
+{
+  "skill_id": "ovos-skill-rss-reader.forslund",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-rss-reader",
+  "package_name": "ovos-skill-rss-reader",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Generic_Feed-icon.svg/800px-Generic_Feed-icon.svg.png",
+  "images": [],
+  "name": "RSS Feed Reader",
+  "description": "An overly complicated reader for RSS feeds. A skill allowing Mycroft to fetch and read headlines and article summaries.",
+  "examples": [
+    "Hey Mycroft, what are the latest headlines from slashdot.org",
+    "Hey Mycroft, read about elon musk's new project"
+  ],
+  "tags": []
+}
