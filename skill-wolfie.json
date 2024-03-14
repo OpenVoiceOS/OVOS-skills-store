@@ -10,8 +10,8 @@
     "media": [],
     "gui": []
   },
-  "icon": "https://github.com/OpenVoiceOS/skill-ovos-wolfie/raw/main/res/icon/wolfie.png",
-  "images": ["https://github.com/OpenVoiceOS/skill-ovos-wolfie/raw/main/wolfie.gif"],
+  "icon": "https://github.com/OpenVoiceOS/skill-ovos-wolfie/raw/dev/res/icon/wolfie.png",
+  "images": ["https://github.com/OpenVoiceOS/skill-ovos-wolfie/raw/dev/wolfie.gif"],
   "name": "Wolfram Alpha",
   "description": "Use Wolfram Alpha for general knowledge questions.",
   "examples": [
