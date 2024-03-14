@@ -1,0 +1,31 @@
+{
+  "skill_id": "skill-easter-eggs.jarbasai",
+  "source": "https://github.com/OpenVoiceOS/ovos-skill-easter-eggs",
+  "package_name": "ovos-skill-easter-eggs",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://cdn-icons-png.flaticon.com/512/257/257905.png",
+  "images": [],
+  "name": "Easter Eggs",
+  "description": "Pop culture references skill. Some funny things for OpenVoiceOS, mostly quotes from movies.",
+  "examples": [
+    "Current stardate?",
+    "Open the pod bay doors.",
+    "First law of robotics?",
+    "How to play rock paper scissors lizard spock?",
+    "How many languages do you speak?",
+    "Do you like Portal?",
+    "What would Duke Nukem say?",
+    "What would HAL 9000 say?",
+    "What would Arnold say?",
+    "What would GLaDOS say?",
+    "What would Bender say?"
+  ],
+  "tags": []
+}
