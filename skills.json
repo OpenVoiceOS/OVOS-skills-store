@@ -1665,7 +1665,7 @@
                 "media": [],
                 "gui": []
             },
-            "icon": "",
+            "icon": "https://static.thenounproject.com/png/1228602-200.png",
             "images": [],
             "name": "Let's Talk",
             "description": "A skill for OVOS that replies to various greetings.",
