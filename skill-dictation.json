@@ -1,0 +1,26 @@
+{
+  "skill_id": "skill-ovos-dictation.openvoiceos",
+  "source": "https://github.com/OpenVoiceOS/skill-ovos-dictation",
+  "package_name": "ovos-skill-ovos-dictation",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://cdn1.iconfinder.com/data/icons/study-and-education-line-set-1/262/20-512.png",
+  "images": [],
+  "name": "Dictation skill",
+  "description": "Continuously transcribes user speech to text file while enabled, made for ovos-dinkum-listener.",
+  "examples": [
+    "start dictation",
+    "end dictation"
+  ],
+  "tags": [
+    "dictation",
+    "transcription",
+    "speech-to-text"
+  ]
+}
