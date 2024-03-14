@@ -274,6 +274,38 @@
             ]
         },
         {
+            "skill_id": "skill-ovos-fallback-chatgpt.openvoiceos",
+            "source": "https://github.com/OpenVoiceOS/skill-ovos-fallback-chatgpt",
+            "package_name": "ovos-skill-ovos-fallback-chatgpt",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/2048px-ChatGPT_logo.svg.png",
+            "images": [],
+            "name": "ChatGPT Fallback Skill",
+            "description": "When in doubt, ask ChatGPT, powered by OpenAI Solver. Capabilities include remembering what the user said earlier in the conversation and declining inappropriate requests.",
+            "examples": [
+                "Explain quantum computing in simple terms",
+                "Got any creative ideas for a 10 year old\u2019s birthday?"
+            ],
+            "tags": [
+                "artificial-intelligence",
+                "chatbot",
+                "language-model",
+                "openai",
+                "conversation",
+                "fallback",
+                "mycroft",
+                "voice-assistant",
+                "ai-assistant"
+            ]
+        },
+        {
             "skill_id": "ovos-skill-countries.openvoiceos",
             "source": "https://github.com/OVOSHatchery/ovos-skill-countries",
             "package_name": "ovos-skill-countries",
