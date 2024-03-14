@@ -1,0 +1,23 @@
+{
+  "skill_id": "skill-fairytalez.andlo",
+  "source": "https://github.com/OVOSHatchery/fairytalez-skill",
+  "package_name": "ovos-skill-fairytalez",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githubusercontent.com/OVOSHatchery/fairytalez-skill/master/story-512.png",
+  "images": [],
+  "name": "Fairytalez",
+  "description": "OVOS tells more than 2000 fairy tales, folk tales, and fables from all around the world.",
+  "examples": [
+    "Tell a fairy tale",
+    "Tell me the story The Little Match Girl",
+    "Continue story"
+  ],
+  "tags": ["stories", "story", "tales", "fairy", "fairytale", "fairytales"]
+}
