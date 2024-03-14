@@ -1,0 +1,27 @@
+{
+  "skill_id": "skill-ovos-tunein.openvoiceos",
+  "source": "https://github.com/OpenVoiceOS/skill-ovos-tunein",
+  "package_name": "ovos-skill-ovos-tunein",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://github.com/OpenVoiceOS/skill-ovos-tunein/raw/main/res/tunein.png",
+  "images": ["https://github.com/OpenVoiceOS/skill-ovos-tunein/raw/main/gui.png"],
+  "name": "TuneIn",
+  "description": "OCP skill for TuneIn.",
+  "examples": [
+    "play heavy metal heart radio",
+    "play metal heart radio on tune in"
+  ],
+  "tags": [
+    "audio",
+    "music",
+    "OCP",
+    "entertainment"
+  ]
+}
