@@ -1,0 +1,23 @@
+{
+  "skill_id": "ovos-skill-cat.forslund",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-cat",
+  "package_name": "ovos-skill-cat",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNqiSPvrnVxCwqBaWcWEp_1IQp60CZQgT8U__Egl8zV39LJxfNnixlOKcdz_WLQ6NcwPI&usqp=CAU",
+  "images": [],
+  "name": "Cat Skill",
+  "description": "The Cat Skill fetches a random cat image from the Cat API and displays it on compatible devices.",
+  "examples": [
+    "Show me a cat",
+    "Show a cute cat",
+    "I want to see a kitty"
+  ],
+  "tags": []
+}
