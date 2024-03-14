@@ -34,6 +34,36 @@
             ]
         },
         {
+            "skill_id": "skill-ovos-spotify.openvoiceos",
+            "source": "https://github.com/OpenVoiceOS/skill-ovos-spotify",
+            "package_name": "ovos-skill-ovos-spotify",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [
+                    "ovos-media-plugin-spotify"
+                ],
+                "gui": []
+            },
+            "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUZqngh5mQq2OkOErN9pDnIeWjqgyxHOFTqYigWeCkCQ&s",
+            "images": [],
+            "name": "OVOS Spotify skill",
+            "description": "OCP skill for Spotify. This skill requires additional setup and components.",
+            "examples": [
+                "play heavy metal",
+                "play motorhead"
+            ],
+            "tags": [
+                "OVOS",
+                "Spotify",
+                "music",
+                "OCP",
+                "voice-search"
+            ]
+        },
+        {
             "skill_id": "skill-ovos-date-time.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-date-time",
             "package_name": "ovos-skill-date-time",
