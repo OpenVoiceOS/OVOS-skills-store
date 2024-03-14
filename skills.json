@@ -1212,6 +1212,50 @@
             ]
         },
         {
+            "skill_id": "skill-pokemon.retrodaredevil",
+            "source": "https://github.com/OVOSHatchery/pokemon-skill",
+            "package_name": "ovos-skill-pokemon",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536849_960_720.png",
+            "images": [],
+            "name": "Pokemon",
+            "description": "Aids you on your journey as a Pokemon Trainer. With this skill, you can ask Mycroft many different facts about Pokemon.",
+            "examples": [
+                "What type is Pikachu?",
+                "How tall is Pikachu?",
+                "What is Pikachu's base happiness?",
+                "What is Pikachu's first evolution?",
+                "What is Pikachu's final evolution?",
+                "How much does Pikachu weigh in kilograms",
+                "What are eevee's evolutions?",
+                "What is Bulbasaur's base attack?",
+                "What does Bulbasaur evolve into?",
+                "What does Charizard evolve from?",
+                "How effective is a ground move against Pikachu?",
+                "What generation was Pichu introduced in?",
+                "What abilities does Pikachu have?",
+                "What is Static's flavor text in emerald",
+                "What is Intimidate's flavor text in diamond",
+                "Give me some info about the ability Static",
+                "Give me some detailed information about the ability Static",
+                "What generation was Static first introduced?"
+            ],
+            "tags": [
+                "Pokemon",
+                "Pokedex",
+                "Video Games",
+                "Entertainment",
+                "Information"
+            ]
+        },
+        {
             "skill_id": "skill-ovos-ip.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-ip",
             "package_name": "ovos-skill-ip",
