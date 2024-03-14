@@ -1,0 +1,27 @@
+{
+  "skill_id": "ovos-skill-personal.openvoiceos",
+  "source": "https://github.com/OpenVoiceOS/skill-ovos-personal",
+  "package_name": "ovos-skill-personal",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/smile-wink.svg",
+  "name": "Assistant's Background",
+  "description": "Learn history and personality of the assistant. Ask about the 'birth' and parentage of the voice assistant and get a taste of the community who is fostering this open source artificial intelligence.",
+  "examples": [
+    "When were you created?",
+    "What are you?",
+    "Where were you born?",
+    "Who made you?"
+  ],
+  "tags": [
+    "personality",
+    "persona"
+  ],
+  "images": []
+}
