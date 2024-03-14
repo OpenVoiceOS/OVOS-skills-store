@@ -4,7 +4,7 @@
   "package_name": "ovos-skill-weather",
   "icon": "https://rawgithub.com/FortAwesome/Font-Awesome/master/svgs/solid/sun.svg",
   "name": "Weather",
-  "description": "Get weather conditions, forecasts, expected precipitation and more! By default, it will tell you about your device's configured location. You can also ask for other cities around the world. Current conditions and weather forecasts come from OpenMeteo. The temperature is shown in Celsius or Fahrenheit depending on the preferences set in your configuration or skill settings. You can ask specifically for a unit that differs from your configuration. No API key or user accounts required.",
+  "description": "Get weather conditions, forecasts, expected precipitation and more! You can also ask for other cities around the world. Current conditions and weather forecasts come from OpenMeteo",
   "category": "Daily",
   "tags": [
     "weather",
