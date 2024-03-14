@@ -937,6 +937,47 @@
             ]
         },
         {
+            "skill_id": "ovos-skill-helioviewer.openvoiceos",
+            "source": "https://github.com/OVOSHatchery/ovos-skill-helioviewer",
+            "package_name": "ovos-skill-helioviewer",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-helioviewer/master/icon.png",
+            "images": [
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-helioviewer/master/gui7.png",
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-helioviewer/master/gui.png",
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-helioviewer/master/gui2.png",
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-helioviewer/master/gui3.png",
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-helioviewer/master/gui4.png",
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-helioviewer/master/gui.gif",
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-helioviewer/master/gui6.png"
+            ],
+            "name": "Helioviewer Skill",
+            "description": "Access daily sunspot data and pictures from NASA's Solar and Heliospheric Observatory.",
+            "examples": [
+                "Live picture of the sun",
+                "What's the number of sunspots?",
+                "How many sunspots yesterday?",
+                "Show me a picture of the solar corona",
+                "Animate that",
+                "Next picture",
+                "Previous picture",
+                "Open Helioviewer"
+            ],
+            "tags": [
+                "nasa",
+                "space",
+                "sun",
+                "helioviewer"
+            ]
+        },
+        {
             "skill_id": "skill-ovos-news.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-news",
             "package_name": "ovos-skill-ovos-news",
