@@ -1,0 +1,21 @@
+{
+  "skill_id": "skill-radio-browser.openvoiceos",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-radio-browser",
+  "package_name": "ovos-skill-radio-browser",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": ["ovos-ocp"],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-radio-browser/dev/ui/logo.png",
+  "images": ["https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-radio-browser/dev/gui.png"],
+  "name": "Radio Browser Skill",
+  "description": "OCP skill for Radio Browser. Listen to various radio stations available on https://www.radio-browser.info",
+  "examples": [
+    "play heavy metal radio"
+  ],
+  "tags": ["audio", "music", "OCP", "entertainment"]
+}
