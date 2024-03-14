@@ -1,0 +1,22 @@
+{
+  "skill_id": "skill-old-world-radio.openvoiceos",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-old-world-radio",
+  "package_name": "ovos-skill-old-world-radio",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-old-world-radio/dev/res/icon/old-world-radio.png",
+  "images": ["https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-old-world-radio/dev/ui/logo.png", "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-old-world-radio/dev/ui/gui.gif"],
+  "name": "Old World Radio",
+  "description": "Old world radio skill.",
+  "examples": [
+    "play old world radio",
+    "play vintage radio"
+  ],
+  "tags": ["audio", "music", "entertainment"]
+}
