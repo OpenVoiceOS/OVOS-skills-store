@@ -6,36 +6,6 @@
     "feed_url": "https://openvoiceos.github.io/OVOS-skills-store/skills.json",
     "items": [
         {
-            "skill_id": "skill-radio-browser.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-radio-browser",
-            "package_name": "ovos-skill-radio-browser",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [
-                    "ovos-ocp"
-                ],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-radio-browser/dev/ui/logo.png",
-            "images": [
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-radio-browser/dev/gui.png"
-            ],
-            "name": "Radio Browser Skill",
-            "description": "OCP skill for Radio Browser. Listen to various radio stations available on https://www.radio-browser.info",
-            "examples": [
-                "play heavy metal radio"
-            ],
-            "tags": [
-                "audio",
-                "music",
-                "OCP",
-                "entertainment"
-            ]
-        },
-        {
             "skill_id": "skill-ovos-youtube-music.jarbasal",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-youtube-music",
             "package_name": "ovos-skill-ovos-youtube-music",
@@ -64,66 +34,6 @@
             ]
         },
         {
-            "skill_id": "skill-ovos-natgeo-pod.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-natgeo-pod",
-            "package_name": "ovos-skill-natgeo-pod",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://github.com/OVOSHatchery/ovos-skill-natgeo-pod/raw/master/icon.png",
-            "images": [
-                "https://github.com/OVOSHatchery/ovos-skill-natgeo-pod/raw/master/gui.png"
-            ],
-            "name": "National Geographic Picture of the Day",
-            "description": "National Geographic Picture of the Day",
-            "examples": [
-                "National Geographic picture of the day",
-                "explain"
-            ],
-            "tags": [
-                "national geographic",
-                "mark2",
-                "desktop"
-            ]
-        },
-        {
-            "skill_id": "skill-iheartradio.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-iheart",
-            "package_name": "ovos-skill-iheartradio",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [
-                    "ovos-ocp"
-                ],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-iheart/master/ui/iheart.png",
-            "images": [
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-iheart/master/ui/gui.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-iheart/master/ui/gui2.png"
-            ],
-            "name": "IHeartRadio",
-            "description": "OCP skill for IHeartRadio. Note: IHeartRadio only provides podcasts outside the US.",
-            "examples": [
-                "play rock radio",
-                "play the heavy metal hangover podcast"
-            ],
-            "tags": [
-                "audio",
-                "radio",
-                "OCP",
-                "entertainment"
-            ]
-        },
-        {
             "skill_id": "skill-ovos-dictation.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-dictation",
             "package_name": "ovos-skill-ovos-dictation",
@@ -147,65 +57,6 @@
                 "dictation",
                 "transcription",
                 "speech-to-text"
-            ]
-        },
-        {
-            "skill_id": "skill-number-guess.arc676",
-            "source": "https://github.com/OVOSHatchery/Number-Guess-Mycroft-Skill",
-            "package_name": "ovos-skill-number-guess",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/question.svg",
-            "images": [],
-            "name": "Number Guess",
-            "description": "Play Number Guess with Mycroft. Mycroft generates a random number between a lower and upper bound, and you try to guess it.",
-            "examples": [
-                "Let's play Number Guess",
-                "Play Number Guess",
-                "Number Guess"
-            ],
-            "tags": [
-                "numberguess",
-                "game",
-                "number",
-                "random",
-                "guessing"
-            ]
-        },
-        {
-            "skill_id": "skill-fairytalez.andlo",
-            "source": "https://github.com/OVOSHatchery/fairytalez-skill",
-            "package_name": "ovos-skill-fairytalez",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githubusercontent.com/OVOSHatchery/fairytalez-skill/master/story-512.png",
-            "images": [],
-            "name": "Fairytalez",
-            "description": "OVOS tells more than 2000 fairy tales, folk tales, and fables from all around the world.",
-            "examples": [
-                "Tell a fairy tale",
-                "Tell me the story The Little Match Girl",
-                "Continue story"
-            ],
-            "tags": [
-                "stories",
-                "story",
-                "tales",
-                "fairy",
-                "fairytale",
-                "fairytales"
             ]
         },
         {
@@ -268,36 +119,6 @@
             ]
         },
         {
-            "skill_id": "ovos-skill-mouse-jiggler.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-mouse-jiggler",
-            "package_name": "ovos-skill-mouse-jiggler",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-mouse-jiggler/master/res/icon/icon.png",
-            "images": [
-                "https://raw.githubusercontent.com/OpenJarbas/jiggle/master/xkcd.png"
-            ],
-            "name": "Mouse Jiggler",
-            "description": "Prevents your computer from going to sleep by creating constant mouse activity.",
-            "examples": [
-                "Start mouse activity",
-                "Stop mouse activity",
-                "Enable mouse jiggler",
-                "Disable mouse jiggler"
-            ],
-            "tags": [
-                "mouse jiggler",
-                "prevent sleep",
-                "mouse activity"
-            ]
-        },
-        {
             "skill_id": "skill-ovos-tunein.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-tunein",
             "package_name": "ovos-skill-ovos-tunein",
@@ -323,180 +144,6 @@
                 "audio",
                 "music",
                 "OCP",
-                "entertainment"
-            ]
-        },
-        {
-            "skill_id": "skill-shoutcast.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-shoutcast",
-            "package_name": "ovos-skill-shoutcast",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [
-                    "ovos-ocp"
-                ],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-shoutcast/dev/ui/logo.png",
-            "images": [
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-shoutcast/dev/gui.png"
-            ],
-            "name": "Shoutcast Skill",
-            "description": "OCP skill for Shoutcast directory. Listen to various radio stations available on https://directory.shoutcast.com/",
-            "examples": [
-                "play heavy metal radio"
-            ],
-            "tags": [
-                "audio",
-                "music",
-                "OCP",
-                "entertainment"
-            ]
-        },
-        {
-            "skill_id": "bedtime-stories-skill.tree",
-            "source": "https://github.com/OVOSHatchery/bedtime-stories-skill",
-            "package_name": "ovos-skill-bedtime-stories",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/book-open.svg",
-            "images": [],
-            "name": "Bedtime Stories",
-            "description": "Listen to famous bedtime stories.",
-            "examples": [
-                "Hey mycroft, read me a bedtime story",
-                "Hey mycroft, what bedtime stories do you know",
-                "Hey mycroft, read me little red riding hood"
-            ],
-            "tags": [
-                "stories",
-                "audio",
-                "kidfriendly"
-            ]
-        },
-        {
-            "skill_id": "skill-ovos-wikihow.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-wikihow",
-            "package_name": "ovos-skill-wikihow",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://github.com/OVOSHatchery/ovos-skill-wikihow/raw/master/icon.png",
-            "images": [
-                "https://github.com/OVOSHatchery/ovos-skill-wikihow/raw/master/gui2.gif",
-                "https://github.com/OVOSHatchery/ovos-skill-wikihow/raw/master/gui.gif"
-            ],
-            "name": "WikiHow Skill",
-            "description": "How to do nearly everything.",
-            "examples": [
-                "how to boil an egg",
-                "give me a random how to",
-                "explain better"
-            ],
-            "tags": [
-                "howto"
-            ]
-        },
-        {
-            "skill_id": "ovos-skill-notes.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-notes",
-            "package_name": "ovos-skill-notes",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/sticky-note.svg",
-            "images": [
-                "samples/notes-1.png",
-                "samples/notes-2.png"
-            ],
-            "name": "Notes",
-            "description": "GUI ONLY. Take personal notes to keep track of appointments, to-do items, etc.",
-            "examples": [
-                "Take a note",
-                "Show all my notes",
-                "Read my last 3 notes",
-                "Read my first 3 notes",
-                "Read my last note",
-                "Read all my notes",
-                "Delete / Remove note (number)"
-            ],
-            "tags": [
-                "notes",
-                "productivity",
-                "GUI",
-                "daily"
-            ]
-        },
-        {
-            "skill_id": "ovos-skill-cmd.forslund",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-cmd",
-            "package_name": "ovos-skill-cmd",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPpiiOOHtYRtYe9Dvo1vdFiOfcqKSGJ92neMSFUndOvA&s",
-            "images": [],
-            "name": "Command Skill",
-            "description": "A Simple OVOS skill for running shell scripts and other commands. The commands will run quietly without any confirmation from OVOS.",
-            "examples": [
-                "Hey Mycroft, launch command echo TEST",
-                "Hey Mycroft, run script generate report"
-            ],
-            "tags": []
-        },
-        {
-            "skill_id": "quote-of-day.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-quote-of-day",
-            "package_name": "ovos-skill-quote-of-day",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-quote-of-day/master/icon.png",
-            "images": [
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-quote-of-day/master/logo.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-quote-of-day/master/screenie.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-quote-of-day/master/screenie2.png"
-            ],
-            "name": "Quote of the Day",
-            "description": "Quote of the day from They said so",
-            "examples": [
-                "quote of the day",
-                "funny quote of the day",
-                "inspirational quote for today",
-                "who said that",
-                "where do you get your quotes",
-                "can your quotes be trusted"
-            ],
-            "tags": [
                 "entertainment"
             ]
         },
@@ -594,91 +241,6 @@
             ]
         },
         {
-            "skill_id": "skill-old-world-radio.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-old-world-radio",
-            "package_name": "ovos-skill-old-world-radio",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-old-world-radio/dev/res/icon/old-world-radio.png",
-            "images": [
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-old-world-radio/dev/ui/logo.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-old-world-radio/dev/ui/gui.gif"
-            ],
-            "name": "Old World Radio",
-            "description": "Old world radio skill.",
-            "examples": [
-                "play old world radio",
-                "play vintage radio"
-            ],
-            "tags": [
-                "audio",
-                "music",
-                "entertainment"
-            ]
-        },
-        {
-            "skill_id": "ovos-skill-iss-location.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-iss-location",
-            "package_name": "ovos-skill-iss-location",
-            "extra_plugins": {},
-            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-iss-location/master/iss2.png",
-            "images": [
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-iss-location/master/gui.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-iss-location/master/gui2.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-iss-location/master/gui3.png"
-            ],
-            "name": "ISS Tracker",
-            "description": "Track the location of the ISS. Can also be used as an idle screen",
-            "examples": [
-                "Where is the ISS",
-                "Who is on board of the space station",
-                "When is the ISS passing over",
-                "Tell me about the ISS",
-                "how many persons on board of the space station"
-            ],
-            "tags": [
-                "nasa",
-                "information"
-            ]
-        },
-        {
-            "skill_id": "skill-farting.aussiew",
-            "source": "https://github.com/OVOSHatchery/skill-farting",
-            "package_name": "ovos-skill-farting",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githubusercontent.com/OVOSHatchery/skill-farting/master/fart.png",
-            "images": [],
-            "name": "Farting",
-            "description": "OVOS will play a farting sound when requested or at random intervals. Just a fun skill that should generate a laugh or two.",
-            "examples": [
-                "did you fart",
-                "what is that smell",
-                "fart",
-                "make a farting noise",
-                "fart randomly",
-                "stop farting"
-            ],
-            "tags": [
-                "fart",
-                "smell",
-                "fun",
-                "entertainment"
-            ]
-        },
-        {
             "skill_id": "ovos-skill-local-media.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-local-media",
             "package_name": "ovos-skill-local-media",
@@ -738,68 +300,6 @@
             ]
         },
         {
-            "skill_id": "ovos-skill-asteroid-tracker.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-asteroid-tracker",
-            "package_name": "ovos-skill-asteroid-tracker",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://cdn-icons-png.flaticon.com/512/3061/3061737.png",
-            "images": [
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-asteroid-tracker/master/gui.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-asteroid-tracker/master/gui2.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-asteroid-tracker/master/gui3.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-asteroid-tracker/master/gui.gif"
-            ],
-            "name": "Asteroid Tracker",
-            "description": "Skill for tracking asteroids and their orbits.",
-            "examples": [
-                "show asteroid orbits"
-            ],
-            "tags": [
-                "nasa",
-                "space",
-                "asteroids",
-                "neo",
-                "solar_system",
-                "information"
-            ]
-        },
-        {
-            "skill_id": "ovos-skill-confucius-quotes.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-confucius-quotes",
-            "package_name": "ovos-skill-confucius-quotes",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-confucius-quotes/master/res/icon/confucius.png",
-            "images": [
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-confucius-quotes/master/gui.png"
-            ],
-            "name": "Confucius Quotes",
-            "description": "Quotes from Confucius",
-            "examples": [
-                "Who is Confucius",
-                "Quote from Confucius",
-                "When was Confucius born",
-                "When did Confucius die"
-            ],
-            "tags": [
-                "quotes",
-                "information"
-            ]
-        },
-        {
             "skill_id": "skill-ovos-alerts.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/ovos-skill-alerts",
             "package_name": "ovos-skill-alerts",
@@ -855,27 +355,6 @@
             ]
         },
         {
-            "skill_id": "8-fact.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-8fact/tree/master",
-            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-8fact/master/icon.png",
-            "images": [
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-8fact/master/screenie1.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-8fact/master/screenie.png"
-            ],
-            "name": "8 Fact",
-            "description": "Random Facts",
-            "examples": [
-                "random fact",
-                "how many facts do you have in your database",
-                "where do you get your facts",
-                "can your facts be trusted"
-            ],
-            "tags": [
-                "entertainment"
-            ],
-            "package_name": "ovos-skill-8fact"
-        },
-        {
             "skill_id": "skill-ovos-wordnet.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-wordnet",
             "package_name": "ovos-skill-ovos-wordnet",
@@ -899,70 +378,6 @@
                 "Wordnet",
                 "query",
                 "information"
-            ]
-        },
-        {
-            "skill_id": "skill-numbers.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-numbers",
-            "package_name": "ovos-skill-numbers",
-            "extra_plugins": {},
-            "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/ac/49/6a/ac496a0d-67c4-1534-a014-6915e1d87630/AppIcon-0-0-1x_U007emarketing-0-0-0-6-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg",
-            "images": [],
-            "name": "Numbers",
-            "description": "Facts about numbers, math, years and dates from http://numbersapi.com",
-            "examples": [
-                "random math fact",
-                "random number trivia",
-                "random date curiosity",
-                "random year trivia",
-                "fact about number 666",
-                "math fact about number 5",
-                "curiosity about year 1992",
-                "trivia about tomorrow",
-                "trivia about next week",
-                "fact about yesterday",
-                "curiosity about march 13"
-            ],
-            "tags": [
-                "math",
-                "numbers",
-                "trivia"
-            ]
-        },
-        {
-            "skill_id": "skill-ovos-xkcd.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-xkcd",
-            "package_name": "ovos-skill-xkcd",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://github.com/OVOSHatchery/ovos-skill-xkcd/raw/master/icon.png",
-            "images": [
-                "https://github.com/OVOSHatchery/ovos-skill-xkcd/raw/master/logo.png",
-                "https://github.com/OVOSHatchery/ovos-skill-xkcd/raw/master/screenie.png",
-                "https://github.com/OVOSHatchery/ovos-skill-xkcd/raw/master/screenie2.png",
-                "https://github.com/OVOSHatchery/ovos-skill-xkcd/raw/master/screenie3.png",
-                "https://github.com/OVOSHatchery/ovos-skill-xkcd/raw/master/website.png"
-            ],
-            "name": "XKCD Comics",
-            "description": "Comics from xkcd.",
-            "examples": [
-                "open the xkcd website",
-                "show me the latest xkcd comic",
-                "random xkcd",
-                "display comic number 2020",
-                "how many xkcd comics"
-            ],
-            "tags": [
-                "comics",
-                "idle screen",
-                "mark2",
-                "bigscreen"
             ]
         },
         {
@@ -990,60 +405,6 @@
             ]
         },
         {
-            "skill_id": "ovos-skill-rss-reader.forslund",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-rss-reader",
-            "package_name": "ovos-skill-rss-reader",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Generic_Feed-icon.svg/800px-Generic_Feed-icon.svg.png",
-            "images": [],
-            "name": "RSS Feed Reader",
-            "description": "An overly complicated reader for RSS feeds. A skill allowing Mycroft to fetch and read headlines and article summaries.",
-            "examples": [
-                "Hey Mycroft, what are the latest headlines from slashdot.org",
-                "Hey Mycroft, read about elon musk's new project"
-            ],
-            "tags": []
-        },
-        {
-            "skill_id": "ovos-skill-diagnostics.the7erm",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-diagnostics",
-            "package_name": "ovos-skill-diagnostics",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://cdn-icons-png.flaticon.com/512/4692/4692089.png",
-            "images": [],
-            "name": "Diagnostics",
-            "description": "Aids you in diagnosing OVOS related issues. Provides various diagnostic functions such as checking CPU usage, drive space, public IP, uptime, etc.",
-            "examples": [
-                "Mycroft, what is the current CPU percent?",
-                "Mycroft, run diagnostics.",
-                "Mycroft, how's my hard drive space?",
-                "Mycroft, what is my public IP?",
-                "Mycroft, what's your uptime?"
-            ],
-            "tags": [
-                "diagnostics",
-                "mycroft",
-                "cpu",
-                "drive space",
-                "public IP",
-                "uptime"
-            ]
-        },
-        {
             "skill_id": "ovos-skill-fallback-unknown.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-fallback-unknown",
             "package_name": "ovos-skill-fallback-unknown",
@@ -1063,78 +424,6 @@
                 "fallback",
                 "unknown",
                 "system"
-            ],
-            "images": []
-        },
-        {
-            "skill_id": "skill-space-is-awesome.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-space-is-awesome",
-            "package_name": "ovos-skill-space-is-awesome",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Font_Awesome_5_solid_user-astronaut.svg/1200px-Font_Awesome_5_solid_user-astronaut.svg.png",
-            "images": [
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-space-is-awesome/master/space.jpg"
-            ],
-            "name": "Space is awesome",
-            "description": "All about space. Ever wanted to know what's up? Now you can.",
-            "examples": [
-                "Next cool thing in space",
-                "How many astronauts in orbit",
-                "Where is the space station",
-                "Who is in space",
-                "How many confirmed exoplanets",
-                "How many super Earths discovered",
-                "How many discovered exoplanets orbiting M type stars",
-                "How many stars known to have planets",
-                "How far away is Voyager",
-                "What do you know about space",
-                "Teach me something about pulsars",
-                "Random fact about exoplanets",
-                "How many active probes in space",
-                "Which probes do we have in space"
-            ],
-            "tags": [
-                "space",
-                "educational",
-                "trivia",
-                "science",
-                "knowledge"
-            ]
-        },
-        {
-            "skill_id": "ovos-skill-camera.openvoiceos",
-            "source": "https://github.com/OpenVoiceOS/skill-ovos-qml-camera",
-            "package_name": "ovos-skill-camera",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/camera-retro.svg",
-            "name": "Camera Skill (QML)",
-            "description": "GUI ONLY! Take single-shot photographs with the Camera Skill.",
-            "examples": [
-                "Take a selfie",
-                "Take a photograph",
-                "Open the camera",
-                "Start the camera app"
-            ],
-            "tags": [
-                "Camera",
-                "Photograph",
-                "Images",
-                "Media",
-                "GUI"
             ],
             "images": []
         },
@@ -1241,169 +530,6 @@
             ]
         },
         {
-            "skill_id": "skill-food-wizard.aix",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-food-wizard",
-            "package_name": "ovos-skill-food-wizard",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/coffee.svg",
-            "images": [],
-            "name": "Food Wizard",
-            "description": "Get popular recipes and how-to-cook directions based on a combination of ingredient keywords. Powered by Edamam.",
-            "examples": [
-                "Hey Mycroft search recipes with apple and honey",
-                "Hey Mycroft show recipes with chicken, honey and lime",
-                "Hey Mycroft open the recipe mexican chicken lime soup",
-                "Hey Mycroft read the current recipe ingredients",
-                "Hey Mycroft read the current recipe cooking instructions"
-            ],
-            "tags": [
-                "Food",
-                "Recipes",
-                "GUI",
-                "Plasmoid",
-                "KDE",
-                "Ingredients",
-                "Cooking"
-            ]
-        },
-        {
-            "skill_id": "ovos-skill-daily-blue-marble.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-daily-blue-marble",
-            "package_name": "ovos-skill-daily-blue-marble",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-daily-blue-marble/master/icon.png",
-            "images": [
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-daily-blue-marble/master/logo.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-daily-blue-marble/master/gui.gif",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-daily-blue-marble/master/ui.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-daily-blue-marble/master/website.png"
-            ],
-            "name": "Daily Blue Marble",
-            "description": "Earth Polychromatic Imaging Camera provides near real-time pictures of earth from orbit. Can be used as homescreen.",
-            "examples": [
-                "show me earth from space",
-                "Daily Blue Marble",
-                "Blue Marble of the Day",
-                "Animate that",
-                "tell me about Earth Polychromatic Imaging Camera",
-                "open the epic website from nasa",
-                "what is the location of DSCOVR spacecraft"
-            ],
-            "tags": [
-                "nasa",
-                "idle screen"
-            ]
-        },
-        {
-            "skill_id": "ovos-skill-good-manners.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-good-manners",
-            "package_name": "ovos-skill-good-manners",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-good-manners/master/goodmanner.png",
-            "images": [],
-            "name": "Good Manners Enforcer",
-            "description": "Responds to insults and good manners. Monitors utterances and reprimands insults / foul language, while showing appreciation for good manners.",
-            "examples": [
-                "go F#&K yourself",
-                "eat sh1$ and die",
-                "please something (X times in a row)"
-            ],
-            "tags": [
-                "goodmanners",
-                "daily",
-                "entertainment"
-            ]
-        },
-        {
-            "skill_id": "ovos-skill-helioviewer.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-helioviewer",
-            "package_name": "ovos-skill-helioviewer",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-helioviewer/master/icon.png",
-            "images": [
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-helioviewer/master/gui7.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-helioviewer/master/gui.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-helioviewer/master/gui2.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-helioviewer/master/gui3.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-helioviewer/master/gui4.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-helioviewer/master/gui.gif",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-helioviewer/master/gui6.png"
-            ],
-            "name": "Helioviewer Skill",
-            "description": "Access daily sunspot data and pictures from NASA's Solar and Heliospheric Observatory.",
-            "examples": [
-                "Live picture of the sun",
-                "What's the number of sunspots?",
-                "How many sunspots yesterday?",
-                "Show me a picture of the solar corona",
-                "Animate that",
-                "Next picture",
-                "Previous picture",
-                "Open Helioviewer"
-            ],
-            "tags": [
-                "nasa",
-                "space",
-                "sun",
-                "helioviewer"
-            ]
-        },
-        {
-            "skill_id": "skill-cocktail.forslund",
-            "source": "https://github.com/OVOSHatchery/skill-cocktail",
-            "package_name": "ovos-skill-cocktail",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/cocktail.svg",
-            "images": [],
-            "name": "Cocktails",
-            "description": "Get help mixing drinks. Let OVOS help you mix better and more fun drinks and cocktails.",
-            "examples": [
-                "how do I mix a Moscow Mule",
-                "how do I make a daiquiri"
-            ],
-            "tags": [
-                "drinks",
-                "recipes",
-                "cocktails",
-                "information"
-            ]
-        },
-        {
             "skill_id": "skill-ovos-news.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-news",
             "package_name": "ovos-skill-ovos-news",
@@ -1437,47 +563,6 @@
             ]
         },
         {
-            "skill_id": "skill-enclosure-ctrl.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-mark1-ctrl",
-            "package_name": "ovos-skill-mark1-ctrl",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://w7.pngwing.com/pngs/645/1014/png-transparent-mycroft-amazon-echo-open-source-model-raspberry-pi-home-automation-kits-microphone-creative-advertising-electronics-linux-amazon-echo-thumbnail.png",
-            "images": [],
-            "name": "Enclosure Control",
-            "description": "Controls the enclosure API vocally. This skill can be used to trigger changes in the enclosure.",
-            "examples": [
-                "look up",
-                "look down",
-                "look left",
-                "look right",
-                "look left and right",
-                "look up and down",
-                "reset enclosure",
-                "narrow your eyes",
-                "spin your eyes",
-                "blink your eyes",
-                "perform system reboot",
-                "system mute",
-                "system unmute",
-                "smile animation",
-                "listen animation",
-                "think animation"
-            ],
-            "tags": [
-                "mark1",
-                "enclosure control",
-                "animation",
-                "system control"
-            ]
-        },
-        {
             "skill_id": "skill-ovos-wolfie.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-wolfie",
             "package_name": "ovos-skill-ovos-wolfie",
@@ -1508,32 +593,6 @@
                 "query",
                 "general-knowledge",
                 "information"
-            ]
-        },
-        {
-            "skill_id": "ovos-skill-coin-flip.wligtenberg",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-coin-flip",
-            "package_name": "ovos-skill-coin-flip",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://cdn-icons-png.flaticon.com/512/1715/1715497.png",
-            "images": [],
-            "name": "Coin Flip",
-            "description": "This skill flips a virtual coin.",
-            "examples": [
-                "flip a coin"
-            ],
-            "tags": [
-                "coin",
-                "flip",
-                "random",
-                "game"
             ]
         },
         {
@@ -1582,35 +641,6 @@
                 "duckduckgo",
                 "query",
                 "search-engine"
-            ]
-        },
-        {
-            "skill_id": "skill-ovos-apod.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-apod",
-            "package_name": "ovos-skill-apod",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://github.com/OVOSHatchery/ovos-skill-apod/raw/master/icon.png",
-            "images": [
-                "https://github.com/OVOSHatchery/ovos-skill-apod/raw/master/gui.png"
-            ],
-            "name": "Astronomy Picture of the Day",
-            "description": "NASA's Astronomy Picture of the Day.",
-            "examples": [
-                "Astronomy picture of the day",
-                "explain"
-            ],
-            "tags": [
-                "nasa",
-                "astronomy",
-                "picture-of-the-day",
-                "entertainment"
             ]
         },
         {
@@ -1678,79 +708,6 @@
             ]
         },
         {
-            "skill_id": "skill-pokemon.retrodaredevil",
-            "source": "https://github.com/OVOSHatchery/pokemon-skill",
-            "package_name": "ovos-skill-pokemon",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536849_960_720.png",
-            "images": [],
-            "name": "Pokemon",
-            "description": "Aids you on your journey as a Pokemon Trainer. With this skill, you can ask Mycroft many different facts about Pokemon.",
-            "examples": [
-                "What type is Pikachu?",
-                "How tall is Pikachu?",
-                "What is Pikachu's base happiness?",
-                "What is Pikachu's first evolution?",
-                "What is Pikachu's final evolution?",
-                "How much does Pikachu weigh in kilograms",
-                "What are eevee's evolutions?",
-                "What is Bulbasaur's base attack?",
-                "What does Bulbasaur evolve into?",
-                "What does Charizard evolve from?",
-                "How effective is a ground move against Pikachu?",
-                "What generation was Pichu introduced in?",
-                "What abilities does Pikachu have?",
-                "What is Static's flavor text in emerald",
-                "What is Intimidate's flavor text in diamond",
-                "Give me some info about the ability Static",
-                "Give me some detailed information about the ability Static",
-                "What generation was Static first introduced?"
-            ],
-            "tags": [
-                "Pokemon",
-                "Pokedex",
-                "Video Games",
-                "Entertainment",
-                "Information"
-            ]
-        },
-        {
-            "skill_id": "ovos-skill-lets-talk.chrison999",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-lets-talk",
-            "package_name": "ovos-skill-lets-talk",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://static.thenounproject.com/png/1228602-200.png",
-            "images": [],
-            "name": "Let's Talk",
-            "description": "A skill for OVOS that replies to various greetings.",
-            "examples": [
-                "Mycroft, good morning",
-                "Mycroft, good afternoon",
-                "Mycroft, good evening",
-                "Mycroft, good night"
-            ],
-            "tags": [
-                "greetings",
-                "hello",
-                "time",
-                "conversation"
-            ]
-        },
-        {
             "skill_id": "skill-ovos-ip.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-ip",
             "package_name": "ovos-skill-ip",
@@ -1813,110 +770,6 @@
             "tags": []
         },
         {
-            "skill_id": "skill-ovos-stephen-hawking-quotes.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-stephen-hawking-quotes",
-            "package_name": "ovos-skill-stephen-hawking-quotes",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://github.com/OVOSHatchery/ovos-skill-stephen-hawking-quotes/raw/master/icon.png",
-            "images": [
-                "https://github.com/OVOSHatchery/ovos-skill-stephen-hawking-quotes/raw/master/gui.png"
-            ],
-            "name": "Stephen Hawking",
-            "description": "Tribute to Stephen Hawking, quotes from a great mind",
-            "examples": [
-                "When was Stephen Hawking born?",
-                "When did Stephen Hawking die?",
-                "Quote from Stephen Hawking"
-            ],
-            "tags": [
-                "quotes"
-            ]
-        },
-        {
-            "skill_id": "skill-ovos-wiktionary.tree",
-            "source": "https://github.com/OVOSHatchery/Wiktionary-Skill",
-            "package_name": "ovos-skill-wiktionary",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/book-reader.svg",
-            "images": [],
-            "name": "Wiktionary",
-            "description": "Find definitions of words using Wiktionary.",
-            "examples": [
-                "Tell me the definition of apple",
-                "What is the definition for orange",
-                "Find the definition for grape"
-            ],
-            "tags": [
-                "word",
-                "dictionary"
-            ]
-        },
-        {
-            "skill_id": "skill-fallback-cakechat.tree",
-            "source": "https://github.com/OVOSHatchery/skill-fallback-cakechat",
-            "package_name": "ovos-skill-fallback-cakechat",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://img.freepik.com/premium-vector/cake-chat-character-cute-logo_96485-2230.jpg",
-            "images": [],
-            "name": "Fallback Cakechat",
-            "description": "A fallback that utilizes the CakeChat Emotional Generative Dialog System",
-            "examples": [
-                "What is your favorite color",
-                "what is the meaning of life"
-            ],
-            "tags": []
-        },
-        {
-            "skill_id": "ovos-skill-laugh.openvoiceos",
-            "source": "https://github.com/OpenVoiceOS/ovos-skill-laugh",
-            "package_name": "ovos-skill-laugh",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-laugh/dev/res/icon/laugh_icon.png",
-            "name": "Laugh",
-            "description": "Makes OVOS laugh like a maniac. Laugh randomly or when requested, gender configurable",
-            "examples": [
-                "Laugh like Alexa",
-                "can you laugh"
-            ],
-            "tags": [
-                "laugh",
-                "funny",
-                "entertainment",
-                "repeating"
-            ],
-            "images": [
-                "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-laugh/dev/sshot.png"
-            ]
-        },
-        {
             "skill_id": "skill-ovos-bandcamp.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-bandcamp",
             "package_name": "ovos-skill-bandcamp",
@@ -1951,60 +804,6 @@
             "images": [
                 "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-bandcamp/dev/ui/logo.png",
                 "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-bandcamp/dev/gui.gif"
-            ]
-        },
-        {
-            "skill_id": "skill-count.andlo",
-            "source": "https://github.com/OVOSHatchery/count-skill",
-            "package_name": "ovos-skill-count",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/rocket.svg",
-            "images": [],
-            "name": "Count",
-            "description": "Count and countdown skill. Let OVOS count to a number or countdown from a number.",
-            "examples": [
-                "Count to 10",
-                "Countdown from 10"
-            ],
-            "tags": [
-                "count",
-                "countdown"
-            ]
-        },
-        {
-            "skill_id": "skill-pickup-lines.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-pickup-lines",
-            "package_name": "ovos-skill-pickup-lines",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-pickup-lines/master/logo.png",
-            "images": [
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-pickup-lines/master/screenie.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-pickup-lines/master/screenie1.png"
-            ],
-            "name": "Pickup Lines",
-            "description": "Pickup lines from https://www.pickuplinesgalore.com/. Includes idle screen.",
-            "examples": [
-                "tell me a pickup line",
-                "say a geeky pickup line",
-                "say a lord of the rings pickup line",
-                "where do you get your pickup lines"
-            ],
-            "tags": [
-                "entertainment"
             ]
         },
         {
@@ -2044,36 +843,6 @@
             ]
         },
         {
-            "skill_id": "skill-librivox.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-librivox",
-            "package_name": "ovos-skill-librivox",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [
-                    "ovos-ocp"
-                ],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-librivox/dev/ui/librivox-icon.png",
-            "images": [
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-librivox/dev/gui.gif"
-            ],
-            "name": "Librivox Skill",
-            "description": "Librivox skill for OCP. Search Librivox by voice!",
-            "examples": [
-                "read the art of war"
-            ],
-            "tags": [
-                "audiobooks",
-                "librivox",
-                "common play",
-                "entertainment"
-            ]
-        },
-        {
             "skill_id": "skill-ovos-somafm.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-somafm/tree/dev",
             "package_name": "ovos-skill-ovos-somafm",
@@ -2104,34 +873,6 @@
             ]
         },
         {
-            "skill_id": "ovos-skill-names.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-names",
-            "package_name": "ovos-skill-names",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://www.svgrepo.com/show/312118/european-name-badge.svg",
-            "images": [],
-            "name": "Names",
-            "description": "Says English names, OVOS can now help name your characters",
-            "examples": [
-                "random name",
-                "random male name",
-                "random female name",
-                "random last name"
-            ],
-            "tags": [
-                "names",
-                "baby names",
-                "english names"
-            ]
-        },
-        {
             "skill_id": "ovos-skill-spelling.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-spelling",
             "package_name": "ovos-skill-spelling",
@@ -2152,31 +893,6 @@
                 "spelling"
             ],
             "images": []
-        },
-        {
-            "skill_id": "skill-inspirational-quotes.oliveralonzo",
-            "source": "https://github.com/OVOSHatchery/skill-inspirational-quotes",
-            "package_name": "skill-inspirational-quotes",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://assets.materialup.com/uploads/6852f4a4-a1a0-4d13-b04f-06a7740d613e/preview.png",
-            "name": "Inspirational Quotes",
-            "description": "Get inspired with quotes from Forismatic.",
-            "examples": [
-                "Hey Mycroft, inspire me",
-                "Hey Mycroft, read me a quote"
-            ],
-            "tags": [
-                "inspirational quotes",
-                "motivation",
-                "wisdom"
-            ]
         },
         {
             "skill_id": "skill-ovos-soundcloud.openvoiceos",
@@ -2245,58 +961,6 @@
             ]
         },
         {
-            "skill_id": "skill-days-in-history.austin-carnahan",
-            "source": "https://github.com/OVOSHatchery/days-in-history-skill",
-            "package_name": "ovos-skill-days-in-history",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/calendar-day.svg",
-            "images": [],
-            "name": "Today In History",
-            "description": "Informs you of historical tidbits about a given calendar day. Provides historical events for today or any other calendar day using information pulled from Wikipedia.",
-            "examples": [
-                "What happened today in history?",
-                "Tell me about events in history on December 12th",
-                "What historical events happened on June 16th?",
-                "Tell me more",
-                "What's another event?"
-            ],
-            "tags": [
-                "History",
-                "Trivia",
-                "Information"
-            ]
-        },
-        {
-            "skill_id": "ovos-skill-cat.forslund",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-cat",
-            "package_name": "ovos-skill-cat",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNqiSPvrnVxCwqBaWcWEp_1IQp60CZQgT8U__Egl8zV39LJxfNnixlOKcdz_WLQ6NcwPI&usqp=CAU",
-            "images": [],
-            "name": "Cat Skill",
-            "description": "The Cat Skill fetches a random cat image from the Cat API and displays it on compatible devices.",
-            "examples": [
-                "Show me a cat",
-                "Show a cute cat",
-                "I want to see a kitty"
-            ],
-            "tags": []
-        },
-        {
             "skill_id": "skill-ovos-audio-recording.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-audio-recording",
             "package_name": "ovos-skill-audio-recording",
@@ -2352,36 +1016,6 @@
             ]
         },
         {
-            "skill_id": "skill-wikiquote.danielwine",
-            "source": "https://github.com/OVOSHatchery/wikiquote-skill",
-            "package_name": "ovos-skill-wikiquote",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Wikiquote-logo-en.svg/1200px-Wikiquote-logo-en.svg.png",
-            "images": [],
-            "name": "wikiquote-skill",
-            "description": "Gives quotations from notable people using Wikiquote. Supported languages are English, German, Spanish, French, Italian.",
-            "examples": [
-                "Give me a quote",
-                "Tell me a quote from Lincoln",
-                "I need some wisdom",
-                "Give me a Buddhist wisdom"
-            ],
-            "tags": [
-                "quotes",
-                "wisdom",
-                "knowledge",
-                "random",
-                "philosophy"
-            ]
-        },
-        {
             "skill_id": "skill-ovos-application-launcher.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-application-launcher",
             "package_name": "ovos-skill-application-launcher",
@@ -2406,83 +1040,6 @@
                 "desktop-launcher"
             ],
             "images": []
-        },
-        {
-            "skill_id": "skill-routines.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-routines",
-            "package_name": "ovos-skill-routines",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://rawgithub.com/FortAwesome/Font-Awesome/master/svgs/solid/business-time.svg",
-            "images": [],
-            "name": "Routines",
-            "description": "Create and schedule a list of actions your assistant should perform, on your selected days and time.",
-            "examples": [
-                "Show routines dashboard",
-                "Show my routines",
-                "Create a new routine",
-                "Setup a new routine",
-                "Delete routine {routine name}",
-                "Remove routine {routine name}"
-            ],
-            "tags": [
-                "routines",
-                "daily",
-                "gui",
-                "schedules",
-                "actions",
-                "productivity"
-            ]
-        },
-        {
-            "skill_id": "ovos-skill-countries.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-countries",
-            "package_name": "ovos-skill-countries",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-countries/master/icon.png",
-            "images": [
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-countries/master/logo.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-countries/master/gui.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-countries/master/gui2.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-countries/master/gui3.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-countries/master/gui4.png",
-                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-countries/master/gui5.png"
-            ],
-            "name": "Countries",
-            "description": "Data about countries from http://restcountries.eu/. Provides information about country population, area, language, borders, currency, timezone, capital, denonyms, etc.",
-            "examples": [
-                "what is the size of portugal",
-                "what are the borders of portugal",
-                "what is the capital of portugal",
-                "what is the currency of portugal",
-                "what is the language of portugal",
-                "what is the population of portugal",
-                "what is the timezone of portugal",
-                "what are the people that live in portugal called",
-                "where is portuguese spoken",
-                "where is portugal located at",
-                "how many countries do you know about",
-                "what are the countries in europe"
-            ],
-            "tags": [
-                "countries",
-                "geography",
-                "information",
-                "education"
-            ]
         },
         {
             "skill_id": "ovos-skill-personal.openvoiceos",
@@ -2510,70 +1067,6 @@
                 "persona"
             ],
             "images": []
-        },
-        {
-            "skill_id": "skill-ovos-desktop-control.tree",
-            "source": "https://github.com/OVOSHatchery/desktop-control",
-            "package_name": "ovos-skill-desktop-control",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/desktop.svg",
-            "name": "Desktop Control",
-            "description": "Control your mouse and keyboard by voice.",
-            "examples": [
-                "type Mycroft is awesome",
-                "press the enter key",
-                "move mouse to 400 and 100",
-                "scroll up a bit",
-                "scroll down a bit",
-                "scroll down some",
-                "scroll down a lot",
-                "hold space key",
-                "release space key",
-                "screen resolution",
-                "select all",
-                "select all and copy"
-            ],
-            "tags": [
-                "desktop",
-                "mouse",
-                "keyboard",
-                "screen",
-                "productivity"
-            ]
-        },
-        {
-            "skill_id": "skill-ovos-algorithmic-art.openvoiceos",
-            "source": "https://github.com/OVOSHatchery/ovos-skill-algorithmic-art",
-            "package_name": "ovos-skill-algorithmic-art",
-            "extra_plugins": {
-                "core": [],
-                "PHAL": [],
-                "listener": [],
-                "audio": [],
-                "media": [],
-                "gui": []
-            },
-            "icon": "https://github.com/OVOSHatchery/ovos-skill-algorithmic-art/raw/master/logo.png",
-            "images": [
-                "https://github.com/OVOSHatchery/ovos-skill-algorithmic-art/raw/master/screenshot.png"
-            ],
-            "name": "Algorithmic Art Skill",
-            "description": "Creating art from math.",
-            "examples": [
-                "draw a picture"
-            ],
-            "tags": [
-                "art",
-                "entertainment",
-                "screensaver"
-            ]
         }
     ]
 }
