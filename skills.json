@@ -674,7 +674,7 @@
         },
         {
             "skill_id": "skill-ovos-wallpapers.openvoiceos",
-            "source": "https://github.com/OpenVoiceOS/skill-ovos-wallpapers/tree/dev",
+            "source": "https://github.com/OpenVoiceOS/skill-ovos-wallpapers",
             "package_name": "ovos-skill-ovos-wallpapers",
             "extra_plugins": {
                 "core": [],
