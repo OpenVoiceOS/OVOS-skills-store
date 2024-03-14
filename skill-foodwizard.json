@@ -1,0 +1,25 @@
+{
+  "skill_id": "skill-food-wizard.aix",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-food-wizard",
+  "package_name": "ovos-skill-food-wizard",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/coffee.svg",
+  "images": [],
+  "name": "Food Wizard",
+  "description": "Get popular recipes and how-to-cook directions based on a combination of ingredient keywords. Powered by Edamam.",
+  "examples": [
+    "Hey Mycroft search recipes with apple and honey",
+    "Hey Mycroft show recipes with chicken, honey and lime",
+    "Hey Mycroft open the recipe mexican chicken lime soup",
+    "Hey Mycroft read the current recipe ingredients",
+    "Hey Mycroft read the current recipe cooking instructions"
+  ],
+  "tags": ["Food", "Recipes", "GUI", "Plasmoid", "KDE", "Ingredients", "Cooking"]
+}
