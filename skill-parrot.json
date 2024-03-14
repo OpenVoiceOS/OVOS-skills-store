@@ -10,7 +10,7 @@
     "media": [],
     "gui": []
   },
-  "icon": "https://github.com/OpenVoiceOS/skill-ovos-parrot/blob/main/icon.png?raw=true",
+  "icon": "https://github.com/OpenVoiceOS/skill-ovos-parrot/blob/dev/icon.png?raw=true",
   "images": [],
   "name": "Parrot",
   "description": "Turn OpenVoiceOS into a echoing parrot! Make OVOS repeat whatever you want.",
