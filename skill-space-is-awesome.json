@@ -1,0 +1,34 @@
+{
+  "skill_id": "skill-space-is-awesome.openvoiceos",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-space-is-awesome",
+  "package_name": "ovos-skill-space-is-awesome",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Font_Awesome_5_solid_user-astronaut.svg/1200px-Font_Awesome_5_solid_user-astronaut.svg.png",
+  "images": ["https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-space-is-awesome/master/space.jpg"],
+  "name": "Space is awesome",
+  "description": "All about space. Ever wanted to know what's up? Now you can.",
+  "examples": [
+    "Next cool thing in space",
+    "How many astronauts in orbit",
+    "Where is the space station",
+    "Who is in space",
+    "How many confirmed exoplanets",
+    "How many super Earths discovered",
+    "How many discovered exoplanets orbiting M type stars",
+    "How many stars known to have planets",
+    "How far away is Voyager",
+    "What do you know about space",
+    "Teach me something about pulsars",
+    "Random fact about exoplanets",
+    "How many active probes in space",
+    "Which probes do we have in space"
+  ],
+  "tags": ["space", "educational", "trivia", "science", "knowledge"]
+}
