@@ -720,6 +720,38 @@
             ]
         },
         {
+            "skill_id": "skill-diagnostics.the7erm",
+            "source": "https://github.com/OVOSHatchery/mycroft-skill-diagnostics",
+            "package_name": "ovos-skill-diagnostics",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://cdn-icons-png.flaticon.com/512/4692/4692089.png",
+            "images": [],
+            "name": "mycroft-skill-diagnostics",
+            "description": "Aids you in diagnosing OVOS related issues. Provides various diagnostic functions such as checking CPU usage, drive space, public IP, uptime, etc.",
+            "examples": [
+                "Mycroft, what is the current CPU percent?",
+                "Mycroft, run diagnostics.",
+                "Mycroft, how's my hard drive space?",
+                "Mycroft, what is my public IP?",
+                "Mycroft, what's your uptime?"
+            ],
+            "tags": [
+                "diagnostics",
+                "mycroft",
+                "cpu",
+                "drive space",
+                "public IP",
+                "uptime"
+            ]
+        },
+        {
             "skill_id": "ovos-skill-fallback-unknown.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-fallback-unknown",
             "package_name": "ovos-skill-fallback-unknown",
