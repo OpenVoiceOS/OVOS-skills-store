@@ -6,6 +6,34 @@
     "feed_url": "https://openvoiceos.github.io/OVOS-skills-store/skills.json",
     "items": [
         {
+            "skill_id": "skill-ovos-youtube-music.jarbasal",
+            "source": "https://github.com/OpenVoiceOS/skill-ovos-youtube-music",
+            "package_name": "ovos-skill-ovos-youtube-music",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube-music/dev/res/ytmus.png",
+            "images": [
+                "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube-music/dev/gui.gif"
+            ],
+            "name": "Youtube Music Skill",
+            "description": "Youtube Music OCP Skill - search Youtube Music by voice!",
+            "examples": [
+                "play Ant\u00f3nio Varia\u00e7\u00f5es"
+            ],
+            "tags": [
+                "youtube",
+                "common play",
+                "music",
+                "entertainment"
+            ]
+        },
+        {
             "skill_id": "skill-ovos-date-time.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-date-time",
             "package_name": "ovos-skill-date-time",
