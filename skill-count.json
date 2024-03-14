@@ -1,0 +1,22 @@
+{
+  "skill_id": "skill-count.andlo",
+  "source": "https://github.com/OVOSHatchery/count-skill",
+  "package_name": "ovos-skill-count",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/rocket.svg",
+  "images": [],
+  "name": "Count",
+  "description": "Count and countdown skill. Let OVOS count to a number or countdown from a number.",
+  "examples": [
+    "Count to 10",
+    "Countdown from 10"
+  ],
+  "tags": ["count", "countdown"]
+}
