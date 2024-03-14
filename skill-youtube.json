@@ -1,0 +1,32 @@
+{
+  "skill_id": "skill-ovos-youtube.openvoiceos",
+  "source": "https://github.com/OpenVoiceOS/skill-ovos-youtube",
+  "package_name": "ovos-skill-youtube",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube/dev/ui/ytube.jpg",
+  "name": "Simple Youtube Skill",
+  "description": "Simple youtube skill for better-cps. Search youtube by voice! This skill can be configured as a fallback matcher for play queries.",
+  "examples": [
+    "play rob zombie",
+    "play freezing moon with dead on vocals",
+    "play programming music mix",
+    "play center of all infinity album"
+  ],
+  "tags": [
+    "video",
+    "youtube",
+    "common play",
+    "music"
+  ],
+  "images": [
+    "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube/dev/ui/gui.png",
+    "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube/dev/ui/gui2.png"
+  ]
+}
