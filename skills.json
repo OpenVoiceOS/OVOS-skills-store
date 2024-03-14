@@ -396,7 +396,7 @@
                 "media": [],
                 "gui": []
             },
-            "icon": "./logo.svg",
+            "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-alerts/7066e2da917526a518b776d3fe8a10c24b29a2e6/logo.svg",
             "images": [],
             "name": "Alerts",
             "description": "A skill to manage alarms, timers, reminders, events and todos and optionally sync them with a CalDAV service.",
