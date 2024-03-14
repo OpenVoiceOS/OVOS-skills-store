@@ -1,0 +1,38 @@
+{
+  "skill_id": "skill-ovos-viirs.openvoiceos",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-viirs",
+  "package_name": "ovos-skill-viirs",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://github.com/OVOSHatchery/ovos-skill-viirs/raw/master/icon.png",
+  "images": [
+    "https://github.com/OVOSHatchery/ovos-skill-viirs/raw/master/gui.png",
+    "https://github.com/OVOSHatchery/ovos-skill-viirs/raw/master/gui1.png",
+    "https://github.com/OVOSHatchery/ovos-skill-viirs/raw/master/gui2.png",
+    "https://github.com/OVOSHatchery/ovos-skill-viirs/raw/master/gui3.png"
+  ],
+  "name": "Visible Infrared Imaging Radiometer Suite",
+  "description": "Near real time Satellite imagery from NASA's VIIRS",
+  "examples": [
+    "show my location from space",
+    "show me london from space",
+    "next picture",
+    "previous picture",
+    "show my house from space last month",
+    "increase zoom",
+    "zoom out",
+    "set zoom to maximum",
+    "why so many clouds",
+    "explain the holes in the equator",
+    "talk about Visible Infrared Imaging Radiometer Suite"
+  ],
+  "tags": [
+    "nasa"
+  ]
+}
