@@ -929,6 +929,35 @@
             ]
         },
         {
+            "skill_id": "skill-ovos-apod.openvoiceos",
+            "source": "https://github.com/OVOSHatchery/ovos-skill-apod",
+            "package_name": "ovos-skill-apod",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://github.com/OVOSHatchery/ovos-skill-apod/raw/master/icon.png",
+            "images": [
+                "https://github.com/OVOSHatchery/ovos-skill-apod/raw/master/gui.png"
+            ],
+            "name": "Astronomy Picture of the Day",
+            "description": "NASA's Astronomy Picture of the Day.",
+            "examples": [
+                "Astronomy picture of the day",
+                "explain"
+            ],
+            "tags": [
+                "nasa",
+                "astronomy",
+                "picture-of-the-day",
+                "entertainment"
+            ]
+        },
+        {
             "skill_id": "skill-ovos-icanhazdadjokes.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-icanhazdadjokes",
             "package_name": "ovos-skill-icanhazdadjokes",
