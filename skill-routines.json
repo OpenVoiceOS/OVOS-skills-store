@@ -1,0 +1,26 @@
+{
+  "skill_id": "skill-routines.openvoiceos",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-routines",
+  "package_name": "ovos-skill-routines",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://rawgithub.com/FortAwesome/Font-Awesome/master/svgs/solid/business-time.svg",
+  "images": [],
+  "name": "Routines",
+  "description": "Create and schedule a list of actions your assistant should perform, on your selected days and time.",
+  "examples": [
+    "Show routines dashboard",
+    "Show my routines",
+    "Create a new routine",
+    "Setup a new routine",
+    "Delete routine {routine name}",
+    "Remove routine {routine name}"
+  ],
+  "tags": ["routines", "daily", "gui", "schedules", "actions", "productivity"]
+}
