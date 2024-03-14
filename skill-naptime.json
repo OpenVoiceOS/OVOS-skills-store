@@ -1,0 +1,29 @@
+{
+  "skill_id": "skill-ovos-naptime.openvoiceos",
+  "source": "https://github.com/OpenVoiceOS/skill-ovos-naptime",
+  "package_name": "ovos-skill-naptime",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/bed.svg",
+  "images": [],
+  "name": "Naptime",
+  "description": "Put the assistant to sleep when you don't want to be disturbed.",
+  "examples": [
+    "Go to sleep",
+    "Nap time",
+    "Wake up"
+  ],
+  "tags": [
+    "nap",
+    "naptime",
+    "sleep",
+    "do-not-disturb",
+    "do-not-disturb"
+  ]
+}
