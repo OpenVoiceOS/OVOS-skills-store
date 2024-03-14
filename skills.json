@@ -1443,6 +1443,32 @@
             ]
         },
         {
+            "skill_id": "ovos-skill-coin-flip.wligtenberg",
+            "source": "https://github.com/OVOSHatchery/ovos-skill-coin-flip",
+            "package_name": "ovos-skill-coin-flip",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://cdn-icons-png.flaticon.com/512/1715/1715497.png",
+            "images": [],
+            "name": "Coin Flip",
+            "description": "This skill flips a virtual coin.",
+            "examples": [
+                "flip a coin"
+            ],
+            "tags": [
+                "coin",
+                "flip",
+                "random",
+                "game"
+            ]
+        },
+        {
             "skill_id": "ovos-skill-weather.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-weather",
             "package_name": "ovos-skill-weather",
