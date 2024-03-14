@@ -148,6 +148,35 @@
             ]
         },
         {
+            "skill_id": "bedtime-stories-skill.ovoshatchery",
+            "source": "https://github.com/OVOSHatchery/bedtime-stories-skill",
+            "package_name": "ovos-skill-bedtime-stories",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/book-open.svg",
+            "images": [],
+            "name": "Bedtime Stories",
+            "description": "Listen to famous bedtime stories.",
+            "examples": [
+                "Hey mycroft, read me a bedtime story",
+                "Hey mycroft, what bedtime stories do you know",
+                "Hey mycroft, read me little red riding hood"
+            ],
+            "credits": "TREE Industries",
+            "category": "Entertainment",
+            "tags": [
+                "stories",
+                "audio",
+                "kidfriendly"
+            ]
+        },
+        {
             "skill_id": "skill-ovos-date-time.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-date-time",
             "package_name": "ovos-skill-date-time",
