@@ -1,0 +1,32 @@
+{
+  "skill_id": "skill-ovos-icanhazdadjokes.openvoiceos",
+  "source": "https://github.com/OpenVoiceOS/skill-ovos-icanhazdadjokes",
+  "package_name": "ovos-skill-icanhazdadjokes",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-icanhazdadjokes/dev/res/icon/dadjokes.png",
+  "name": "Jokes",
+  "description": "Let Mycroft brighten your day with a little humor from icanhazdadjoke.com. Chuck Norris jokes powered by pyjokes.",
+  "examples": [
+    "Tell me a joke.",
+    "Say a joke.",
+    "Do you know any jokes?",
+    "Can you tell jokes?",
+    "Make me laugh.",
+    "Tell me a joke about dentists.",
+    "Do you know any Chuck Norris jokes?"
+  ],
+  "tags": [
+    "joke",
+    "jokes",
+    "humor",
+    "humour",
+    "funny"
+  ]
+}
