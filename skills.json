@@ -944,8 +944,8 @@
             "tags": []
         },
         {
-            "skill_id": "skill-diagnostics.the7erm",
-            "source": "https://github.com/OVOSHatchery/mycroft-skill-diagnostics",
+            "skill_id": "ovos-skill-diagnostics.the7erm",
+            "source": "https://github.com/OVOSHatchery/ovos-skill-diagnostics",
             "package_name": "ovos-skill-diagnostics",
             "extra_plugins": {
                 "core": [],
@@ -957,7 +957,7 @@
             },
             "icon": "https://cdn-icons-png.flaticon.com/512/4692/4692089.png",
             "images": [],
-            "name": "mycroft-skill-diagnostics",
+            "name": "Diagnostics",
             "description": "Aids you in diagnosing OVOS related issues. Provides various diagnostic functions such as checking CPU usage, drive space, public IP, uptime, etc.",
             "examples": [
                 "Mycroft, what is the current CPU percent?",
