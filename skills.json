@@ -425,6 +425,39 @@
             ]
         },
         {
+            "skill_id": "skill-ovos-news.openvoiceos",
+            "source": "https://github.com/OpenVoiceOS/skill-ovos-news",
+            "package_name": "ovos-skill-ovos-news",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-news/dev/res/icon/news.png",
+            "images": [
+                "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-news/dev/gui.png",
+                "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-news/dev/gui2.png",
+                "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-news/dev/gui3.png"
+            ],
+            "name": "News Streams",
+            "description": "News streams from around the globe.",
+            "examples": [
+                "play the news",
+                "play npr news",
+                "play euronews",
+                "play catalan news",
+                "play portuguese news",
+                "play news in spanish"
+            ],
+            "tags": [
+                "news",
+                "information"
+            ]
+        },
+        {
             "skill_id": "skill-ovos-fallback-chatgpt.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-fallback-chatgpt",
             "package_name": "ovos-skill-ovos-fallback-chatgpt",
