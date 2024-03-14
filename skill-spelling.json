@@ -1,0 +1,22 @@
+{
+  "skill_id": "ovos-skill-spelling.openvoiceos",
+  "source": "https://github.com/OpenVoiceOS/skill-ovos-spelling",
+  "package_name": "ovos-skill-spelling",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/book-reader.svg",
+  "name": "Spelling",
+  "description": "Let OVOS help you spell words. OVOS can spell any word which is understood by speech-to-text. The proper spelling is pronounced on all platforms, as well as displayed by devices such as the Mark 1.",
+  "category": "Information",
+  "tags": [
+    "spell",
+    "spelling"
+  ],
+  "images": []
+}
