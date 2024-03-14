@@ -1,0 +1,25 @@
+{
+  "skill_id": "skill-inspirational-quotes.oliveralonzo",
+  "source": "https://github.com/OVOSHatchery/skill-inspirational-quotes",
+  "package_name": "skill-inspirational-quotes",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://assets.materialup.com/uploads/6852f4a4-a1a0-4d13-b04f-06a7740d613e/preview.png",
+  "name": "Inspirational Quotes",
+  "description": "Get inspired with quotes from Forismatic.",
+  "examples": [
+    "Hey Mycroft, inspire me",
+    "Hey Mycroft, read me a quote"
+  ],
+  "tags": [
+    "inspirational quotes",
+    "motivation",
+    "wisdom"
+  ]
+}
