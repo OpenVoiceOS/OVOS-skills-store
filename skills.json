@@ -6,6 +6,36 @@
     "feed_url": "https://openvoiceos.github.io/OVOS-skills-store/skills.json",
     "items": [
         {
+            "skill_id": "skill-radio-browser.openvoiceos",
+            "source": "https://github.com/OVOSHatchery/ovos-skill-radio-browser",
+            "package_name": "ovos-skill-radio-browser",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [
+                    "ovos-ocp"
+                ],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-radio-browser/dev/ui/logo.png",
+            "images": [
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-radio-browser/dev/gui.png"
+            ],
+            "name": "Radio Browser Skill",
+            "description": "OCP skill for Radio Browser. Listen to various radio stations available on https://www.radio-browser.info",
+            "examples": [
+                "play heavy metal radio"
+            ],
+            "tags": [
+                "audio",
+                "music",
+                "OCP",
+                "entertainment"
+            ]
+        },
+        {
             "skill_id": "skill-ovos-youtube-music.jarbasal",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-youtube-music",
             "package_name": "ovos-skill-ovos-youtube-music",
@@ -62,6 +92,38 @@
             ]
         },
         {
+            "skill_id": "skill-iheartradio.openvoiceos",
+            "source": "https://github.com/OVOSHatchery/ovos-skill-iheart",
+            "package_name": "ovos-skill-iheartradio",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [
+                    "ovos-ocp"
+                ],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-iheart/master/ui/iheart.png",
+            "images": [
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-iheart/master/ui/gui.png",
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-iheart/master/ui/gui2.png"
+            ],
+            "name": "IHeartRadio",
+            "description": "OCP skill for IHeartRadio. Note: IHeartRadio only provides podcasts outside the US.",
+            "examples": [
+                "play rock radio",
+                "play the heavy metal hangover podcast"
+            ],
+            "tags": [
+                "audio",
+                "radio",
+                "OCP",
+                "entertainment"
+            ]
+        },
+        {
             "skill_id": "skill-ovos-dictation.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-dictation",
             "package_name": "ovos-skill-ovos-dictation",
@@ -85,6 +147,65 @@
                 "dictation",
                 "transcription",
                 "speech-to-text"
+            ]
+        },
+        {
+            "skill_id": "skill-number-guess.arc676",
+            "source": "https://github.com/OVOSHatchery/Number-Guess-Mycroft-Skill",
+            "package_name": "ovos-skill-number-guess",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/question.svg",
+            "images": [],
+            "name": "Number Guess",
+            "description": "Play Number Guess with Mycroft. Mycroft generates a random number between a lower and upper bound, and you try to guess it.",
+            "examples": [
+                "Let's play Number Guess",
+                "Play Number Guess",
+                "Number Guess"
+            ],
+            "tags": [
+                "numberguess",
+                "game",
+                "number",
+                "random",
+                "guessing"
+            ]
+        },
+        {
+            "skill_id": "skill-fairytalez.andlo",
+            "source": "https://github.com/OVOSHatchery/fairytalez-skill",
+            "package_name": "ovos-skill-fairytalez",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githubusercontent.com/OVOSHatchery/fairytalez-skill/master/story-512.png",
+            "images": [],
+            "name": "Fairytalez",
+            "description": "OVOS tells more than 2000 fairy tales, folk tales, and fables from all around the world.",
+            "examples": [
+                "Tell a fairy tale",
+                "Tell me the story The Little Match Girl",
+                "Continue story"
+            ],
+            "tags": [
+                "stories",
+                "story",
+                "tales",
+                "fairy",
+                "fairytale",
+                "fairytales"
             ]
         },
         {
@@ -197,6 +318,36 @@
             "examples": [
                 "play heavy metal heart radio",
                 "play metal heart radio on tune in"
+            ],
+            "tags": [
+                "audio",
+                "music",
+                "OCP",
+                "entertainment"
+            ]
+        },
+        {
+            "skill_id": "skill-shoutcast.openvoiceos",
+            "source": "https://github.com/OVOSHatchery/ovos-skill-shoutcast",
+            "package_name": "ovos-skill-shoutcast",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [
+                    "ovos-ocp"
+                ],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-shoutcast/dev/ui/logo.png",
+            "images": [
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-shoutcast/dev/gui.png"
+            ],
+            "name": "Shoutcast Skill",
+            "description": "OCP skill for Shoutcast directory. Listen to various radio stations available on https://directory.shoutcast.com/",
+            "examples": [
+                "play heavy metal radio"
             ],
             "tags": [
                 "audio",
@@ -383,6 +534,35 @@
                 "world-clock",
                 "clock",
                 "permissive-license"
+            ]
+        },
+        {
+            "skill_id": "skill-old-world-radio.openvoiceos",
+            "source": "https://github.com/OVOSHatchery/ovos-skill-old-world-radio",
+            "package_name": "ovos-skill-old-world-radio",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-old-world-radio/dev/res/icon/old-world-radio.png",
+            "images": [
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-old-world-radio/dev/ui/logo.png",
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-old-world-radio/dev/ui/gui.gif"
+            ],
+            "name": "Old World Radio",
+            "description": "Old world radio skill.",
+            "examples": [
+                "play old world radio",
+                "play vintage radio"
+            ],
+            "tags": [
+                "audio",
+                "music",
+                "entertainment"
             ]
         },
         {
@@ -907,6 +1087,39 @@
             ]
         },
         {
+            "skill_id": "skill-food-wizard.aix",
+            "source": "https://github.com/OVOSHatchery/ovos-skill-food-wizard",
+            "package_name": "ovos-skill-food-wizard",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/coffee.svg",
+            "images": [],
+            "name": "Food Wizard",
+            "description": "Get popular recipes and how-to-cook directions based on a combination of ingredient keywords. Powered by Edamam.",
+            "examples": [
+                "Hey Mycroft search recipes with apple and honey",
+                "Hey Mycroft show recipes with chicken, honey and lime",
+                "Hey Mycroft open the recipe mexican chicken lime soup",
+                "Hey Mycroft read the current recipe ingredients",
+                "Hey Mycroft read the current recipe cooking instructions"
+            ],
+            "tags": [
+                "Food",
+                "Recipes",
+                "GUI",
+                "Plasmoid",
+                "KDE",
+                "Ingredients",
+                "Cooking"
+            ]
+        },
+        {
             "skill_id": "ovos-skill-daily-blue-marble.openvoiceos",
             "source": "https://github.com/OVOSHatchery/ovos-skill-daily-blue-marble",
             "package_name": "ovos-skill-daily-blue-marble",
@@ -1067,6 +1280,47 @@
             "tags": [
                 "news",
                 "information"
+            ]
+        },
+        {
+            "skill_id": "skill-enclosure-ctrl.openvoiceos",
+            "source": "https://github.com/OVOSHatchery/ovos-skill-mark1-ctrl",
+            "package_name": "ovos-skill-mark1-ctrl",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://w7.pngwing.com/pngs/645/1014/png-transparent-mycroft-amazon-echo-open-source-model-raspberry-pi-home-automation-kits-microphone-creative-advertising-electronics-linux-amazon-echo-thumbnail.png",
+            "images": [],
+            "name": "Enclosure Control",
+            "description": "Controls the enclosure API vocally. This skill can be used to trigger changes in the enclosure.",
+            "examples": [
+                "look up",
+                "look down",
+                "look left",
+                "look right",
+                "look left and right",
+                "look up and down",
+                "reset enclosure",
+                "narrow your eyes",
+                "spin your eyes",
+                "blink your eyes",
+                "perform system reboot",
+                "system mute",
+                "system unmute",
+                "smile animation",
+                "listen animation",
+                "think animation"
+            ],
+            "tags": [
+                "mark1",
+                "enclosure control",
+                "animation",
+                "system control"
             ]
         },
         {
@@ -1491,6 +1745,60 @@
             ]
         },
         {
+            "skill_id": "skill-count.andlo",
+            "source": "https://github.com/OVOSHatchery/count-skill",
+            "package_name": "ovos-skill-count",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/rocket.svg",
+            "images": [],
+            "name": "Count",
+            "description": "Count and countdown skill. Let OVOS count to a number or countdown from a number.",
+            "examples": [
+                "Count to 10",
+                "Countdown from 10"
+            ],
+            "tags": [
+                "count",
+                "countdown"
+            ]
+        },
+        {
+            "skill_id": "skill-pickup-lines.openvoiceos",
+            "source": "https://github.com/OVOSHatchery/ovos-skill-pickup-lines",
+            "package_name": "ovos-skill-pickup-lines",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-pickup-lines/master/logo.png",
+            "images": [
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-pickup-lines/master/screenie.png",
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-pickup-lines/master/screenie1.png"
+            ],
+            "name": "Pickup Lines",
+            "description": "Pickup lines from https://www.pickuplinesgalore.com/. Includes idle screen.",
+            "examples": [
+                "tell me a pickup line",
+                "say a geeky pickup line",
+                "say a lord of the rings pickup line",
+                "where do you get your pickup lines"
+            ],
+            "tags": [
+                "entertainment"
+            ]
+        },
+        {
             "skill_id": "skill-ovos-wikipedia.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-wikipedia",
             "package_name": "ovos-skill-ovos-wikipedia",
@@ -1524,6 +1832,36 @@
                 "wiki",
                 "question",
                 "query"
+            ]
+        },
+        {
+            "skill_id": "skill-librivox.openvoiceos",
+            "source": "https://github.com/OVOSHatchery/ovos-skill-librivox",
+            "package_name": "ovos-skill-librivox",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [
+                    "ovos-ocp"
+                ],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-librivox/dev/ui/librivox-icon.png",
+            "images": [
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-librivox/dev/gui.gif"
+            ],
+            "name": "Librivox Skill",
+            "description": "Librivox skill for OCP. Search Librivox by voice!",
+            "examples": [
+                "read the art of war"
+            ],
+            "tags": [
+                "audiobooks",
+                "librivox",
+                "common play",
+                "entertainment"
             ]
         },
         {
@@ -1698,6 +2036,35 @@
             ]
         },
         {
+            "skill_id": "skill-days-in-history.austin-carnahan",
+            "source": "https://github.com/OVOSHatchery/days-in-history-skill",
+            "package_name": "ovos-skill-days-in-history",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/calendar-day.svg",
+            "images": [],
+            "name": "Today In History",
+            "description": "Informs you of historical tidbits about a given calendar day. Provides historical events for today or any other calendar day using information pulled from Wikipedia.",
+            "examples": [
+                "What happened today in history?",
+                "Tell me about events in history on December 12th",
+                "What historical events happened on June 16th?",
+                "Tell me more",
+                "What's another event?"
+            ],
+            "tags": [
+                "History",
+                "Trivia",
+                "Information"
+            ]
+        },
+        {
             "skill_id": "skill-ovos-audio-recording.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-audio-recording",
             "package_name": "ovos-skill-audio-recording",
@@ -1750,6 +2117,36 @@
             "images": [
                 "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube/dev/ui/gui.png",
                 "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube/dev/ui/gui2.png"
+            ]
+        },
+        {
+            "skill_id": "skill-wikiquote.danielwine",
+            "source": "https://github.com/OVOSHatchery/wikiquote-skill",
+            "package_name": "ovos-skill-wikiquote",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Wikiquote-logo-en.svg/1200px-Wikiquote-logo-en.svg.png",
+            "images": [],
+            "name": "wikiquote-skill",
+            "description": "Gives quotations from notable people using Wikiquote. Supported languages are English, German, Spanish, French, Italian.",
+            "examples": [
+                "Give me a quote",
+                "Tell me a quote from Lincoln",
+                "I need some wisdom",
+                "Give me a Buddhist wisdom"
+            ],
+            "tags": [
+                "quotes",
+                "wisdom",
+                "knowledge",
+                "random",
+                "philosophy"
             ]
         },
         {
