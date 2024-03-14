@@ -1,0 +1,31 @@
+{
+  "skill_id": "skill-ovos-wallpapers.openvoiceos",
+  "source": "https://github.com/OpenVoiceOS/skill-ovos-wallpapers/tree/dev",
+  "package_name": "ovos-skill-ovos-wallpapers",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-wallpapers/dev/icon.png",
+  "images": [
+    "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-wallpapers/dev/logo.png",
+    "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-wallpapers/dev/gui.png",
+    "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-wallpapers/dev/gui2.png",
+    "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-wallpapers/dev/gui3.png",
+    "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-wallpapers/dev/gui.gif"
+  ],
+  "name": "Wallpaper Changer",
+  "description": "Pictures from selected subreddits.",
+  "examples": [
+    "new wallpaper",
+    "change wallpaper to nature",
+    "show me a picture",
+    "show me a picture with dogs",
+    "make that my wallpaper"
+  ],
+  "tags": []
+}
