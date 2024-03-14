@@ -101,9 +101,9 @@
                 "media": [],
                 "gui": []
             },
-            "icon": "https://github.com/OpenVoiceOS/skill-ovos-tunein/raw/main/res/tunein.png",
+            "icon": "https://github.com/OpenVoiceOS/skill-ovos-tunein/raw/dev/res/tunein.png",
             "images": [
-                "https://github.com/OpenVoiceOS/skill-ovos-tunein/raw/main/gui.png"
+                "https://github.com/OpenVoiceOS/skill-ovos-tunein/raw/dev/gui.png"
             ],
             "name": "TuneIn",
             "description": "OCP skill for TuneIn.",
