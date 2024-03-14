@@ -1,0 +1,27 @@
+{
+  "skill_id": "skill-ovos-stephen-hawking-quotes.openvoiceos",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-stephen-hawking-quotes",
+  "package_name": "ovos-skill-stephen-hawking-quotes",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://github.com/OVOSHatchery/ovos-skill-stephen-hawking-quotes/raw/master/icon.png",
+  "images": [
+    "https://github.com/OVOSHatchery/ovos-skill-stephen-hawking-quotes/raw/master/gui.png"
+  ],
+  "name": "Stephen Hawking",
+  "description": "Tribute to Stephen Hawking, quotes from a great mind",
+  "examples": [
+    "When was Stephen Hawking born?",
+    "When did Stephen Hawking die?",
+    "Quote from Stephen Hawking"
+  ],
+  "tags": [
+    "quotes"
+  ]
+}
