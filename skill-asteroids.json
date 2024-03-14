@@ -1,0 +1,26 @@
+{
+  "skill_id": "ovos-skill-asteroid-tracker.openvoiceos",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-asteroid-tracker",
+  "package_name": "ovos-skill-asteroid-tracker",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://cdn-icons-png.flaticon.com/512/3061/3061737.png",
+  "images": [
+    "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-asteroid-tracker/master/gui.png",
+    "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-asteroid-tracker/master/gui2.png",
+    "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-asteroid-tracker/master/gui3.png",
+    "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-asteroid-tracker/master/gui.gif"
+  ],
+  "name": "Asteroid Tracker",
+  "description": "Skill for tracking asteroids and their orbits.",
+  "examples": [
+    "show asteroid orbits"
+  ],
+  "tags": ["nasa", "space", "asteroids", "neo", "solar_system", "information"]
+}
