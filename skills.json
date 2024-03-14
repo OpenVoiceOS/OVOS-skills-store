@@ -168,8 +168,6 @@
                 "Hey mycroft, what bedtime stories do you know",
                 "Hey mycroft, read me little red riding hood"
             ],
-            "credits": "TREE Industries",
-            "category": "Entertainment",
             "tags": [
                 "stories",
                 "audio",
