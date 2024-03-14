@@ -592,9 +592,9 @@
                 "media": [],
                 "gui": []
             },
-            "icon": "https://github.com/OpenVoiceOS/skill-ovos-ddg/raw/main/res/icon/ddg.png",
+            "icon": "https://github.com/OpenVoiceOS/skill-ovos-ddg/raw/dev/res/icon/ddg.png",
             "images": [
-                "https://github.com/OpenVoiceOS/skill-ovos-ddg/raw/main/ui/logo.png"
+                "https://github.com/OpenVoiceOS/skill-ovos-ddg/raw/dev/ui/logo.png"
             ],
             "name": "DuckDuckGo",
             "description": "Use DuckDuckGo to answer questions.",
