@@ -1,0 +1,22 @@
+{
+  "skill_id": "skill-iheartradio.openvoiceos",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-iheart",
+  "package_name": "ovos-skill-iheartradio",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": ["ovos-ocp"],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-iheart/master/ui/iheart.png",
+  "images": ["https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-iheart/master/ui/gui.png", "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-iheart/master/ui/gui2.png"],
+  "name": "IHeartRadio",
+  "description": "OCP skill for IHeartRadio. Note: IHeartRadio only provides podcasts outside the US.",
+  "examples": [
+    "play rock radio",
+    "play the heavy metal hangover podcast"
+  ],
+  "tags": ["audio", "radio", "OCP", "entertainment"]
+}
