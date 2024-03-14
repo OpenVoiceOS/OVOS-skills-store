@@ -175,6 +175,34 @@
             ]
         },
         {
+            "skill_id": "skill-ovos-wikihow.openvoiceos",
+            "source": "https://github.com/OVOSHatchery/ovos-skill-wikihow",
+            "package_name": "ovos-skill-wikihow",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://github.com/OVOSHatchery/ovos-skill-wikihow/raw/master/icon.png",
+            "images": [
+                "https://github.com/OVOSHatchery/ovos-skill-wikihow/raw/master/gui2.gif",
+                "https://github.com/OVOSHatchery/ovos-skill-wikihow/raw/master/gui.gif"
+            ],
+            "name": "WikiHow Skill",
+            "description": "How to do nearly everything.",
+            "examples": [
+                "how to boil an egg",
+                "give me a random how to",
+                "explain better"
+            ],
+            "tags": [
+                "howto"
+            ]
+        },
+        {
             "skill_id": "quote-of-day.openvoiceos",
             "source": "https://github.com/OVOSHatchery/ovos-skill-quote-of-day",
             "package_name": "ovos-skill-quote-of-day",
