@@ -499,6 +499,27 @@
             ]
         },
         {
+            "skill_id": "8-fact.openvoiceos",
+            "source": "https://github.com/OVOSHatchery/ovos-skill-8fact/tree/master",
+            "icon": "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-8fact/master/icon.png",
+            "images": [
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-8fact/master/screenie1.png",
+                "https://raw.githubusercontent.com/OVOSHatchery/ovos-skill-8fact/master/screenie.png"
+            ],
+            "name": "8 Fact",
+            "description": "Random Facts",
+            "examples": [
+                "random fact",
+                "how many facts do you have in your database",
+                "where do you get your facts",
+                "can your facts be trusted"
+            ],
+            "tags": [
+                "entertainment"
+            ],
+            "package_name": "ovos-skill-8fact"
+        },
+        {
             "skill_id": "skill-ovos-wordnet.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-wordnet",
             "package_name": "ovos-skill-ovos-wordnet",
