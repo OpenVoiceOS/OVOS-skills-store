@@ -1,0 +1,22 @@
+{
+  "skill_id": "skill-fallback-cakechat.tree",
+  "source": "https://github.com/OVOSHatchery/skill-fallback-cakechat",
+  "package_name": "ovos-skill-fallback-cakechat",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "https://img.freepik.com/premium-vector/cake-chat-character-cute-logo_96485-2230.jpg",
+  "images": [],
+  "name": "Fallback Cakechat",
+  "description": "A fallback that utilizes the CakeChat Emotional Generative Dialog System",
+  "examples": [
+    "What is your favorite color",
+    "what is the meaning of life"
+  ],
+  "tags": []
+}
