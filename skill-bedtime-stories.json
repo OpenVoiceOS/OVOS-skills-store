@@ -1,5 +1,5 @@
 {
-  "skill_id": "bedtime-stories-skill.ovoshatchery",
+  "skill_id": "bedtime-stories-skill.tree",
   "source": "https://github.com/OVOSHatchery/bedtime-stories-skill",
   "package_name": "ovos-skill-bedtime-stories",
   "extra_plugins": {
