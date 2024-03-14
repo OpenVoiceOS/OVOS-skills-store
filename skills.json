@@ -868,6 +868,32 @@
             ]
         },
         {
+            "skill_id": "skill-ovos-application-launcher.openvoiceos",
+            "source": "https://github.com/OpenVoiceOS/skill-ovos-application-launcher",
+            "package_name": "ovos-skill-application-launcher",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/spinner.svg",
+            "name": "Application Launcher",
+            "description": "Launch applications on the Linux desktop. The standard directories will be scanned for .desktop files, application names and execution commands will be parsed from there.",
+            "examples": [
+                "Open Volume Control",
+                "Launch Firefox"
+            ],
+            "tags": [
+                "desktop",
+                "desktop-launch",
+                "desktop-launcher"
+            ],
+            "images": []
+        },
+        {
             "skill_id": "ovos-skill-countries.openvoiceos",
             "source": "https://github.com/OVOSHatchery/ovos-skill-countries",
             "package_name": "ovos-skill-countries",
