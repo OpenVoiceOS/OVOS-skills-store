@@ -13,34 +13,93 @@
         }
 
         .card {
+            width: 200px; /* Set fixed width for skill cards */
             margin-bottom: 20px;
             border: none;
-            transition: all 0.3s;
+            position: relative; /* Add position relative for overlay positioning */
+            height: auto; /* Set height to auto to accommodate variable text length */
+        }
+
+        .card-body {
+            text-align: center;
+            height: 100%; /* Ensure card body fills the entire card height */
+            display: flex; /* Use flexbox for alignment */
+            flex-direction: column; /* Align items in a column */
+            justify-content: space-between; /* Distribute space evenly between items */
         }
 
         .card:hover {
+            width: 250px;
+            height: auto;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .card-img-top {
             max-width: 100%;
             height: auto;
-            max-height: 100px; /* Limit image height */
         }
 
-        #skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid layout */
-            grid-gap: 20px; /* Spacing between cards */
+        .card-content {
+            display: block;
         }
 
-        .card-body {
-            text-align: center;
+        .card-content.hidden {
+            display: none;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: none;
+            z-index: 2;
+        }
+
+        .card:hover .card-overlay {
+            display: block;
+        }
+
+        .preview-container {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            height: auto; /* Set height to auto to accommodate variable content */
+            width: 100%; /* Set width to 100% of parent container */
+            max-width: calc(100% - 20px); /* Limit max-width to prevent overflow */
+        }
+
+        .preview-container.show {
+            display: block;
+        }
+
+        .preview-images {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .preview-images img {
+            width: 100%;
+            height: auto;
+        }
+
+        .preview-examples {
+            margin-bottom: 20px;
         }
 
         .audio-qr-code-install-button {
-            margin-top: 10px;
+            display: block;
+            width: 100%;
             padding: 8px 16px;
+            margin-bottom: 10px; /* Add margin bottom for spacing */
             background-color: #007bff;
             border: none;
             border-radius: 4px;
@@ -52,6 +111,7 @@
         .audio-qr-code-install-button:hover {
             background-color: #0056b3;
         }
+
     </style>
 </head>
 <body>
@@ -69,22 +129,41 @@
     </div>
 
     <!-- Skills container -->
-    <div id="skills-container">
-        <!-- Skill cards generated dynamically using Vue.js -->
-        <div class="card" v-for="skill in skills" :key="skill.skill_id">
-            <!-- Link to skill source code -->
+    <div id="skills-container" class="d-flex flex-wrap justify-content-between">
+        <!-- Skill cards -->
+        <div class="card" v-for="skill in skills" :key="skill.skill_id" @mouseenter="showPreview" @mouseleave="hidePreview">
             <a :href="skill.source" target="_blank" rel="noopener noreferrer">
                 <!-- Skill icon -->
                 <img :src="skill.icon" class="card-img-top" :alt="skill.name">
             </a>
             <!-- Skill information -->
             <div class="card-body">
-                <h5 class="card-title">{{ skill.name }}</h5> <!-- Skill name -->
-                <p class="card-text">{{ skill.description }}</p> <!-- Skill description -->
-                <!-- Audio QR Code Install button -->
-                <button class="audio-qr-code-install-button" @click="transmitPackage(skill.package_name)">Audio QR Code
-                    Install
-                </button>
+                <h5 class="card-title">{{ skill.name }}</h5>
+                <p class="card-text card-content">{{ skill.description }}</p>
+            </div>
+            <!-- Preview overlay -->
+            <div class="card-overlay">
+                <div class="preview-container">
+                    <!-- Audio QR code install button -->
+                    <button class="audio-qr-code-install-button" @click="transmitPackage(skill.source)">Audio QR Code Install</button>
+                    <!-- Preview images -->
+                    <div class="preview-images">
+                        <a v-if="skill.images && skill.images.length > 0" :href="skill.source" target="_blank" rel="noopener noreferrer">
+                            <img :src="skill.images[0]" alt="Skill Image">
+                        </a>
+                        <!-- Use skill icon as the single image if no images available -->
+                        <a v-else :href="skill.source" target="_blank" rel="noopener noreferrer">
+                            <img :src="skill.icon" alt="Skill Icon">
+                        </a>
+                    </div>
+                    <!-- Examples -->
+                    <div class="preview-examples" v-if="skill.examples && skill.examples.length">
+                        <h5>Examples:</h5>
+                        <ul>
+                            <li v-for="(example, index) in skill.examples.slice(0, 5)" :key="index">{{ example }}</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -194,24 +273,34 @@
         new Vue({
             el: '#app',
             data: {
-                skills: [] // Array to store fetched skills
-            },
-            mounted() {
-                // Fetch skills when the component is mounted
-                this.fetchSkills();
+                skills: [], // Array to store fetched skills
             },
             methods: {
                 // Method to fetch skills data
                 fetchSkills() {
                     // Fetch skills JSON data from the specified URL
-                    fetch('https://openvoiceos.github.io/OVOS-skills-store/skills.json')
+                    fetch('skills.json')
                         .then(response => response.json()) // Parse response as JSON
                         .then(data => {
                             // Assign fetched skills to the data array
                             this.skills = data.items;
                         })
                         .catch(error => console.error('Error fetching skills:', error)); // Handle fetch errors
-                }
+                },
+                // Method to show the preview
+                showPreview(event) {
+                    event.currentTarget.querySelector('.preview-container').classList.add('show');
+                    document.querySelector('.card-content').classList.add('hidden');
+                },
+                // Method to hide the preview
+                hidePreview(event) {
+                    event.currentTarget.querySelector('.preview-container').classList.remove('show');
+                    document.querySelector('.card-content').classList.remove('hidden');
+                },
+            },
+            mounted() {
+                // Fetch skills when the component is mounted
+                this.fetchSkills();
             }
         });
     });
