@@ -12,9 +12,15 @@
       "ovos-plugin-gui"
     ]
   },
+  "examples": [
+    "play {artist}",
+    "play {track}",
+    "play {album}",
+    "play {track} by {artist}"
+  ],
   "icon": "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/folder-open.svg",
   "name": "Local Media",
-  "description": "File Browser For Open Voice OS. For voice search, this skill builds a local index of scanned user media. Your collection needs to be organized in the following fashion to be detected by this skill: ~/OCPMedia/Music, ~/OCPMedia/Movies, ~/OCPMedia/Podcasts, ~/OCPMedia/... ",
+  "description": "GUI File Browser For Open Voice OS. For voice search, this skill builds a local index of scanned user media.",
   "category": "Daily",
   "tags": [
     "filebrowser",

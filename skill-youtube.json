@@ -12,12 +12,13 @@
   },
   "icon": "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube/dev/ui/ytube.jpg",
   "name": "Simple Youtube Skill",
-  "description": "Simple youtube skill for better-cps. Search youtube by voice! This skill can be configured as a fallback matcher for play queries.",
+  "description": "Youtube videos. Search youtube by voice!",
   "examples": [
-    "play rob zombie",
-    "play freezing moon with dead on vocals",
+    "play {query} videos",
+    "search youtube for {artist/album/genre/track}",
     "play programming music mix",
-    "play center of all infinity album"
+    "play {album} album",
+    "play {track} by {artist}"
   ],
   "tags": [
     "video",
@@ -26,7 +27,7 @@
     "music"
   ],
   "images": [
-    "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube/dev/ui/gui.png",
-    "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube/dev/ui/gui2.png"
+    "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube/dev/gui.png",
+    "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube/dev/gui2.png"
   ]
 }
