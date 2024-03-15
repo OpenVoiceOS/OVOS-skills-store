@@ -816,8 +816,12 @@
                 "core": [],
                 "PHAL": [],
                 "listener": [],
-                "audio": [],
-                "media": [],
+                "audio": [
+                    "ovos-ocp-bandcamp-plugin"
+                ],
+                "media": [
+                    "ovos-ocp-bandcamp-plugin"
+                ],
                 "gui": []
             },
             "icon": "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-bandcamp/dev/ui/logo.png",
