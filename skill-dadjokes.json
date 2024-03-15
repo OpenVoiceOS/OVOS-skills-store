@@ -12,7 +12,7 @@
   },
   "icon": "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-icanhazdadjokes/dev/res/icon/dadjokes.png",
   "name": "Jokes",
-  "description": "Let Mycroft brighten your day with a little humor from icanhazdadjoke.com. Chuck Norris jokes powered by pyjokes.",
+  "description": "Let OVOS brighten your day with a little humor from icanhazdadjoke.com. Chuck Norris jokes powered by pyjokes.",
   "examples": [
     "Tell me a joke.",
     "Say a joke.",
