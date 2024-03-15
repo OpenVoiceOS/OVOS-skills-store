@@ -302,9 +302,15 @@
                     "ovos-plugin-gui"
                 ]
             },
+            "examples": [
+                "play {artist}",
+                "play {track}",
+                "play {album}",
+                "play {track} by {artist}"
+            ],
             "icon": "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/folder-open.svg",
             "name": "Local Media",
-            "description": "File Browser For Open Voice OS. For voice search, this skill builds a local index of scanned user media. Your collection needs to be organized in the following fashion to be detected by this skill: ~/OCPMedia/Music, ~/OCPMedia/Movies, ~/OCPMedia/Podcasts, ~/OCPMedia/... ",
+            "description": "GUI File Browser For Open Voice OS. For voice search, this skill builds a local index of scanned user media.",
             "category": "Daily",
             "tags": [
                 "filebrowser",
@@ -901,14 +907,12 @@
             "name": "BandCamp Skill",
             "description": "Bandcamp skill for your hipster music needs.",
             "examples": [
+                "play {artist/album/genre/track}",
                 "play compressorhead",
                 "play astronaut problems",
-                "play {artist/album/genre/track}",
-                "search bandcamp for black metal",
-                "search bandcamp for {artist/album/genre/track}",
                 "play center of all infinity album",
+                "search bandcamp for {artist/album/genre/track}",
                 "play {album} album",
-                "play freezing moon by mayhem",
                 "play {track} by {artist}"
             ],
             "tags": [
@@ -918,7 +922,6 @@
                 "common play"
             ],
             "images": [
-                "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-bandcamp/dev/ui/logo.png",
                 "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-bandcamp/dev/gui.gif"
             ]
         },
@@ -1117,12 +1120,13 @@
             },
             "icon": "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube/dev/ui/ytube.jpg",
             "name": "Simple Youtube Skill",
-            "description": "Simple youtube skill for better-cps. Search youtube by voice! This skill can be configured as a fallback matcher for play queries.",
+            "description": "Youtube videos. Search youtube by voice!",
             "examples": [
-                "play rob zombie",
-                "play freezing moon with dead on vocals",
+                "play {query} videos",
+                "search youtube for {artist/album/genre/track}",
                 "play programming music mix",
-                "play center of all infinity album"
+                "play {album} album",
+                "play {track} by {artist}"
             ],
             "tags": [
                 "video",
@@ -1131,8 +1135,8 @@
                 "music"
             ],
             "images": [
-                "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube/dev/ui/gui.png",
-                "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube/dev/ui/gui2.png"
+                "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube/dev/gui.png",
+                "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube/dev/gui2.png"
             ]
         },
         {
