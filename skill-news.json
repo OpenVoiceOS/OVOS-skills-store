@@ -6,8 +6,8 @@
     "core": [],
     "PHAL": [],
     "listener": [],
-    "audio": [],
-    "media": [],
+    "audio": ["ovos-ocp-news-plugin"],
+    "media": ["ovos-ocp-news-plugin"],
     "gui": []
   },
   "icon": "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-news/dev/res/icon/news.png",
