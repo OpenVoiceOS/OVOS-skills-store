@@ -773,7 +773,9 @@
             "package_name": "ovos-skill-ovos-wallpapers",
             "extra_plugins": {
                 "core": [],
-                "PHAL": [],
+                "PHAL": [
+                    "ovos-PHAL-plugin-wallpaper-manager"
+                ],
                 "listener": [],
                 "audio": [],
                 "media": [],
