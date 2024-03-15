@@ -319,6 +319,35 @@
             ]
         },
         {
+            "skill_id": "skill-meal-plan.mikejgray",
+            "source": "https://github.com/mikejgray/skill-meal-plan",
+            "package_name": "meal-plan-skill",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/utensils.svg",
+            "images": [],
+            "name": "Meal Plan",
+            "description": "Suggests a meal for you to make, based on a short default list, but you can manage your own meals!",
+            "examples": [
+                "What should I make for dinner?",
+                "What should I eat?",
+                "What should I eat tonight?",
+                "I'm hungry",
+                "What's for dinner?"
+            ],
+            "tags": [
+                "Food",
+                "meal planning",
+                "Productivity"
+            ]
+        },
+        {
             "skill_id": "skill-ovos-naptime.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-naptime",
             "package_name": "ovos-skill-naptime",
