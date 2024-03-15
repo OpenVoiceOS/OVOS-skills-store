@@ -123,6 +123,50 @@
             ]
         },
         {
+            "skill_id": "ovos-skill-openhab.mikejgray",
+            "source": "https://github.com/mikejgray/ovos-skill-openhab",
+            "package_name": "ovos-skill-openhab",
+            "extra_plugins": {
+                "core": [],
+                "PHAL": [],
+                "listener": [],
+                "audio": [],
+                "media": [],
+                "gui": []
+            },
+            "icon": "https://www.openhab.org/openhab-logo-square.png",
+            "images": [],
+            "name": "openHAB",
+            "description": "This skill adds openHAB support to OVOS. Not an official OVOS or Neon skill, not maintained by the openHAB community.",
+            "examples": [
+                "Hey Mycroft/Neon, turn on Diningroom Light",
+                "Hey Mycroft/Neon, switch off Kitchen Light",
+                "Hey Mycroft/Neon, put on Good Night",
+                "Hey Mycroft/Neon, what is Good Night status?",
+                "Hey Mycroft/Neon, set Diningroom to 50 percent",
+                "Hey Mycroft/Neon, dim Kitchen",
+                "Hey Mycroft/Neon, bright Kitchen",
+                "Hey Mycroft/Neon, dim Kitchen by 20 percent",
+                "Hey Mycroft/Neon, what's Bedroom temperature?",
+                "Hey Mycroft/Neon, tell me the temperature of Bedroom",
+                "Hey Mycroft/Neon, what's the Bedroom humidity?",
+                "Hey Mycroft/Neon, I'd like to know the humidity of Bedroom",
+                "Hey Mycroft/Neon, adjust Main Thermostat to 21 degrees",
+                "Hey Mycroft/Neon, regulate Main Thermostat to 20 degrees",
+                "Hey Mycroft/Neon, decrease Main Thermostat by 2 degrees",
+                "Hey Mycroft/Neon, increase Main Thermostat by 1 degrees",
+                "Hey Mycroft/Neon, what is Main Thermostat is regulated to?",
+                "Hey Mycroft/Neon, how the Main Thermostat tuned to?"
+            ],
+            "tags": [
+                "openHAB",
+                "smarthome",
+                "IoT",
+                "Automation",
+                "opensource"
+            ]
+        },
+        {
             "skill_id": "skill-ovos-tunein.openvoiceos",
             "source": "https://github.com/OpenVoiceOS/skill-ovos-tunein",
             "package_name": "ovos-skill-ovos-tunein",
