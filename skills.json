@@ -13,8 +13,12 @@
                 "core": [],
                 "PHAL": [],
                 "listener": [],
-                "audio": [],
-                "media": [],
+                "audio": [
+                    "ovos-ocp-youtube-plugin"
+                ],
+                "media": [
+                    "ovos-ocp-youtube-plugin"
+                ],
                 "gui": []
             },
             "icon": "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube-music/dev/res/ytmus.png",
