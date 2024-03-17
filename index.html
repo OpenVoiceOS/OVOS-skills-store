@@ -145,7 +145,7 @@
             <div class="card-overlay">
                 <div class="preview-container">
                     <!-- Audio QR code install button -->
-                    <button class="audio-qr-code-install-button" @click="transmitPackage(skill.source)">Audio QR Code Install</button>
+                    <button class="audio-qr-code-install-button" @click="transmitPackage(skill.package_name)">Audio QR Code Install</button>
                     <!-- Preview images -->
                     <div class="preview-images">
                         <a v-if="skill.images && skill.images.length > 0" :href="skill.source" target="_blank" rel="noopener noreferrer">
