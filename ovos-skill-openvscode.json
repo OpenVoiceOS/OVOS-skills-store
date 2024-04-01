@@ -1,0 +1,20 @@
+{
+  "skill_id": "ovos-skill-openvscode.andlo",
+  "source": "https://github.com/andlo/ovos-skill-openvscode",
+  "license": "GPL-3.0",
+  "name": "OpenVSCode-Server",
+  "description": "This skill installs openVScode-server on your OPenvoiceOS device. OpenVSCode-server is VSCode in a browser and great\nfor making skills and programs. This skill, sets everything up for you.\nOpenVSCode-server integrate fine with Github, and tools like from the integrated\nshell.",
+  "examples": [
+    "Run VS code server.",
+    "End VS code server.",
+    "Restart VS code server."
+  ],
+  "tags": [
+    "Productivity",
+    "vscode",
+    "editor",
+    "dev"
+  ],
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-openvscode/master/favicon.ico",
+  "author": "andlo"
+}

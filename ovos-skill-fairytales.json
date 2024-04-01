@@ -1,0 +1,26 @@
+{
+  "skill_id": "ovos-skill-fairytales.andlo",
+  "source": "https://github.com/andlo/ovos-skill-fairytales",
+  "license": "GPL-3.0",
+  "name": "Fairy Tales",
+  "description": "This skill enables Mycroft to tell a lot of H. C. Andersen's and the Brothers Grimm fairy tales. So make a cup of coco, and sit back and enjoy listning to the good clasic tales.\n\nContent is from andersenstories.com and grimmstories.com, so please go visit there if you like the stories and want them in text to read.\n\nhttps://www.andersenstories.com/\nhttps://www.grimmstories.com/\n\nThis skill support stories in following languages: EN, DE, DA, ES, FR, IT. NL and uses the language your device is setup to use.\n\n_“If you want your children to be intelligent, read them fairy tales. If you want them to be more intelligent, read them more fairy tales.”\nAlbert Einstein_",
+  "examples": [
+    "Tell me a story about The little Mermaide.",
+    "Tell me the story about Cinderella.",
+    "Continue the story."
+  ],
+  "tags": [
+    "Entertainment",
+    "stories",
+    "story",
+    "tales",
+    "fairy",
+    "fairytale",
+    "fairytales",
+    "andersen",
+    "hca",
+    "grimm"
+  ],
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-fairytales/master/story-512.png",
+  "author": "andlo"
+}
