@@ -1,0 +1,31 @@
+---
+---
+<div class="w-full max-w-xl mx-auto mb-8">
+  <input 
+    type="text" 
+    id="search"
+    placeholder="Search skills..."
+    class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:border-red-500 bg-white"
+  />
+</div>
+
+<script>
+  const searchInput = document.getElementById('search');
+  const skillCards = document.querySelectorAll('.skill-card');
+
+  searchInput?.addEventListener('input', (e) => {
+    const searchTerm = (e.target as HTMLInputElement).value.toLowerCase();
+
+    skillCards.forEach((card) => {
+      const title = card.querySelector('.skill-title')?.textContent?.toLowerCase() || '';
+      const description = card.querySelector('.skill-description')?.textContent?.toLowerCase() || '';
+      const tags = card.querySelector('.skill-tags')?.textContent?.toLowerCase() || '';
+
+      if (title.includes(searchTerm) || description.includes(searchTerm) || tags.includes(searchTerm)) {
+        (card as HTMLElement).style.display = 'block';
+      } else {
+        (card as HTMLElement).style.display = 'none';
+      }
+    });
+  });
+</script>

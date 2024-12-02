@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SearchBar from '../components/SearchBar.astro';
+import SkillCard from '../components/SkillCard.astro';
+import { getSkills } from '../utils/skills';
+
+const skills = await getSkills();
+---
+
+<Layout title="Skill Store">
+  <main class="min-h-screen p-8">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl font-black text-center mb-8">
+        Open Voice OS Skill Store
+      </h1>
+      
+      <SearchBar />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {skills.map((skill) => <SkillCard skill={skill} />)}
+      </div>
+    </div>
+  </main>
+</Layout>

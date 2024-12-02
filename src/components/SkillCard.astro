@@ -1,0 +1,48 @@
+---
+interface Props {
+  skill: {
+    skill_id: string;
+    name: string;
+    description: string;
+    icon: string;
+    tags: string[];
+  };
+}
+
+const { skill } = Astro.props;
+---
+
+<div class="skill-card bg-white shadow-md rounded-lg p-6 hover:bg-gray-100 transition-all">
+  <div class="flex items-start gap-4">
+    <img src={skill.icon || 'https://pngimg.com/d/question_mark_PNG6.png'} alt={skill.name} class="w-12 h-12" />
+    <div class="flex-1">
+      <h3 class="skill-title text-xl font-semibold text-gray-800 mb-2">{skill.name}</h3>
+      <p class="skill-description text-gray-600 mb-4">{skill.description}</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        {skill.tags.map((tag) => (
+          <span class="skill-tags text-sm px-2 py-1 rounded-full bg-red-100 text-red-700">
+            {tag}
+          </span>
+        ))}
+      </div>
+      <button
+        class="install-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors"
+        data-skill-id={skill.skill_id}
+      >
+        Install Skill
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const installButtons = document.querySelectorAll('.install-btn');
+
+  installButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const skillId = button.getAttribute('data-skill-id');
+      // Placeholder for audio QR playback function
+      console.log(`Installing skill: ${skillId}`);
+    });
+  });
+</script>
