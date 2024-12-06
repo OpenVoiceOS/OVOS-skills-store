@@ -79,6 +79,10 @@
     "time right now please",
     "time please"
   ],
+  "compatibility":[
+      "mycroft",
+      "openvoiceos"
+  ],
   "license": "apache-2.0",
   "tags": [
     "world-time",

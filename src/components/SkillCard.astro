@@ -6,6 +6,7 @@ interface Props {
     description: string;
     icon: string;
     tags: string[];
+    compatibility: string[];
   };
 }
 
@@ -25,24 +26,88 @@ const { skill } = Astro.props;
           </span>
         ))}
       </div>
+      <div class="flex flex-wrap gap-2 mb-4">
+        {skill.compatibility && skill.compatibility.length > 0 && skill.compatibility.map((compat) => (
+          <span class="compatible-badge text-sm px-2 py-1 rounded-full bg-green-100 text-green-700">
+        Compatible with {compat}
+          </span>
+        ))}
+      </div>
       <button
-        class="install-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors"
-        data-skill-id={skill.skill_id}
-      >
-        Install Skill
-      </button>
+      class="install-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors"
+      onclick="{window.transmitPackage(skill.skill_id)}"
+    >
+      Install Skill
+    </button>
+    
     </div>
   </div>
 </div>
 
-<script>
-  const installButtons = document.querySelectorAll('.install-btn');
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ggwave@0.4.0/ggwave.min.js"></script>
+<script type="module">
+  // Initialize and set up GGWave as before
+  let context = null;
+  let ggwave = null;
+  let parameters = null;
+  let instance = null;
 
-  installButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const skillId = button.getAttribute('data-skill-id');
-      // Placeholder for audio QR playback function
-      console.log(`Installing skill: ${skillId}`);
-    });
+  ggwave_factory().then((obj) => {
+    ggwave = obj;
   });
+
+  function init() {
+    if (!context) {
+      context = new AudioContext({ sampleRate: 48000 });
+
+      parameters = ggwave.getDefaultParameters();
+      parameters.sampleRateInp = context.sampleRate;
+      parameters.sampleRateOut = context.sampleRate;
+      instance = ggwave.init(parameters);
+    }
+  }
+
+  function convertTypedArray(src, type) {
+    const buffer = new ArrayBuffer(src.byteLength);
+    new src.constructor(buffer).set(src);
+    return new type(buffer);
+  }
+
+  function transmitPackage(packageName) {
+    if (!ggwave || !context) {
+      console.error("GGWave or AudioContext is not initialized.");
+      return;
+    }
+
+    init();
+
+    try {
+      const waveform = ggwave.encode(
+        instance,
+        `PIP:${packageName}`,
+        ggwave.ProtocolId.GGWAVE_PROTOCOL_AUDIBLE_FAST,
+        10
+      );
+
+      const buf = convertTypedArray(waveform, Float32Array);
+      const buffer = context.createBuffer(1, buf.length, context.sampleRate);
+      buffer.getChannelData(0).set(buf);
+
+      const source = context.createBufferSource();
+      source.buffer = buffer;
+
+      const gainNode = context.createGain();
+      gainNode.gain.value = 1.0; // Adjust volume
+      source.connect(gainNode).connect(context.destination);
+
+      source.start(0);
+      console.log("Audio playback started.");
+    } catch (error) {
+      console.error("Error transmitting package:", error);
+    }
+  }
+
+  // Expose function globally
+  window.transmitPackage = transmitPackage;
 </script>
+
