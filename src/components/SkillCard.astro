@@ -35,9 +35,46 @@ const { skill } = Astro.props;
       </div>
       <button
         class="install-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors"
-        onclick={`transmitPackage('${skill.skill_id}')`}
+        onclick={`showModal('${skill.skill_id}')`}
       >
         Install Skill
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="modal" class="modal hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-3">
+  <div class="modal-content bg-white p-6 rounded-lg shadow-lg">
+    <h2 class="text-lg font-semibold mb-4">Install Skill</h2>
+    <p class="text-gray-700 mb-4">
+      Make sure your device is near the speaker and ensure your device is on unmute and at maximum volume. Click "Play" to transmit the code.
+    </p>
+    <div class="flex gap-4 justify-end" id="before-transmission">
+      <button
+        class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded-lg"
+        onclick="closeModal()"
+      >
+        Cancel
+      </button>
+      <button
+        class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg"
+        onclick="playCode()"
+      >
+        Play
+      </button>
+    </div>
+    <div id="after-transmission" class="hidden flex gap-4 justify-end mt-4">
+      <button
+        class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded-lg"
+        onclick="closeModal()"
+      >
+        Close
+      </button>
+      <button
+        class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg"
+        onclick="playCode()"
+      >
+        Retransmit
       </button>
     </div>
   </div>
@@ -49,6 +86,7 @@ const { skill } = Astro.props;
   let ggwave = null;
   let parameters = null;
   let instance = null;
+  let currentSkillId = null;
 
   ggwave_factory().then((obj) => {
     ggwave = obj;
@@ -71,18 +109,29 @@ const { skill } = Astro.props;
     return new type(buffer);
   }
 
-  function transmitPackage(skillId) {
+  function showModal(skillId) {
+    currentSkillId = skillId;
+    document.getElementById('modal').classList.remove('hidden');
+    document.getElementById('after-transmission').classList.add('hidden');
+    document.getElementById('before-transmission').classList.remove('hidden');
+  }
+
+  function closeModal() {
+    document.getElementById('modal').classList.add('hidden');
+  }
+
+  function playCode() {
     init();
 
-    if (!ggwave || !context) {
-      console.error("GGWave or AudioContext is not initialized.");
+    if (!ggwave || !context || !currentSkillId) {
+      console.error("GGWave, AudioContext, or Skill ID is not initialized.");
       return;
     }
 
     try {
       const waveform = ggwave.encode(
         instance,
-        `PIP: ${skillId}`,
+        `PIP: ${currentSkillId}`,
         ggwave.ProtocolId.GGWAVE_PROTOCOL_AUDIBLE_FAST,
         10
       );
@@ -99,12 +148,16 @@ const { skill } = Astro.props;
       source.connect(gainNode).connect(context.destination);
 
       source.start(0);
-      console.log(`Audio playback started for skill: PIP: ${skillId}`);
+      console.log(`Audio playback started for skill: PIP: ${currentSkillId}`);
+      document.getElementById('after-transmission').classList.remove('hidden');
+      document.getElementById('before-transmission').classList.add('hidden');
     } catch (error) {
       console.error("Error transmitting package:", error);
     }
   }
 
-  // Expose function globally
-  window.transmitPackage = transmitPackage;
+  // Expose functions globally
+  window.showModal = showModal;
+  window.closeModal = closeModal;
+  window.playCode = playCode;
 </script>
