@@ -29,24 +29,22 @@ const { skill } = Astro.props;
       <div class="flex flex-wrap gap-2 mb-4">
         {skill.compatibility && skill.compatibility.length > 0 && skill.compatibility.map((compat) => (
           <span class="compatible-badge text-sm px-2 py-1 rounded-full bg-green-100 text-green-700">
-        Compatible with {compat}
+            Compatible with {compat}
           </span>
         ))}
       </div>
       <button
-      class="install-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors"
-      onclick="{window.transmitPackage(skill.skill_id)}"
-    >
-      Install Skill
-    </button>
-    
+        class="install-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors"
+        onclick={`transmitPackage('${skill.skill_id}')`}
+      >
+        Install Skill
+      </button>
     </div>
   </div>
 </div>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ggwave@0.4.0/ggwave.min.js"></script>
 <script type="module">
-  // Initialize and set up GGWave as before
   let context = null;
   let ggwave = null;
   let parameters = null;
@@ -73,18 +71,18 @@ const { skill } = Astro.props;
     return new type(buffer);
   }
 
-  function transmitPackage(packageName) {
+  function transmitPackage(skillId) {
+    init();
+
     if (!ggwave || !context) {
       console.error("GGWave or AudioContext is not initialized.");
       return;
     }
 
-    init();
-
     try {
       const waveform = ggwave.encode(
         instance,
-        `PIP:${packageName}`,
+        `PIP: ${skillId}`,
         ggwave.ProtocolId.GGWAVE_PROTOCOL_AUDIBLE_FAST,
         10
       );
@@ -97,11 +95,11 @@ const { skill } = Astro.props;
       source.buffer = buffer;
 
       const gainNode = context.createGain();
-      gainNode.gain.value = 1.0; // Adjust volume
+      gainNode.gain.value = 1.0;
       source.connect(gainNode).connect(context.destination);
 
       source.start(0);
-      console.log("Audio playback started.");
+      console.log(`Audio playback started for skill: PIP: ${skillId}`);
     } catch (error) {
       console.error("Error transmitting package:", error);
     }
@@ -110,4 +108,3 @@ const { skill } = Astro.props;
   // Expose function globally
   window.transmitPackage = transmitPackage;
 </script>
-
