@@ -2,11 +2,13 @@
 interface Props {
   skill: {
     skill_id: string;
+    source: string;
     name: string;
     description: string;
     icon: string;
     tags: string[];
     compatibility: string[];
+    examples: string[];
   };
 }
 
@@ -17,19 +19,21 @@ const { skill } = Astro.props;
   <div class="flex items-start gap-4">
     <img src={skill.icon || 'https://pngimg.com/d/question_mark_PNG6.png'} alt={skill.name} class="w-12 h-12" />
     <div class="flex-1">
-      <h3 class="skill-title text-xl font-semibold text-gray-800 mb-2">{skill.name}</h3>
+      <div class="flex items-center">
+        <h3 class="skill-title text-xl font-semibold text-gray-800 mb-2 mr-2">{skill.name}</h3>
+        {skill.source && skill.source.includes('https://github.com/OpenVoiceOS') && (
+        <span class="official-skill-badge text-sm px-2 py-1 rounded-full bg-green-100 text-green-700 flex items-center" title="This skill is official developed by Open Voice OS">
+          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </span>
+        )}
+      </div>
       <p class="skill-description text-gray-600 mb-4">{skill.description}</p>
       <div class="flex flex-wrap gap-2 mb-4">
         {skill.tags.map((tag) => (
           <span class="skill-tags text-sm px-2 py-1 rounded-full bg-red-100 text-red-700">
             {tag}
-          </span>
-        ))}
-      </div>
-      <div class="flex flex-wrap gap-2 mb-4">
-        {skill.compatibility && skill.compatibility.length > 0 && skill.compatibility.map((compat) => (
-          <span class="compatible-badge text-sm px-2 py-1 rounded-full bg-green-100 text-green-700">
-            Compatible with {compat}
           </span>
         ))}
       </div>
@@ -44,11 +48,23 @@ const { skill } = Astro.props;
 </div>
 
 <div id="modal" class="modal hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-3">
-  <div class="modal-content bg-white p-6 rounded-lg shadow-lg">
+  <div class="modal-content bg-white p-6 rounded-lg shadow-lg max-h-full overflow-y-auto">
     <h2 class="text-lg font-semibold mb-4">Install Skill</h2>
     <p class="text-gray-700 mb-4">
       Make sure your device is near the speaker and ensure your device is on unmute and at maximum volume. Click "Play" to transmit the code.
     </p>
+    <!-- {skill.examples && skill.examples.length > 0 && (
+      <>
+        <p class="text-gray-700 mb-4">
+          Example usage
+        </p>
+        <ul class="list-disc list-inside text-gray-700 mb-4">
+          {skill.examples.map((example) => (
+            <li>{example}</li>
+          ))}
+        </ul>
+      </>
+    )} -->
     <div class="flex gap-4 justify-end" id="before-transmission">
       <button
         class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded-lg"

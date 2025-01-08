@@ -10,14 +10,20 @@ const skills = await getSkills();
 <Layout title="Skill Store">
   <main class="min-h-screen p-8">
     <div class="max-w-6xl mx-auto">
-      <h1 class="text-4xl font-black text-center mb-8">
-        Open Voice OS Skill Store
-      </h1>
+      <div class="hero bg-cover bg-center h-64 flex items-center justify-center">
+        <h1 class="text-5xl font-black text-black text-center">
+          Open Voice OS Skill Store
+        </h1>
+      </div>
       
-      <SearchBar />
+      <div class="mt-8">
+        <SearchBar class="w-full max-w-lg mx-auto mb-8 p-4 border rounded-lg shadow-lg" />
+      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {skills.map((skill) => <SkillCard skill={skill} />)}
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {skills.map((skill) => (
+          <SkillCard skill={skill} />
+        ))}
       </div>
     </div>
   </main>
