@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OVOS Skills Store</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS styles */
+        body {
+            background-color: #f8f9fa;
+            padding-top: 20px;
+        }
+
+        .card {
+            width: 200px; /* Set fixed width for skill cards */
+            margin-bottom: 20px;
+            border: none;
+            position: relative; /* Add position relative for overlay positioning */
+            height: auto; /* Set height to auto to accommodate variable text length */
+        }
+
+        .card-body {
+            text-align: center;
+            height: 100%; /* Ensure card body fills the entire card height */
+            display: flex; /* Use flexbox for alignment */
+            flex-direction: column; /* Align items in a column */
+            justify-content: space-between; /* Distribute space evenly between items */
+        }
+
+        .card:hover {
+            width: 250px;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-top {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .card-content {
+            display: block;
+        }
+
+        .card-content.hidden {
+            display: none;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: none;
+            z-index: 2;
+        }
+
+        .card:hover .card-overlay {
+            display: block;
+        }
+
+        .preview-container {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            height: auto; /* Set height to auto to accommodate variable content */
+            width: 100%; /* Set width to 100% of parent container */
+            max-width: calc(100% - 20px); /* Limit max-width to prevent overflow */
+        }
+
+        .preview-container.show {
+            display: block;
+        }
+
+        .preview-images {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .preview-images img {
+            width: 100%;
+            height: auto;
+        }
+
+        .preview-examples {
+            margin-bottom: 20px;
+        }
+
+        .audio-qr-code-install-button {
+            display: block;
+            width: 100%;
+            padding: 8px 16px;
+            margin-bottom: 10px; /* Add margin bottom for spacing */
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .audio-qr-code-install-button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app" class="container">
+    <!-- Introduction section -->
+    <div id="intro" class="jumbotron">
+        <h1 class="display-4">Welcome to the OVOS Skills Store!</h1>
+        <p class="lead">This is OpenVoiceOS' Skill Store, where OVOS community developers can submit their skills. It's
+            also where the OVOS dev team hosts our own skills!</p>
+        <!-- Note about audio QR code installs -->
+        <p>Note: Devices need to have the <a href="https://github.com/OpenVoiceOS/ovos-audio-transformer-plugin-ggwave">OVOS
+            GGWave Plugin</a> installed and enabled for audio QR code installs to work.</p>
+        <hr class="my-4">
+        <p>Below, you'll find a list of available skills:</p>
+    </div>
+
+    <!-- Skills container -->
+    <div id="skills-container" class="d-flex flex-wrap justify-content-between">
+        <!-- Skill cards -->
+        <div class="card" v-for="skill in skills" :key="skill.skill_id" @mouseenter="showPreview" @mouseleave="hidePreview">
+            <a :href="skill.source" target="_blank" rel="noopener noreferrer">
+                <!-- Skill icon -->
+                <img :src="skill.icon" class="card-img-top" :alt="skill.name">
+            </a>
+            <!-- Skill information -->
+            <div class="card-body">
+                <h5 class="card-title">{{ skill.name }}</h5>
+                <p class="card-text card-content">{{ skill.description }}</p>
+            </div>
+            <!-- Preview overlay -->
+            <div class="card-overlay">
+                <div class="preview-container">
+                    <!-- Audio QR code install button -->
+                    <button class="audio-qr-code-install-button" @click="transmitPackage(skill.package_name)">Audio QR Code Install</button>
+                    <!-- Preview images -->
+                    <div class="preview-images">
+                        <a v-if="skill.images && skill.images.length > 0" :href="skill.source" target="_blank" rel="noopener noreferrer">
+                            <img :src="skill.images[0]" alt="Skill Image">
+                        </a>
+                        <!-- Use skill icon as the single image if no images available -->
+                        <a v-else :href="skill.source" target="_blank" rel="noopener noreferrer">
+                            <img :src="skill.icon" alt="Skill Icon">
+                        </a>
+                    </div>
+                    <!-- Examples -->
+                    <div class="preview-examples" v-if="skill.examples && skill.examples.length">
+                        <h5>Examples:</h5>
+                        <ul>
+                            <li v-for="(example, index) in skill.examples.slice(0, 5)" :key="index">{{ example }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional information section -->
+    <div id="additional-info" class="mt-5">
+        <!-- Information about JSON feed -->
+        <p>A JSON feed is automatically published at <a
+                href="https://openvoiceos.github.io/OVOS-skills-store/skills.json">https://openvoiceos.github.io/OVOS-skills-store/skills.json</a>
+            to be consumed by 3rd party UIs or applications.</p>
+        <!-- Information about forking the repository -->
+        <p>Setting up your own marketplace is as easy as <a
+                href="https://github.com/OpenVoiceOS/OVOS-skills-store/fork">forking this repository</a>!</p>
+        <!-- Information about licensing requirements -->
+        <p>Please note that all skills hosted on this store must be licensed under an OSI-approved open-source license,
+            or released into the public domain, except by special permission from the OVOS dev team.</p>
+    </div>
+
+</div>
+
+<!-- Submitting a Skill -->
+<div id="submitting-skill" class="container mt-5">
+    <h2>Submitting a skill</h2>
+    <p>Submitting a Skill is easy, and relatively painless, though a few steps need to be completed before your Skill
+        can be accepted:</p>
+    <ol>
+        <li>You must create a JSON file for your Skill. Learn more about the <a
+                href="https://openvoiceos.github.io/ovos-technical-manual/skill_json/">skill.json specification</a>.
+        </li>
+        <li>Your skill must be licensed under an OSI-approved open-source license, or released into the public domain,
+            except by special permission from the OVOS dev team. Such permission is unlikely to be granted except in
+            cases where your Skill integrates OVOS with software that is a) extremely valuable to users, b) extremely
+            popular, c) privacy-respecting, and d) cannot be integrated any other way. (We're talking about things like
+            a big-name streaming service, or integrating with a video game console. Big things with no open-source
+            alternative. Submissions containing utility Skills under a proprietary license will be summarily closed as
+            invalid.)
+        </li>
+        <li>Submit a Pull Request to <a href="https://github.com/OpenVoiceOS/OVOS-skills-store">OpenVoiceOS/OVOS-skills-store</a>.
+        </li>
+    </ol>
+    <p>Once you have completed these steps, your Skill submission will be reviewed as soon as possible by one or more
+        OVOS developers or authorized Skill Reviewers.</p>
+    <p>Once your Skill has been reviewed, and the pull request is merged, your Skill should immediately be listed on the
+        OVOS Skills Store!</p>
+</div>
+
+<!-- Vue.js library -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<!-- ggwave.js script -->
+<script type="text/javascript" src="ggwave.js"></script>
+<script type='text/javascript'>
+    // Ensure variables are properly scoped
+    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+    window.OfflineAudioContext = window.OfflineAudioContext || window.webkitOfflineAudioContext;
+
+    var context = null;
+
+    // the ggwave module instance
+    var ggwave = null;
+    var parameters = null;
+    var instance = null;
+
+    // instantiate the ggwave instance
+    // ggwave_factory comes from the ggwave.js module
+    ggwave_factory().then(function(obj) {
+        ggwave = obj;
+    });
+
+    // Initialize audio context and ggwave
+    function init() {
+        if (!context) {
+            context = new AudioContext({sampleRate: 48000});
+
+            parameters = ggwave.getDefaultParameters();
+            parameters.sampleRateInp = context.sampleRate;
+            parameters.sampleRateOut = context.sampleRate;
+            instance = ggwave.init(parameters);
+        }
+    }
+
+    // Transmit data using ggwave
+    function transmitPackage(packageName) {
+        init();
+
+        // Generate audio waveform with the package name
+        var waveform = ggwave.encode(instance, "PIP:" + packageName, ggwave.ProtocolId.GGWAVE_PROTOCOL_AUDIBLE_FAST, 10);
+
+        // Play audio
+        var buf = convertTypedArray(waveform, Float32Array);
+        var buffer = context.createBuffer(1, buf.length, context.sampleRate);
+        buffer.getChannelData(0).set(buf);
+        var source = context.createBufferSource();
+        source.buffer = buffer;
+        source.connect(context.destination);
+        source.start(0);
+    }
+
+    // Helper function to convert typed arrays
+    function convertTypedArray(src, type) {
+        var buffer = new ArrayBuffer(src.byteLength);
+        var baseView = new src.constructor(buffer).set(src);
+        return new type(buffer);
+    }
+
+    // Vue.js initialization
+    document.addEventListener('DOMContentLoaded', function() {
+        new Vue({
+            el: '#app',
+            data: {
+                skills: [], // Array to store fetched skills
+            },
+            methods: {
+                // Method to fetch skills data
+                fetchSkills() {
+                    // Fetch skills JSON data from the specified URL
+                    fetch('skills.json')
+                        .then(response => response.json()) // Parse response as JSON
+                        .then(data => {
+                            // Assign fetched skills to the data array
+                            this.skills = data.items;
+                        })
+                        .catch(error => console.error('Error fetching skills:', error)); // Handle fetch errors
+                },
+                // Method to show the preview
+                showPreview(event) {
+                    event.currentTarget.querySelector('.preview-container').classList.add('show');
+                    document.querySelector('.card-content').classList.add('hidden');
+                },
+                // Method to hide the preview
+                hidePreview(event) {
+                    event.currentTarget.querySelector('.preview-container').classList.remove('show');
+                    document.querySelector('.card-content').classList.remove('hidden');
+                },
+            },
+            mounted() {
+                // Fetch skills when the component is mounted
+                this.fetchSkills();
+            }
+        });
+    });
+</script>
+</body>
+</html>
