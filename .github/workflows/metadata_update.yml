@@ -1,6 +1,6 @@
 # This workflow will generate updated metadata when changes are merged into the main branch
 
-name: Build GH Pages
+name: Update json feed in GH Pages
 on:
   push:
     branches:
