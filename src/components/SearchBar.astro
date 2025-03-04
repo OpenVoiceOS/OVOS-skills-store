@@ -1,0 +1,37 @@
+---
+const { class: className, id } = Astro.props;
+---
+
+<div class={className}>
+  <form id="search-form" action="/search" method="get">
+    <div class="relative">
+      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+        <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+        </svg>
+      </div>
+      <input 
+        type="search" 
+        id={id}
+        name="q"
+        placeholder="Search skills..."
+        class="w-full pl-10 px-4 py-2 rounded-lg border focus:ring-2 focus:ring-red-500 focus:border-red-500 transition duration-200"
+      />
+    </div>
+  </form>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchForm = document.getElementById('search-form');
+    
+    if (searchForm) {
+      searchForm.addEventListener('submit', (e) => {
+        const input = searchForm.querySelector('input[type="search"]');
+        if (input && input.value.trim() === '') {
+          e.preventDefault(); // Don't submit if empty
+        }
+      });
+    }
+  });
+</script>

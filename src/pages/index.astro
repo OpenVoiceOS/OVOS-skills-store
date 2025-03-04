@@ -1,0 +1,231 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SearchBar from '../components/SearchBar.astro';
+import SkillCard from '../components/SkillCard.astro';
+import FeaturedSkill from '../components/FeaturedSkill.astro';
+import { getSkills, getFeaturedSkills, getSkillsByCategory } from '../utils/skills';
+
+const skills = await getSkills();
+const featuredSkills = getFeaturedSkills(skills);
+const skillsByCategory = getSkillsByCategory(skills);
+
+// Get popular categories (those with more skills)
+const popularCategories = Object.entries(skillsByCategory)
+  .sort((a, b) => b[1].length - a[1].length)
+  .slice(0, 6);
+---
+
+<Layout title="Skill Store">
+  <main class="min-h-screen p-8">
+    <div class="mx-auto">
+      <header class="sticky top-0 z-10 bg-white py-4 px-6 mb-6">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <h1 class="text-2xl sm:text-3xl font-black text-black">
+            Skill Store
+          </h1>
+          <div class="w-full max-w-md">
+            <div class="flex justify-end">
+              <a href="/search" class="flex items-center justify-between px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition whitespace-nowrap">
+                <span>Search</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Featured Skills Section -->
+      <div class="featured-section mt-8" id="featured-section">
+        <h2 class="text-2xl font-bold mb-6">Featured Skills</h2>
+        <div class="relative carousel-container">
+          <!-- Add explicit width and overflow to parent container -->
+          <div id="carousel" class="overflow-x-scroll scrollbar-hide pb-12 px-4 mb-[20px]" style="width: 100%;">
+            <div class="flex gap-6" style="width: max-content;">
+              {featuredSkills.map((skill) => (
+                <FeaturedSkill 
+                  skill={skill} 
+                  class="flex-none w-60" 
+                />
+              ))}
+            </div>
+          </div>
+          
+          <!-- Navigation buttons centered at bottom -->
+          <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex gap-6 z-10">
+            <button 
+              id="prev-btn" 
+              class="bg-black rounded-full p-2 focus:outline-none"
+              aria-label="Previous items">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            
+            <button 
+              id="next-btn" 
+              class="bg-black rounded-full p-2 focus:outline-none"
+              aria-label="Next items">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        
+          <!-- Optional scroll indicators -->
+          <div class="absolute top-0 bottom-0 left-0 bg-gradient-to-r from-white w-12 pointer-events-none"></div>
+          <div class="absolute top-0 bottom-0 right-0 bg-gradient-to-l from-white w-12 pointer-events-none"></div>
+        </div>
+      </div>
+      
+      <!-- Installation Guide Section -->
+      <div class="mt-16 bg-gray-50 rounded-xl p-6 border border-gray-200">
+        <h2 class="text-2xl font-bold mb-4">How to Install Skills</h2>
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="flex-1">
+            <div class="bg-white p-4 rounded-lg shadow-md h-full">
+              <div class="flex items-center mb-2">
+                <div class="rounded-full bg-red-600 text-white w-8 h-8 flex items-center justify-center font-bold mr-3">1</div>
+                <h3 class="font-semibold text-lg">Find a Skill</h3>
+              </div>
+              <p class="text-gray-600">Browse categories or search for skills that interest you.</p>
+            </div>
+          </div>
+          
+          <div class="flex-1">
+            <div class="bg-white p-4 rounded-lg shadow-md h-full">
+              <div class="flex items-center mb-2">
+                <div class="rounded-full bg-red-600 text-white w-8 h-8 flex items-center justify-center font-bold mr-3">2</div>
+                <h3 class="font-semibold text-lg">Click "Install Skill"</h3>
+              </div>
+              <p class="text-gray-600">Press the Install button on any skill you want to add.</p>
+            </div>
+          </div>
+          
+          <div class="flex-1">
+            <div class="bg-white p-4 rounded-lg shadow-md h-full">
+              <div class="flex items-center mb-2">
+                <div class="rounded-full bg-red-600 text-white w-8 h-8 flex items-center justify-center font-bold mr-3">3</div>
+                <h3 class="font-semibold text-lg">Play the Audio Code</h3>
+              </div>
+              <p class="text-gray-600">Hold your device near your speaker to receive the audio QR code.</p>
+            </div>
+          </div>
+        </div>
+        <p class="mt-4 text-gray-500 text-sm">Note: Your device needs to have the <a href="https://github.com/OpenVoiceOS/ovos-audio-transformer-plugin-ggwave" class="text-red-600 hover:underline">OVOS GGWave Plugin</a> installed for audio QR code installation to work.</p>
+      </div>
+
+      <!-- Categories Section -->
+      {popularCategories.map(([category, categorySkills]) => (
+        <div class="mt-12">
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold capitalize">{category}</h2>
+            <a href={`/search?q=${category}`} class="text-red-600 hover:underline flex items-center">
+              See all
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a 1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+          
+          <div class="overflow-x-auto scrollbar-hide">
+            <div class="flex gap-6 pb-4" style="width: max-content;">
+              {categorySkills.slice(0, 6).map((skill) => (
+                <div class="flex-none w-80">
+                  <SkillCard skill={skill} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+      
+      <!-- Updated Skills Section -->
+      <div class="mt-16">
+        <h2 class="text-2xl font-bold mb-6">All Skills</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {skills.map((skill) => (
+            <SkillCard skill={skill} />
+          ))}
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .overflow-x-scroll {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: grab;
+  }
+  
+  .overflow-x-scroll:active {
+    cursor: grabbing;
+  }
+  
+  .overflow-x-scroll::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Existing carousel script
+    const carousel = document.getElementById('carousel');
+    const prevButton = document.getElementById('prev-btn');
+    const nextButton = document.getElementById('next-btn');
+    
+    if (carousel && prevButton && nextButton) {
+      // Scroll amount (can be adjusted)
+      const scrollAmount = 350;
+      
+      prevButton.addEventListener('click', () => {
+        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+      
+      nextButton.addEventListener('click', () => {
+        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+      
+      // Show/hide buttons based on scroll position
+      const toggleButtons = () => {
+        prevButton.style.opacity = carousel.scrollLeft > 0 ? '1' : '0.5';
+        nextButton.style.opacity = 
+          carousel.scrollLeft < (carousel.scrollWidth - carousel.clientWidth) ? '1' : '0.5';
+      };
+      
+      carousel.addEventListener('scroll', toggleButtons);
+      window.addEventListener('resize', toggleButtons);
+      
+      // Initial button state
+      toggleButtons();
+    }
+    
+    // Make all category rows scrollable
+    const scrollContainers = document.querySelectorAll('.overflow-x-auto');
+    scrollContainers.forEach(container => {
+      container.addEventListener('wheel', (e) => {
+        if (e.deltaY != 0) {
+          e.preventDefault();
+          container.scrollLeft += e.deltaY;
+        }
+      });
+    });
+  });
+</script>

@@ -1,0 +1,217 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SkillCard from '../components/SkillCard.astro';
+import { getSkills } from '../utils/skills';
+
+const skills = await getSkills();
+const searchQuery = Astro.url.searchParams.get('q') || '';
+---
+
+<Layout title="Search Skills - Open Voice OS">
+  <main class="min-h-screen p-8">
+    <div class="max-w-6xl mx-auto">
+      <a href="/" class="inline-flex items-center text-blue-600 mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Back to Home
+      </a>
+      
+      <h1 class="text-3xl font-bold mb-6">Search Skills</h1>
+      
+      <div class="mb-8">
+        <div class="relative">
+          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+          </div>
+          <input 
+            type="search" 
+            id="live-search-input"
+            name="q"
+            value={searchQuery}
+            placeholder="Search skills..."
+            class="w-full pl-10 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 transition duration-200 shadow-md"
+          />
+          <button 
+            id="clear-search" 
+            type="button"
+            class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
+            style={searchQuery ? "" : "display: none;"}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 hover:text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <div id="search-results">
+        <div id="initial-results" class={searchQuery ? 'hidden' : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'}>
+          {skills.map((skill) => (
+            <SkillCard skill={skill} />
+          ))}
+        </div>
+        
+        <div id="search-results-grid" class={searchQuery ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6' : 'hidden'}>
+          <!-- Filtered results will appear here via JavaScript -->
+        </div>
+        
+        <!-- Empty state for no results -->
+        <div id="no-results" class="hidden text-center py-16">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <h3 class="text-xl font-bold text-gray-700">No skills found</h3>
+          <p class="text-gray-500 mt-2">Try a different search term</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script define:vars={{ skills: skills, initialQuery: searchQuery }}>
+  // Convert server-side skills data to client-side
+  const allSkills = skills;
+  
+  // Function to create skill card element from the template
+  function createSkillCard(skill) {
+    // Create a template holder
+    const template = document.createElement('template');
+    
+    // Use the structure from SkillCard.astro but as a string template
+    template.innerHTML = `
+      <div class="skill-card bg-white shadow-md rounded-lg p-6 hover:bg-gray-100 transition-all">
+        <div class="flex items-start gap-4">
+          <img src="${skill.icon || 'https://pngimg.com/d/question_mark_PNG6.png'}" alt="${skill.name}" class="w-12 h-12" />
+          <div class="flex-1">
+            <div class="flex items-center">
+              <h3 class="skill-title text-xl font-semibold text-gray-800 mb-2 mr-2">${skill.name}</h3>
+              ${skill.source && skill.source.includes('https://github.com/OpenVoiceOS') ? `
+                <span class="official-skill-badge text-sm px-2 py-1 rounded-full bg-green-100 text-green-700 flex items-center" title="This skill is official developed by Open Voice OS">
+                  <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </span>
+              ` : ''}
+            </div>
+            <p class="skill-description text-gray-600 mb-4">${skill.description}</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              ${skill.tags ? skill.tags.map(tag => `
+                <span class="skill-tags text-sm px-2 py-1 rounded-full bg-red-100 text-red-700">
+                  ${tag}
+                </span>
+              `).join('') : ''}
+            </div>
+            <button
+              class="install-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors"
+              onclick="showModal('${skill.skill_id}')"
+            >
+              Install Skill
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+    
+    return template.content.firstElementChild;
+  }
+  
+  // Function to perform search
+  function performSearch(query) {
+    const initialResults = document.getElementById('initial-results');
+    const resultsGrid = document.getElementById('search-results-grid');
+    const noResults = document.getElementById('no-results');
+    const clearButton = document.getElementById('clear-search');
+    
+    // Update clear button visibility
+    if (clearButton) {
+      clearButton.style.display = query ? 'flex' : 'none';
+    }
+    
+    if (initialResults && resultsGrid && noResults) {
+      // Clear existing results
+      resultsGrid.innerHTML = '';
+      
+      if (!query) {
+        // If query is empty, show initial results
+        initialResults.classList.remove('hidden');
+        resultsGrid.classList.add('hidden');
+        noResults.classList.add('hidden');
+        return;
+      }
+      
+      // Hide initial results when searching
+      initialResults.classList.add('hidden');
+      
+      // Filter skills based on query
+      const lowercaseQuery = query.toLowerCase();
+      const filteredSkills = allSkills.filter(skill => {
+        const titleMatch = skill.name.toLowerCase().includes(lowercaseQuery);
+        const descMatch = skill.description.toLowerCase().includes(lowercaseQuery);
+        const tagsMatch = skill.tags && skill.tags.some(tag => tag.toLowerCase().includes(lowercaseQuery));
+        
+        return titleMatch || descMatch || tagsMatch;
+      });
+      
+      if (filteredSkills.length > 0) {
+        // Show results
+        noResults.classList.add('hidden');
+        resultsGrid.classList.remove('hidden');
+        
+        // Create and append skill cards
+        filteredSkills.forEach(skill => {
+          const card = createSkillCard(skill);
+          resultsGrid.appendChild(card);
+        });
+      } else {
+        // Show no results message
+        noResults.classList.remove('hidden');
+        resultsGrid.classList.add('hidden');
+      }
+      
+      // Update URL with search query (debounced)
+      updateURLDebounced(query);
+    }
+  }
+  
+  // Debounce function to limit URL updates
+  let debounceTimeout;
+  function updateURLDebounced(query) {
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(() => {
+      const url = new URL(window.location);
+      if (query) {
+        url.searchParams.set('q', query);
+      } else {
+        url.searchParams.delete('q');
+      }
+      window.history.replaceState({}, '', url);
+    }, 500);
+  }
+  
+  // Perform initial search if query exists
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('live-search-input');
+    const clearButton = document.getElementById('clear-search');
+    
+    if (searchInput) {
+      // Set up live filtering
+      searchInput.addEventListener('input', (e) => {
+        performSearch(e.target.value.trim());
+      });
+      
+      // Set initial value and perform search
+      performSearch(initialQuery);
+      
+      // Handle clear button
+      if (clearButton) {
+        clearButton.addEventListener('click', () => {
+          searchInput.value = '';
+          performSearch('');
+        });
+      }
+    }
+  });
+</script>
