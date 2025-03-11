@@ -48,14 +48,12 @@ const searchQuery = Astro.url.searchParams.get('q') || '';
       </div>
       
       <div id="search-results">
-        <div id="initial-results" class={searchQuery ? 'hidden' : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'}>
+        <div id="initial-results" class="masonry-container">
           {skills.map((skill) => (
-            <SkillCard skill={skill} />
+            <div class="masonry-item">
+              <SkillCard skill={skill} />
+            </div>
           ))}
-        </div>
-        
-        <div id="search-results-grid" class={searchQuery ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6' : 'hidden'}>
-          <!-- Filtered results will appear here via JavaScript -->
         </div>
         
         <!-- Empty state for no results -->
@@ -68,60 +66,111 @@ const searchQuery = Astro.url.searchParams.get('q') || '';
         </div>
       </div>
     </div>
+    <div id="modal" class="modal hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-3 z-[99]">
+      <div class="modal-content bg-white p-6 rounded-lg shadow-lg max-h-full overflow-y-auto">
+        <h2 class="text-lg font-semibold mb-4">Install Skill</h2>
+        <p class="text-gray-700 mb-4">
+          Make sure your device is near the speaker and ensure your device is on unmute and at maximum volume. Click "Play" to transmit the code.
+        </p>
+        <div class="flex gap-4 justify-end" id="before-transmission">
+          <button
+            class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded-lg"
+            onclick="closeModal()"
+          >
+            Cancel
+          </button>
+          <button
+            class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg"
+            onclick="playCode()"
+          >
+            Play
+          </button>
+        </div>
+        <div id="after-transmission" class="hidden flex gap-4 justify-end mt-4">
+          <button
+            class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded-lg"
+            onclick="closeModal()"
+          >
+            Close
+          </button>
+          <button
+            class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg"
+            onclick="playCode()"
+          >
+            Retransmit
+          </button>
+        </div>
+      </div>
+    </div>
   </main>
 </Layout>
+
+<style>
+  /* Custom CSS for Masonry Layout */
+  .masonry-container {
+    column-count: 1;
+    column-gap: 1.5rem;
+  }
+  
+  .masonry-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    break-inside: avoid;
+  }
+  
+  /* Responsive column counts */
+  @media (min-width: 640px) {
+    .masonry-container {
+      column-count: 2;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .masonry-container {
+      column-count: 3;
+    }
+  }
+</style>
 
 <script define:vars={{ skills: skills, initialQuery: searchQuery }}>
   // Convert server-side skills data to client-side
   const allSkills = skills;
+  let currentSkillId = null;
   
-  // Function to create skill card element from the template
-  function createSkillCard(skill) {
-    // Create a template holder
-    const template = document.createElement('template');
+  // Ensure modal functions work correctly
+  function showModal(skillId) {
+    currentSkillId = skillId;
+    const modal = document.getElementById('modal');
+    const afterTransmission = document.getElementById('after-transmission');
+    const beforeTransmission = document.getElementById('before-transmission');
     
-    // Use the structure from SkillCard.astro but as a string template
-    template.innerHTML = `
-      <div class="skill-card bg-white shadow-md rounded-lg p-6 hover:bg-gray-100 transition-all">
-        <div class="flex items-start gap-4">
-          <img src="${skill.icon || 'https://pngimg.com/d/question_mark_PNG6.png'}" alt="${skill.name}" class="w-12 h-12" />
-          <div class="flex-1">
-            <div class="flex items-center">
-              <h3 class="skill-title text-xl font-semibold text-gray-800 mb-2 mr-2">${skill.name}</h3>
-              ${skill.source && skill.source.includes('https://github.com/OpenVoiceOS') ? `
-                <span class="official-skill-badge text-sm px-2 py-1 rounded-full bg-green-100 text-green-700 flex items-center" title="This skill is official developed by Open Voice OS">
-                  <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                </span>
-              ` : ''}
-            </div>
-            <p class="skill-description text-gray-600 mb-4">${skill.description}</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              ${skill.tags ? skill.tags.map(tag => `
-                <span class="skill-tags text-sm px-2 py-1 rounded-full bg-red-100 text-red-700">
-                  ${tag}
-                </span>
-              `).join('') : ''}
-            </div>
-            <button
-              class="install-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors"
-              onclick="showModal('${skill.skill_id}')"
-            >
-              Install Skill
-            </button>
-          </div>
-        </div>
-      </div>
-    `;
+    if (modal) {
+      modal.classList.remove('hidden');
+      // Force reflow to ensure CSS changes take effect
+      void modal.offsetWidth;
+    } else {
+      console.error("Modal element not found");
+    }
     
-    return template.content.firstElementChild;
+    if (afterTransmission) {
+      afterTransmission.classList.add('hidden');
+    }
+    if (beforeTransmission) {
+      beforeTransmission.classList.remove('hidden');
+    }
+    console.log("Modal shown for skill ID:", skillId);
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('modal');
+    if (modal) {
+      modal.classList.add('hidden');
+    }
   }
   
   // Function to perform search
   function performSearch(query) {
-    const initialResults = document.getElementById('initial-results');
-    const resultsGrid = document.getElementById('search-results-grid');
     const noResults = document.getElementById('no-results');
     const clearButton = document.getElementById('clear-search');
     
@@ -130,80 +179,94 @@ const searchQuery = Astro.url.searchParams.get('q') || '';
       clearButton.style.display = query ? 'flex' : 'none';
     }
     
-    if (initialResults && resultsGrid && noResults) {
-      // Clear existing results
-      resultsGrid.innerHTML = '';
+    // Filter skills based on query
+    const lowercaseQuery = query.toLowerCase().trim();
+    const allCards = document.querySelectorAll('.skill-card');
+    let visibleCount = 0;
+    
+    allCards.forEach(card => {
+      const parent = card.closest('.masonry-item');
+      const titleElement = card.querySelector('.skill-title');
+      const descriptionElement = card.querySelector('.skill-description');
+      const tagElements = card.querySelectorAll('.skill-tags');
       
-      if (!query) {
-        // If query is empty, show initial results
-        initialResults.classList.remove('hidden');
-        resultsGrid.classList.add('hidden');
-        noResults.classList.add('hidden');
-        return;
-      }
+      const title = titleElement ? titleElement.textContent.toLowerCase() : '';
+      const description = descriptionElement ? descriptionElement.textContent.toLowerCase() : '';
       
-      // Hide initial results when searching
-      initialResults.classList.add('hidden');
-      
-      // Filter skills based on query
-      const lowercaseQuery = query.toLowerCase();
-      const filteredSkills = allSkills.filter(skill => {
-        const titleMatch = skill.name.toLowerCase().includes(lowercaseQuery);
-        const descMatch = skill.description.toLowerCase().includes(lowercaseQuery);
-        const tagsMatch = skill.tags && skill.tags.some(tag => tag.toLowerCase().includes(lowercaseQuery));
-        
-        return titleMatch || descMatch || tagsMatch;
+      // Check if any tag matches
+      let tagsMatch = false;
+      tagElements.forEach(tag => {
+        if (tag.textContent.toLowerCase().includes(lowercaseQuery)) {
+          tagsMatch = true;
+        }
       });
       
-      if (filteredSkills.length > 0) {
-        // Show results
-        noResults.classList.add('hidden');
-        resultsGrid.classList.remove('hidden');
-        
-        // Create and append skill cards
-        filteredSkills.forEach(skill => {
-          const card = createSkillCard(skill);
-          resultsGrid.appendChild(card);
-        });
-      } else {
-        // Show no results message
-        noResults.classList.remove('hidden');
-        resultsGrid.classList.add('hidden');
-      }
+      const isMatch = !lowercaseQuery || 
+        title.includes(lowercaseQuery) || 
+        description.includes(lowercaseQuery) || 
+        tagsMatch;
       
-      // Update URL with search query (debounced)
-      updateURLDebounced(query);
+      if (isMatch) {
+        if (parent) parent.style.display = '';
+        visibleCount++;
+      } else {
+        if (parent) parent.style.display = 'none';
+      }
+    });
+    
+    // Show "No results" if nothing matches
+    if (noResults) {
+      if (visibleCount === 0 && lowercaseQuery) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
     }
+    
+    // Update URL with search query (debounced)
+    updateURLDebounced(query);
   }
   
-  // Debounce function to limit URL updates
-  let debounceTimeout;
+  // Debounce function to avoid excessive URL updates
+  let updateURLTimeout;
   function updateURLDebounced(query) {
-    clearTimeout(debounceTimeout);
-    debounceTimeout = setTimeout(() => {
-      const url = new URL(window.location);
+    clearTimeout(updateURLTimeout);
+    updateURLTimeout = setTimeout(() => {
       if (query) {
+        const url = new URL(window.location);
         url.searchParams.set('q', query);
+        window.history.replaceState({}, '', url);
       } else {
+        const url = new URL(window.location);
         url.searchParams.delete('q');
+        window.history.replaceState({}, '', url);
       }
-      window.history.replaceState({}, '', url);
     }, 500);
   }
-  
-  // Perform initial search if query exists
-  document.addEventListener('DOMContentLoaded', () => {
+
+  // Event handling should be set up immediately
+  const setupEventListeners = () => {
     const searchInput = document.getElementById('live-search-input');
     const clearButton = document.getElementById('clear-search');
     
+    // Set up event delegation for all skill cards using a single listener
+    document.addEventListener('click', (e) => {
+      // Find the closest install button or its parent elements
+      const installButton = e.target.closest('.install-btn');
+      if (installButton) {
+        const skillId = installButton.getAttribute('data-skill-id');
+        if (skillId) {
+          showModal(skillId);
+          e.preventDefault(); // Prevent any default actions
+        }
+      }
+    });
+    
+    // Set up live filtering
     if (searchInput) {
-      // Set up live filtering
       searchInput.addEventListener('input', (e) => {
-        performSearch(e.target.value.trim());
+        performSearch(e.target.value);
       });
-      
-      // Set initial value and perform search
-      performSearch(initialQuery);
       
       // Handle clear button
       if (clearButton) {
@@ -213,5 +276,73 @@ const searchQuery = Astro.url.searchParams.get('q') || '';
         });
       }
     }
-  });
+  };
+
+  // Run setup as soon as possible and also after DOM is fully loaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      setupEventListeners();
+      // Initial search if query exists
+      if (initialQuery) {
+        setTimeout(() => performSearch(initialQuery), 100);
+      }
+    });
+  } else {
+    setupEventListeners();
+    // Initial search if query exists
+    if (initialQuery) {
+      setTimeout(() => performSearch(initialQuery), 100);
+    }
+  }
+  
+  // GGWave setup and other existing functions remain the same
+  // ...existing code for GGWave...
+
+  function init() {
+    if (!context) {
+      context = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 48000 });
+      
+      parameters = ggwave.getDefaultParameters();
+      parameters.sampleRateInp = context.sampleRate;
+      parameters.sampleRateOut = context.sampleRate;
+      instance = ggwave.init(parameters);
+    }
+  }
+
+  function playCode() {
+    init();
+    
+    if (!ggwave || !context || !currentSkillId) {
+      console.error("GGWave, AudioContext, or Skill ID is not initialized.");
+      return;
+    }
+    
+    try {
+      const waveform = ggwave.encode(
+        instance,
+        `PIP: ${currentSkillId}`,
+        ggwave.ProtocolId.GGWAVE_PROTOCOL_AUDIBLE_FAST,
+        10
+      );
+      
+      const buf = convertTypedArray(waveform, Float32Array);
+      const buffer = context.createBuffer(1, buf.length, context.sampleRate);
+      buffer.getChannelData(0).set(buf);
+      
+      const source = context.createBufferSource();
+      source.buffer = buffer;
+      
+      const gainNode = context.createGain();
+      gainNode.gain.value = 1.0;
+      
+      source.connect(gainNode).connect(context.destination);
+      
+      source.start(0);
+      console.log(`Audio playback started for skill: PIP: ${currentSkillId}`);
+      document.getElementById('after-transmission').classList.remove('hidden');
+      document.getElementById('before-transmission').classList.add('hidden');
+    } catch (error) {
+      console.error("Error transmitting package:", error);
+    }
+  }
 </script>
