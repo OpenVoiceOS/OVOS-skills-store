@@ -24,7 +24,7 @@ jobs:
       - name: copy updated json
         run: |
           cp main/skills.json gh-pages/skills.json
-      - uses: EndBug/add-and-commit@v7
+      - uses: EndBug/add-and-commit@v9
         with:
           cwd: ./gh-pages
           branch: gh-pages
