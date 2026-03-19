@@ -12,10 +12,8 @@ import {
   filterSkills,
   filterSkillsByCategory,
   getRandomItems,
-  getCategories,
   countSkillsByCategory,
 } from './utils/skills';
-import { getPredefinedCategories } from './utils/categories.tsx';
 
 function App() {
   const { skills, loading, error } = useSkills();
@@ -25,13 +23,6 @@ function App() {
   const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Get categories and their counts - filter to only predefined categories
-  const allCategories = useMemo(() => getCategories(skills), [skills]);
-  const predefinedCategoryList = getPredefinedCategories();
-  const categories = useMemo(
-    () => allCategories.filter(cat => predefinedCategoryList.includes(cat.toLowerCase())),
-    [allCategories]
-  );
   const skillCounts = useMemo(() => countSkillsByCategory(skills), [skills]);
 
   // Get featured skills (5 random ones)
@@ -129,7 +120,7 @@ function App() {
                     </p>
                   )}
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-4">
                   {filteredSkills.map((skill, index) => (
                     <SkillCard
                       key={index}

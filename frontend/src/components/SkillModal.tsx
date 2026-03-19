@@ -1,14 +1,7 @@
-interface Skill {
-  name?: string;
-  description?: string;
-  icon?: string;
-  source?: string;
-  skill_id?: string;
-  package_name?: string;
-  examples?: string[];
-  tags?: string[];
-  [key: string]: any;
-}
+'use client';
+
+import AudioQRInstall from './AudioQRInstall';
+import type { Skill } from '../types';
 
 interface SkillModalProps {
   skill: Skill | null;
@@ -22,10 +15,10 @@ const SkillModal = ({ skill, isOpen, onClose }: SkillModalProps) => {
   return (
     <>
       {/* Backdrop */}
-      <div
-        className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity"
+        <div
+        className="fixed inset-0 bg-gray-500/50 z-40 transition-opacity"
         onClick={onClose}
-      />
+        />
 
       {/* Modal */}
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -107,7 +100,7 @@ const SkillModal = ({ skill, isOpen, onClose }: SkillModalProps) => {
                   Tags
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {skill.tags.map((tag, idx) => (
+                  {skill.tags.map((tag: string, idx: number) => (
                     <span
                       key={idx}
                       className="bg-red-50 dark:bg-red-950 text-red-700 dark:text-red-300 px-3 py-1 rounded-full text-sm font-medium border border-red-200 dark:border-red-800"
@@ -126,7 +119,7 @@ const SkillModal = ({ skill, isOpen, onClose }: SkillModalProps) => {
                   Voice Commands
                 </h3>
                 <div className="space-y-2 max-h-48 overflow-y-auto">
-                  {skill.examples.slice(0, 10).map((example, idx) => (
+                  {skill.examples.slice(0, 10).map((example: string, idx: number) => (
                     <div
                       key={idx}
                       className="flex items-start gap-3 bg-gray-50 dark:bg-gray-700 p-3 rounded"
@@ -144,6 +137,16 @@ const SkillModal = ({ skill, isOpen, onClose }: SkillModalProps) => {
                 </div>
               </div>
             )}
+
+            {/* Audio QR Installation */}
+            <AudioQRInstall
+              skillId={skill.skill_id || 'unknown'}
+              skillName={skill.name || 'Unknown Skill'}
+              skillSource={skill.source}
+              skillPackageName={skill.package_name}
+              skillDescription={skill.description}
+              skillTags={skill.tags}
+            />
 
             {/* Links */}
             <div className="flex gap-3 pt-4">

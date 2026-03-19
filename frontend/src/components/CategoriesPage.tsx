@@ -1,4 +1,3 @@
-import type { Skill } from '../types';
 import { getPredefinedCategories, getCategoryIcon } from '../utils/categories.tsx';
 
 interface CategoriesPageProps {

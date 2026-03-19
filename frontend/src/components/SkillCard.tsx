@@ -20,40 +20,40 @@ const SkillCard = ({
   return (
     <div
       onClick={onClick}
-      className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700 h-full flex flex-col cursor-pointer hover:scale-105"
+      className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700 flex flex-col cursor-pointer hover:scale-105 h-64"
     >
       {/* Header with icon */}
-      <div className="h-32 bg-gray-100 dark:bg-gray-700 p-4 flex items-center justify-center flex-shrink-0 border-b border-gray-200 dark:border-gray-600">
+      <div className="h-20 bg-gray-100 dark:bg-gray-700 p-2 flex items-center justify-center flex-shrink-0 border-b border-gray-200 dark:border-gray-600">
         {icon ? (
           <img
             src={icon}
             alt={name}
-            className="w-16 h-16 object-contain rounded"
+            className="w-10 h-10 object-contain rounded"
             onError={(e) => {
               e.currentTarget.style.display = 'none';
             }}
           />
         ) : (
-          <div className="w-16 h-16 bg-white dark:bg-gray-800 rounded flex items-center justify-center">
+          <div className="w-10 h-10 bg-white dark:bg-gray-800 rounded flex items-center justify-center">
             <span className="text-2xl">📦</span>
           </div>
         )}
       </div>
 
       {/* Content */}
-      <div className="p-4 flex flex-col flex-grow">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white truncate">
+      <div className="p-3 flex flex-col flex-grow">
+        <h3 className="text-sm font-semibold text-gray-900 dark:text-white truncate">
           {name}
         </h3>
 
         {description && (
-          <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 line-clamp-2">
+          <p className="text-xs text-gray-600 dark:text-gray-400 mt-1 line-clamp-2">
             {description}
           </p>
         )}
 
         {/* Metadata */}
-        <div className="mt-3 space-y-1 text-xs text-gray-500 dark:text-gray-500">
+        <div className="mt-2 space-y-0.5 text-xs text-gray-500 dark:text-gray-500">
           {author && <div>👤 {author}</div>}
           {version && <div>📌 v{version}</div>}
         </div>
