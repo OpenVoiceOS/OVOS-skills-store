@@ -1,4 +1,4 @@
-from os import listdir, getcwd
+from os import listdir, getcwd, makedirs
 from os.path import dirname, join
 import json
 
@@ -16,11 +16,17 @@ root_dir = dirname(dirname(__file__))
 raw_jsons_dir = join(root_dir, "raw_jsons")
 public_dir = join(root_dir, "public")
 
+# Create public directory if it doesn't exist
+makedirs(public_dir, exist_ok=True)
+
 # Read all JSON files from raw_jsons directory
 for skill in [f for f in listdir(raw_jsons_dir) if f.endswith(".json")]:
     skill_path = join(raw_jsons_dir, skill)
-    with open(skill_path) as f:
-        output["items"].append(json.load(f))
+    try:
+        with open(skill_path) as f:
+            output["items"].append(json.load(f))
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"Warning: Skipping {skill} - {e}")
 
 # Output to public directory
 output_file = join(public_dir, "skills.json")
