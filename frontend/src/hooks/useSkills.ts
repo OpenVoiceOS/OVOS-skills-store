@@ -26,7 +26,7 @@ export const useSkills = () => {
     const loadSkills = async () => {
       try {
         setLoading(true);
-        const response = await fetch('/public/skills.json');
+        const response = await fetch('./skills.json');
         if (!response.ok) {
           throw new Error(`Failed to load skills: ${response.statusText}`);
         }
