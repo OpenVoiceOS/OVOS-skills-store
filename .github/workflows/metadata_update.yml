@@ -1,10 +1,10 @@
-# This workflow will generate updated metadata when changes are merged into the main branch
+# This workflow will generate updated metadata when changes are merged into the master branch
 
 name: Update json feed in GH Pages
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   update_metadata:
@@ -12,21 +12,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: main
-          path: main
-      - uses: actions/checkout@v2
-        with:
-          ref: gh-pages
-          path: gh-pages
+          ref: master
+          path: master
       - name: generate-json
         run: |
-          python main/gen_skill_list.py
-      - name: copy updated json
+          cd master
+          python scripts/generate_store_data.py
+      - name: copy updated json to public
         run: |
-          cp main/skills.json gh-pages/skills.json
+          cd master
+          cp public/skills.json .
       - uses: EndBug/add-and-commit@v7
         with:
-          cwd: ./gh-pages
-          branch: gh-pages
+          cwd: ./master
+          branch: master
           add: skills.json
           message: "Automated Metadata Update"
