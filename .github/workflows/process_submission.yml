@@ -1,0 +1,154 @@
+name: Process Skill Submission
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  process:
+    # Only run if issue title starts with [submission]
+    if: startsWith(github.event.issue.title, '[submission]')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Extract JSON from issue
+        id: extract
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          python3 << 'EOF'
+          import os
+          import re
+          import json
+          import sys
+
+          body = os.environ.get('ISSUE_BODY', '')
+          issue_number = os.environ.get('ISSUE_NUMBER', '')
+
+          # Find JSON in code fence
+          pattern = r'```json\s*([\s\S]*?)\s*```'
+          match = re.search(pattern, body)
+
+          if not match:
+              print("::error::No JSON code fence found in issue body")
+              sys.exit(1)
+
+          json_str = match.group(1).strip()
+
+          try:
+              data = json.loads(json_str)
+          except json.JSONDecodeError as e:
+              print(f"::error::Invalid JSON: {e}")
+              sys.exit(1)
+
+          # Write to temp file for next step
+          with open('/tmp/submission.json', 'w') as f:
+              json.dump(data, f, indent=2)
+
+          # Set outputs
+          skill_id = data.get('skill_id', f'skill-{issue_number}')
+          skill_name = data.get('name', 'Unknown Skill')
+
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f"skill_id={skill_id}\n")
+              f.write(f"skill_name={skill_name}\n")
+              f.write(f"has_json=true\n")
+
+          print(f"Extracted skill: {skill_name} ({skill_id})")
+          EOF
+
+      - name: Validate and apply submission
+        id: apply
+        run: |
+          python scripts/apply_submission.py /tmp/submission.json
+
+      - name: Create branch and commit
+        if: steps.apply.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SKILL_ID: ${{ steps.extract.outputs.skill_id }}
+        run: |
+          BRANCH="submission-${{ github.event.issue.number }}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git checkout -b "$BRANCH"
+          git add raw_jsons/
+          git commit -m "feat: add skill $SKILL_ID from submission #${{ github.event.issue.number }}"
+          git push origin "$BRANCH"
+
+      - name: Create Pull Request
+        if: steps.apply.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SKILL_NAME: ${{ steps.extract.outputs.skill_name }}
+        run: |
+          BRANCH="submission-${{ github.event.issue.number }}"
+
+          gh pr create \
+            --title "feat: add skill $SKILL_NAME" \
+            --body "## Skill Submission
+
+          This PR was automatically generated from issue #${{ github.event.issue.number }}.
+
+          **Skill**: $SKILL_NAME
+          **Issue**: ${{ github.event.issue.html_url }}
+          **Submitted by**: @${{ github.event.issue.user.login }}
+
+          ---
+
+          Please review the skill JSON before merging.
+
+          Once merged, the skill will be available in the store after the metadata update workflow runs." \
+            --base master \
+            --head "$BRANCH" \
+            --label "skill-submission"
+
+      - name: Comment on issue (success)
+        if: steps.apply.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --body "## Submission Processed
+
+          Your skill submission has been processed and a pull request has been created.
+
+          **Next steps:**
+          1. A maintainer will review the PR
+          2. Once approved and merged, your skill will appear in the store
+
+          Thank you for contributing to the OVOS Skills Store!"
+
+      - name: Comment on issue (failure)
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --body "## Submission Processing Failed
+
+          There was an error processing your skill submission. Please check that:
+
+          1. Your JSON is valid and properly formatted
+          2. All required fields are present (skill_id, source, package_name, name, description, examples, tags)
+          3. The skill_id follows the format: \`skill-name.domain\`
+          4. The source is a valid GitHub URL
+
+          Please edit your issue to fix any problems, or open a new submission.
+
+          If you need help, please check the submission guide."

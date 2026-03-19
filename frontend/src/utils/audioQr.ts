@@ -77,7 +77,7 @@ export async function encodeSkilAsAudioQR(skill: any): Promise<Float32Array | nu
     const module = ggwaveModule;
     
     // Send only skill_id with PIP: prefix (matching gh-pages: "PIP:" + packageName)
-    const payload = `PIP: ${skill.skill_id}`;
+    const payload = `PIP: ${skill.package_name || skill.skill_id}`;
     // Encode using the instance - using DT protocol which has minimal sync tones
     const waveform = module.encode(
       instance,

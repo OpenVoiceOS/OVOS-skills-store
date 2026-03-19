@@ -1,0 +1,132 @@
+name: Skill Submission
+description: Submit a new skill to the OVOS Skills Store
+title: "[submission] "
+labels: ["skill-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Submit a Skill to OVOS Skills Store
+
+        Fill out this form to submit your skill. The submission will be automatically processed.
+
+        **Tip**: Use the [Submit Skill page](https://openvoiceos.github.io/OVOS-skills-store) for a guided experience.
+
+  - type: input
+    id: skill_name
+    attributes:
+      label: Skill Name
+      description: Human-readable name for your skill
+      placeholder: "e.g., Date and Time"
+    validations:
+      required: true
+
+  - type: input
+    id: skill_id
+    attributes:
+      label: Skill ID
+      description: Unique identifier (lowercase, hyphenated, with domain suffix)
+      placeholder: "e.g., skill-date-time.openvoiceos"
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Source Repository
+      description: GitHub repository URL
+      placeholder: "https://github.com/OpenVoiceOS/skill-ovos-date-time"
+    validations:
+      required: true
+
+  - type: input
+    id: package_name
+    attributes:
+      label: Package Name
+      description: pip package name
+      placeholder: "e.g., ovos-skill-date-time"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Brief description of what the skill does (10-500 characters)
+      placeholder: "Get the local time or time for major cities around the world..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Voice Command Examples
+      description: At least 3 example voice commands (one per line)
+      placeholder: |
+        what time is it
+        tell me the date
+        what day is it today
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tags
+    attributes:
+      label: Primary Category
+      description: Select the main category for your skill
+      options:
+        - music
+        - entertainment
+        - query
+        - common play
+        - system
+        - audio
+        - daily
+        - information
+        - productivity
+        - smart-home
+    validations:
+      required: true
+
+  - type: input
+    id: additional_tags
+    attributes:
+      label: Additional Tags
+      description: Comma-separated additional tags
+      placeholder: "e.g., time, date, clock, world-time"
+
+  - type: input
+    id: icon
+    attributes:
+      label: Icon URL (optional)
+      description: URL to the skill icon
+      placeholder: "https://example.com/icon.svg"
+
+  - type: dropdown
+    id: license
+    attributes:
+      label: License
+      description: SPDX license identifier
+      options:
+        - apache-2.0
+        - mit
+        - gpl-3.0
+        - bsd-3-clause
+        - mpl-2.0
+        - unlicense
+        - other
+
+  - type: textarea
+    id: json_payload
+    attributes:
+      label: JSON Payload
+      description: |
+        If using the web form, this is auto-generated. Otherwise, paste your complete skill JSON in a code fence.
+      placeholder: |
+        ```json
+        {
+          "skill_id": "...",
+          "source": "...",
+          ...
+        }
+        ```

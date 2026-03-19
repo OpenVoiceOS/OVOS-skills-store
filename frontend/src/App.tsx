@@ -8,6 +8,7 @@ import FeaturedSection from './components/FeaturedSection';
 import SkillModal from './components/SkillModal';
 import CategoriesPage from './components/CategoriesPage';
 import CategoryDetailPage from './components/CategoryDetailPage';
+import SubmitPage from './components/SubmitPage';
 import {
   filterSkills,
   filterSkillsByCategory,
@@ -17,7 +18,7 @@ import {
 
 function App() {
   const { skills, loading, error } = useSkills();
-  const [currentPage, setCurrentPage] = useState<'home' | 'categories' | 'category-detail'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'categories' | 'category-detail' | 'submit'>('home');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
@@ -158,6 +159,11 @@ function App() {
             onSkillClick={handleSkillClick}
             onBack={handleBackToCategories}
           />
+        )}
+
+        {/* Submit Skill Page */}
+        {currentPage === 'submit' && (
+          <SubmitPage />
         )}
       </main>
 
