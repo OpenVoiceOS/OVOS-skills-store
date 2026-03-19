@@ -78,11 +78,11 @@ export async function encodeSkilAsAudioQR(skill: any): Promise<Float32Array | nu
     
     // Send only skill_id with PIP: prefix (matching gh-pages: "PIP:" + packageName)
     const payload = `PIP: ${skill.skill_id}`;
-    // Encode using the instance (matching gh-pages: ggwave.encode(instance, payload, protocolId, volume))
+    // Encode using the instance - using DT protocol which has minimal sync tones
     const waveform = module.encode(
-      instance, 
-      payload, 
-      module.ProtocolId.GGWAVE_PROTOCOL_AUDIBLE_FAST, 
+      instance,
+      payload,
+      module.ProtocolId.GGWAVE_PROTOCOL_DT_FAST,  // Changed from AUDIBLE_FAST to DT_FAST (less intrusive)
       10
     );
     
@@ -104,8 +104,8 @@ export async function decodeAudioQR(audio: ArrayBuffer): Promise<AudioQRData | n
   try {
     const instance = await initGGWave();
     const module = ggwaveModule;
-    
-    const decoded = module.decode(instance, new Float32Array(audio), module.ProtocolId.GGWAVE_PROTOCOL_AUDIBLE_FAST);
+
+    const decoded = module.decode(instance, new Float32Array(audio), module.ProtocolId.GGWAVE_PROTOCOL_DT_FAST);
     return decoded ? JSON.parse(decoded) : null;
   } catch (error) {
     console.error('Decoding error:', error);
