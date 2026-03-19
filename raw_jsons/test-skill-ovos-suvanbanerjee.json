@@ -1,0 +1,18 @@
+{
+  "skill_id": "test-skill-ovos.suvanbanerjee",
+  "source": "https://github.com/suvanbanerjee/test-skill-ovos",
+  "package_name": "ovos-skill-test-skill-ovos",
+  "name": "Test Skill",
+  "description": "Test Skill",
+  "examples": [
+    "Hello World!"
+  ],
+  "tags": [
+    "music",
+    "custom"
+  ],
+  "icon": "https://example.com",
+  "images": [],
+  "license": "mit",
+  "extra_plugins": {}
+}
