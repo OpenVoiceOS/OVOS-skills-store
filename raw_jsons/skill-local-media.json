@@ -18,7 +18,7 @@
     "play {album}",
     "play {track} by {artist}"
   ],
-  "icon": "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/folder-open.svg",
+  "icon": "FaFolderOpen",
   "name": "Local Media",
   "description": "GUI File Browser For Open Voice OS. For voice search, this skill builds a local index of scanned user media.",
   "category": "Daily",

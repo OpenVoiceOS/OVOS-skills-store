@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import InstallModal from './InstallModal';
 import type { Skill } from '../types';
+import { getIconByName } from '../utils/icons';
+import { RiVerifiedBadgeFill } from 'react-icons/ri';
 
 interface FeaturedSkillCardProps extends Skill {
   onClick?: () => void;
@@ -24,26 +26,20 @@ const FeaturedSkillCard = ({
   const isOfficial = skill_id?.endsWith('.openvoiceos') ?? false;
   const [showInstallModal, setShowInstallModal] = useState(false);
 
+  // Get the icon component from react-icons
+  const IconComponent = getIconByName(icon);
+
   return (
     <>
       <div
         onClick={onClick}
-        className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700 flex flex-col cursor-pointer hover:scale-105 min-h-[380px] max-h-[420px] mx-auto w-full"
+        className="bg-white dark:bg-stone-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-200 dark:border-stone-700 flex flex-col cursor-pointer hover:scale-105 min-h-[380px] max-h-[420px] mx-auto w-full"
       >
         {/* Header with larger icon */}
-        <div className="h-40 bg-gray-100 dark:bg-gray-700 p-4 flex items-center justify-center flex-shrink-0 border-b border-gray-200 dark:border-gray-600">
-          {icon ? (
-            <img
-              src={icon}
-              alt={name}
-              className="w-24 h-24 object-contain rounded"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-              }}
-            />
-          ) : (
-            <div className="w-24 h-24 bg-gray-200 dark:bg-gray-700 rounded" />
-          )}
+        <div className="h-40 bg-gray-100 dark:bg-stone-700 p-4 flex items-center justify-center flex-shrink-0 border-b border-gray-200 dark:border-stone-600">
+          <div className="text-gray-600 dark:text-stone-300">
+            <IconComponent className="w-24 h-24" />
+          </div>
         </div>
 
         {/* Content */}
@@ -53,41 +49,35 @@ const FeaturedSkillCard = ({
               {name}
             </h3>
             {isOfficial && (
-              <div className="relative group flex-shrink-0 mt-0.5">
-                <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-                  <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 top-6 px-2 py-1 bg-green-500 text-white text-xs rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50 shadow-md">
-                  Official plugin
-                </div>
-              </div>
+              <RiVerifiedBadgeFill
+                className="w-5 h-5 text-gray-900 dark:text-gray-100 flex-shrink-0 mt-0.5"
+                title="Official Open Voice OS Plugin"
+              />
             )}
           </div>
 
           {description && (
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 line-clamp-2">
+            <p className="text-sm text-gray-600 dark:text-stone-400 mt-2 line-clamp-2">
               {description}
             </p>
           )}
 
           {/* Metadata */}
-          <div className="mt-2 space-y-1 text-sm text-gray-500 dark:text-gray-500 flex-shrink-0">
+          <div className="mt-2 space-y-1 text-sm text-gray-500 dark:text-stone-500 flex-shrink-0">
             {author && <div className="truncate">{author}</div>}
             {version && <div className="truncate">v{version}</div>}
           </div>
         </div>
 
         {/* Action button - always at bottom */}
-        <div className="p-5 pt-0 flex-shrink-0 bg-white dark:bg-gray-800">
+        <div className="p-5 pt-0 flex-shrink-0 bg-white dark:bg-stone-800">
           {url ? (
             <a
               href={url}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="w-full inline-block bg-gray-900 hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded transition-colors duration-200 text-center"
+              className="w-full inline-block bg-gray-900 hover:bg-gray-800 dark:bg-stone-700 dark:hover:bg-stone-600 text-white font-semibold py-2 px-4 rounded transition-colors duration-200 text-center"
             >
               View Details
             </a>

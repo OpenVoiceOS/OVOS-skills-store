@@ -61,6 +61,13 @@ export function validateTags(value: string[]): string | undefined {
   return undefined;
 }
 
+// Validate icon (must be a non-empty icon name)
+export function validateIcon(value: string | undefined): string | undefined {
+  if (!value) return 'Icon is required';
+  if (value.startsWith('http')) return 'Please select an icon from the icon picker';
+  return undefined;
+}
+
 // Validate optional URL field
 export function validateUrl(value: string | undefined): string | undefined {
   if (!value) return undefined;
@@ -83,7 +90,7 @@ export function validateSubmission(data: Partial<SkillSubmission>): SubmissionEr
   errors.description = validateDescription(data.description || '');
   errors.examples = validateExamples(data.examples || []);
   errors.tags = validateTags(data.tags || []);
-  errors.icon = validateUrl(data.icon);
+  errors.icon = validateIcon(data.icon);
 
   // Remove undefined errors
   Object.keys(errors).forEach(key => {

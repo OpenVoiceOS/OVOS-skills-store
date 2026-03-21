@@ -122,23 +122,23 @@ const InstallModal: React.FC<InstallModalProps> = ({
       {/* Modal */}
       <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
         <div
-          className="bg-white dark:bg-gray-900 rounded-lg shadow-xl w-full max-w-md my-auto border border-gray-200 dark:border-gray-700 flex flex-col max-h-[85vh] sm:max-h-[90vh]"
+          className="bg-white dark:bg-stone-900 rounded-lg shadow-xl w-full max-w-md my-auto border border-gray-200 dark:border-stone-700 flex flex-col max-h-[85vh] sm:max-h-[90vh]"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="border-b border-gray-200 dark:border-gray-700 p-4 sm:p-5 flex-shrink-0">
+          <div className="border-b border-gray-200 dark:border-stone-700 p-4 sm:p-5 flex-shrink-0">
             <div className="flex items-start justify-between gap-3">
               <div>
                 <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">
                   Install Skill
                 </h2>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-1 truncate">
+                <p className="text-sm text-gray-600 dark:text-stone-400 mt-1 truncate">
                   {skillName}
                 </p>
               </div>
               <button
                 onClick={onClose}
-                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded transition-colors flex-shrink-0"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-stone-300 p-1 rounded transition-colors flex-shrink-0"
                 aria-label="Close"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -151,7 +151,7 @@ const InstallModal: React.FC<InstallModalProps> = ({
           {/* Content - Scrollable */}
           <div className="p-4 sm:p-5 space-y-4 overflow-y-auto flex-1" style={{ WebkitOverflowScrolling: 'touch' }}>
             {/* Status Display */}
-            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 sm:p-8 border border-gray-200 dark:border-gray-700">
+            <div className="bg-gray-50 dark:bg-stone-800 rounded-lg p-6 sm:p-8 border border-gray-200 dark:border-stone-700">
               <div className="flex flex-col items-center justify-center">
                 {/* Status Icon */}
                 <div className="mb-3 sm:mb-4">
@@ -188,8 +188,8 @@ const InstallModal: React.FC<InstallModalProps> = ({
                     </div>
                   )}
                   {status === 'idle' && (
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center">
-                      <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-400 dark:bg-gray-600 rounded-full" />
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gray-200 dark:bg-stone-700 rounded-full flex items-center justify-center">
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-400 dark:bg-stone-600 rounded-full" />
                     </div>
                   )}
                 </div>
@@ -197,33 +197,33 @@ const InstallModal: React.FC<InstallModalProps> = ({
                 {/* Status Text */}
                 <div className="text-center">
                   {status === 'idle' && (
-                    <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">Ready to transmit</p>
+                    <p className="text-gray-600 dark:text-stone-400 text-sm font-medium">Audio QR Ready</p>
                   )}
                   {status === 'encoding' && (
-                    <p className="text-red-600 dark:text-red-400 text-sm sm:text-base font-semibold">Preparing transmission...</p>
+                    <p className="text-red-600 dark:text-red-400 text-sm sm:text-base font-semibold">Preparing Audio QR...</p>
                   )}
                   {status === 'ready' && (
-                    <p className="text-green-600 dark:text-green-400 text-sm sm:text-base font-semibold">Ready to play</p>
+                    <p className="text-green-600 dark:text-green-400 text-sm sm:text-base font-semibold">Audio QR Ready</p>
                   )}
                   {status === 'playing' && (
-                    <p className="text-red-600 dark:text-red-400 text-sm sm:text-base font-semibold">Transmitting audio</p>
+                    <p className="text-red-600 dark:text-red-400 text-sm sm:text-base font-semibold">Playing Audio QR</p>
                   )}
                   {status === 'complete' && (
-                    <p className="text-green-600 dark:text-green-400 text-sm sm:text-base font-semibold">Transmission complete</p>
+                    <p className="text-green-600 dark:text-green-400 text-sm sm:text-base font-semibold">Audio QR Sent</p>
                   )}
                   {status === 'error' && (
-                    <p className="text-red-600 dark:text-red-400 text-sm sm:text-base font-semibold">Error occurred</p>
+                    <p className="text-red-600 dark:text-red-400 text-sm sm:text-base font-semibold">Audio QR Error</p>
                   )}
                 </div>
               </div>
             </div>
 
             {/* Instructions */}
-            <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-3 sm:p-4">
-              <ol className="space-y-1.5 sm:space-y-2 text-sm text-gray-700 dark:text-gray-300 list-decimal list-inside">
+            <div className="bg-gray-50 dark:bg-stone-800 border border-gray-200 dark:border-stone-700 rounded-lg p-3 sm:p-4">
+              <ol className="space-y-1.5 sm:space-y-2 text-sm text-gray-700 dark:text-stone-300 list-decimal list-inside">
                 <li>Position your OVOS device near the speaker</li>
-                <li>Press the play button to start transmission</li>
-                <li>Keep device close until transmission completes</li>
+                <li>Press the play button to send the Audio QR</li>
+                <li>Keep device close until Audio QR completes</li>
               </ol>
             </div>
 
@@ -238,7 +238,7 @@ const InstallModal: React.FC<InstallModalProps> = ({
           </div>
 
           {/* Footer */}
-          <div className="border-t border-gray-200 dark:border-gray-700 p-3 sm:p-4 bg-gray-50 dark:bg-gray-800/50 flex-shrink-0">
+          <div className="border-t border-gray-200 dark:border-stone-700 p-3 sm:p-4 bg-gray-50 dark:bg-stone-800/50 flex-shrink-0">
             <div className="flex gap-2 sm:gap-3">
               <button
                 onClick={handlePlay}
@@ -249,7 +249,7 @@ const InstallModal: React.FC<InstallModalProps> = ({
               </button>
               <button
                 onClick={onClose}
-                className="px-4 sm:px-6 bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-white font-medium py-2 sm:py-2.5 rounded transition-colors border border-gray-300 dark:border-gray-600 text-sm sm:text-base"
+                className="px-4 sm:px-6 bg-white dark:bg-stone-900 hover:bg-gray-100 dark:hover:bg-stone-800 text-gray-900 dark:text-white font-medium py-2 sm:py-2.5 rounded transition-colors border border-gray-300 dark:border-stone-600 text-sm sm:text-base"
               >
                 Close
               </button>

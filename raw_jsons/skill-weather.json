@@ -2,11 +2,14 @@
   "skill_id": "ovos-skill-weather.openvoiceos",
   "source": "https://github.com/OpenVoiceOS/skill-ovos-weather",
   "package_name": "ovos-skill-weather",
-  "icon": "https://rawgithub.com/FortAwesome/Font-Awesome/master/svgs/solid/sun.svg",
+  "icon": "FaSun",
   "name": "Weather",
   "description": "Get weather conditions, forecasts, expected precipitation and more! You can also ask for other cities around the world. Current conditions and weather forecasts come from OpenMeteo",
   "category": "Daily",
-  "examples": ["what is the weather like?", "is it raining?"],
+  "examples": [
+    "what is the weather like?",
+    "is it raining?"
+  ],
   "tags": [
     "weather",
     "forecast",

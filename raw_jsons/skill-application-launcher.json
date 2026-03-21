@@ -10,7 +10,7 @@
     "media": [],
     "gui": []
   },
-  "icon": "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/spinner.svg",
+  "icon": "FaSpinner",
   "name": "Application Launcher",
   "description": "Launch applications on the Linux desktop. The standard directories will be scanned for .desktop files, application names and execution commands will be parsed from there.",
   "examples": [

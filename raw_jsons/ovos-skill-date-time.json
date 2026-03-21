@@ -3,7 +3,7 @@
   "source": "https://github.com/OpenVoiceOS/skill-ovos-date-time",
   "package_name": "ovos-skill-date-time",
   "extra_plugins": {},
-  "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/calendar.svg",
+  "icon": "FaCalendar",
   "images": [],
   "name": "Date and Time",
   "description": "Get the local time or time for major cities around the world. Times are given in 12-hour (2:30 pm) or 24-hour format (14:30) based on the Time Format setting.",

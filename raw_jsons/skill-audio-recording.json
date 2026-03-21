@@ -10,7 +10,7 @@
     "media": [],
     "gui": []
   },
-  "icon": "https://storage.needpix.com/rsynced_images/microphone-98394_1280.png",
+  "icon": "FaMicrophone",
   "images": [],
   "name": "Audio Recording Skill",
   "description": "Record audio to file, requires ovos-dinkum-listener",

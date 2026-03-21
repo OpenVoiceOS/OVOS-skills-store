@@ -10,8 +10,10 @@
     "media": [],
     "gui": []
   },
-  "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/brands/wikipedia-w.svg",
-  "images": ["https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-wikipedia/dev/gui.gif"],
+  "icon": "FaWikipediaW",
+  "images": [
+    "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-wikipedia/dev/gui.gif"
+  ],
   "name": "Wikipedia",
   "description": "Query Wikipedia for answers to all your questions. Get just a summary, or ask for more to get in-depth information.",
   "examples": [

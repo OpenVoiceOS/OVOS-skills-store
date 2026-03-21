@@ -6,11 +6,15 @@
     "core": [],
     "PHAL": [],
     "listener": [],
-    "audio": ["ovos-ocp-news-plugin"],
-    "media": ["ovos-ocp-news-plugin"],
+    "audio": [
+      "ovos-ocp-news-plugin"
+    ],
+    "media": [
+      "ovos-ocp-news-plugin"
+    ],
     "gui": []
   },
-  "icon": "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-news/dev/res/icon/news.png",
+  "icon": "FaNewspaper",
   "images": [
     "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-news/dev/gui.png",
     "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-news/dev/gui2.png",

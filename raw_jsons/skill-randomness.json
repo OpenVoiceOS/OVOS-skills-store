@@ -10,7 +10,7 @@
     "media": [],
     "gui": []
   },
-  "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c4/2-Dice-Icon.svg",
+  "icon": "FaQuestion",
   "images": [],
   "name": "Randomness",
   "description": "A skill for all kinds of chance - make a choice, roll a die, flip a coin, pick between two choices, etc.",

@@ -6,12 +6,18 @@
     "core": [],
     "PHAL": [],
     "listener": [],
-    "audio": ["ovos-ocp-youtube-plugin"],
-    "media": ["ovos-ocp-youtube-plugin"],
+    "audio": [
+      "ovos-ocp-youtube-plugin"
+    ],
+    "media": [
+      "ovos-ocp-youtube-plugin"
+    ],
     "gui": []
   },
-  "icon": "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube-music/dev/res/ytmus.png",
-  "images": ["https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube-music/dev/gui.gif"],
+  "icon": "SiYoutube",
+  "images": [
+    "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube-music/dev/gui.gif"
+  ],
   "name": "Youtube Music Skill",
   "description": "Youtube Music OCP Skill - search Youtube Music by voice!",
   "examples": [
