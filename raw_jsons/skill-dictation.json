@@ -10,7 +10,7 @@
     "media": [],
     "gui": []
   },
-  "icon": "https://cdn1.iconfinder.com/data/icons/study-and-education-line-set-1/262/20-512.png",
+  "icon": "FaMicrophone",
   "images": [],
   "name": "Dictation skill",
   "description": "Continuously transcribes user speech to text file while enabled, made for ovos-dinkum-listener.",

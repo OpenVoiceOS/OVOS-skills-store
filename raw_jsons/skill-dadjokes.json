@@ -10,7 +10,7 @@
     "media": [],
     "gui": []
   },
-  "icon": "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-icanhazdadjokes/dev/res/icon/dadjokes.png",
+  "icon": "FaSmile",
   "name": "Jokes",
   "description": "Let OVOS brighten your day with a little humor from icanhazdadjoke.com. Chuck Norris jokes powered by pyjokes.",
   "examples": [

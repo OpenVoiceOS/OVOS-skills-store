@@ -10,8 +10,10 @@
     "media": [],
     "gui": []
   },
-  "icon": "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-somafm/dev/ui/somafm.png",
-  "images": ["https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-somafm/dev/gui.png"],
+  "icon": "MdRadio",
+  "images": [
+    "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-somafm/dev/gui.png"
+  ],
   "name": "SomaFM",
   "description": "OCP skill for SomaFM.",
   "examples": [

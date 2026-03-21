@@ -10,7 +10,7 @@
     "media": [],
     "gui": []
   },
-  "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/utensils.svg",
+  "icon": "FaUtensils",
   "images": [],
   "name": "Meal Plan",
   "description": "Suggests a meal for you to make, based on a short default list, but you can manage your own meals!",
@@ -21,5 +21,9 @@
     "I'm hungry",
     "What's for dinner?"
   ],
-  "tags": ["Food", "meal planning", "Productivity"]
+  "tags": [
+    "Food",
+    "meal planning",
+    "Productivity"
+  ]
 }

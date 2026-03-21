@@ -10,7 +10,7 @@
     "media": [],
     "gui": []
   },
-  "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/bed.svg",
+  "icon": "FaBed",
   "images": [],
   "name": "Naptime",
   "description": "Put the assistant to sleep when you don't want to be disturbed.",

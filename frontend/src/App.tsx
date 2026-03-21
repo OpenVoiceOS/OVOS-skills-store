@@ -66,7 +66,7 @@ function App() {
   }, [currentPage, selectedCategory]);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col">
+    <div className="min-h-screen bg-white dark:bg-stone-900 flex flex-col">
       {/* Header with navigation */}
       <Header
         currentPage={currentPage}
@@ -81,7 +81,7 @@ function App() {
         {loading && (
           <div className="flex items-center justify-center py-12">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-600"></div>
-            <span className="ml-3 text-gray-600 dark:text-gray-400">
+            <span className="ml-3 text-stone-600 dark:text-stone-400">
               Loading skills...
             </span>
           </div>
@@ -109,12 +109,12 @@ function App() {
             {filteredSkills.length > 0 ? (
               <div>
                 <div className="mb-6">
-                  <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+                  <h2 className="text-xl md:text-2xl font-bold text-stone-900 dark:text-white">
                     {searchQuery ? 'Search Results' : 'All Skills'} (
                     {filteredSkills.length})
                   </h2>
                   {searchQuery && (
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+                    <p className="text-stone-600 dark:text-stone-400 text-sm mt-1">
                       Found {filteredSkills.length} skill
                       {filteredSkills.length !== 1 ? 's' : ''} matching "
                       {searchQuery}"
@@ -133,7 +133,7 @@ function App() {
               </div>
             ) : (
               <div className="text-center py-12">
-                <p className="text-gray-500 dark:text-gray-400 text-lg">
+                <p className="text-stone-500 dark:text-stone-400 text-lg">
                   {searchQuery
                     ? `No skills found matching "${searchQuery}"`
                     : 'No skills available'}

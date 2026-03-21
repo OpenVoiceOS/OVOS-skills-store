@@ -10,7 +10,7 @@
     "media": [],
     "gui": []
   },
-  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/2048px-ChatGPT_logo.svg.png",
+  "icon": "SiOpenai",
   "images": [],
   "name": "ChatGPT Fallback Skill",
   "description": "When in doubt, ask ChatGPT, powered by OpenAI Solver. Capabilities include remembering what the user said earlier in the conversation and declining inappropriate requests.",

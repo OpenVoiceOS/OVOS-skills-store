@@ -4,13 +4,15 @@
   "package_name": "ovos-skill-ovos-wallpapers",
   "extra_plugins": {
     "core": [],
-    "PHAL": ["ovos-PHAL-plugin-wallpaper-manager"],
+    "PHAL": [
+      "ovos-PHAL-plugin-wallpaper-manager"
+    ],
     "listener": [],
     "audio": [],
     "media": [],
     "gui": []
   },
-  "icon": "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-wallpapers/dev/icon.png",
+  "icon": "MdWallpaper",
   "images": [
     "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-wallpapers/dev/gui.gif",
     "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-wallpapers/dev/gui.png",
