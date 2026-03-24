@@ -359,7 +359,7 @@ const SubmitPage = () => {
                 type="button"
                 onClick={addCustomTag}
                 disabled={!customTag.trim()}
-                className="px-4 py-2 bg-red-600 hover:bg-red-700 disabled:bg-gray-300 dark:disabled:bg-gray-600 text-white disabled:text-gray-500 rounded-lg font-medium transition-colors"
+                className="px-4 py-2 bg-red-600 hover:bg-red-700 disabled:bg-stone-300 dark:disabled:bg-stone-600 text-white disabled:text-stone-500 rounded-lg font-medium transition-colors"
               >
                 Add
               </button>
@@ -456,7 +456,7 @@ const SubmitPage = () => {
               className={`px-6 py-2.5 rounded-lg font-medium transition-colors ${
                 canSubmit
                   ? 'bg-red-600 hover:bg-red-700 text-white'
-                  : 'bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-stone-400 cursor-not-allowed'
+                  : 'bg-stone-300 dark:bg-stone-600 text-stone-500 dark:text-stone-400 cursor-not-allowed opacity-60'
               }`}
             >
               Submit via GitHub

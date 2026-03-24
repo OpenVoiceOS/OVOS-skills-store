@@ -34,6 +34,7 @@ const Header = ({
                     value={searchValue}
                     onChange={e => onSearchChange(e.target.value)}
                     placeholder="Search skills..."
+                    aria-label="Search skills"
                     className="w-full px-4 py-2 pl-10 rounded border border-gray-200 dark:border-stone-600 bg-white dark:bg-stone-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm md:text-base"
                   />
                   <svg

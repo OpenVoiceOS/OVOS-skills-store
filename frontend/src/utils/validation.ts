@@ -1,4 +1,5 @@
 import type { SkillSubmission, SubmissionErrors } from '../types';
+import { AVAILABLE_ICONS } from './icons';
 
 // Validate skill_id format: lowercase, hyphens, with domain suffix
 export function validateSkillId(value: string): string | undefined {
@@ -61,10 +62,11 @@ export function validateTags(value: string[]): string | undefined {
   return undefined;
 }
 
-// Validate icon (must be a non-empty icon name)
+// Validate icon (must be a valid icon from the registry)
 export function validateIcon(value: string | undefined): string | undefined {
   if (!value) return 'Icon is required';
-  if (value.startsWith('http')) return 'Please select an icon from the icon picker';
+  const iconExists = AVAILABLE_ICONS.some(icon => icon.name === value);
+  if (!iconExists) return 'Please select a valid icon';
   return undefined;
 }
 

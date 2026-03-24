@@ -67,6 +67,7 @@ const SkillInfoModal = ({ skill, isOpen, onClose, onInstall }: SkillInfoModalPro
                       <RiVerifiedBadgeFill
                         className="w-5 h-5 sm:w-6 sm:h-6 text-gray-900 dark:text-gray-100 flex-shrink-0 mt-1"
                         title="Official Open Voice OS Plugin"
+                        aria-label="Official Open Voice OS Plugin"
                       />
                     )}
                   </div>

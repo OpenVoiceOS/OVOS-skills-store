@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { searchIcons, getPopularIcons } from '../utils/icons';
+import { searchIcons, getPopularIcons, getIconByName } from '../utils/icons';
 
 interface IconSelectorProps {
   selectedIcon?: string;
@@ -63,12 +63,8 @@ const IconSelector = ({ selectedIcon, onSelect, onBlur }: IconSelectorProps) => 
         <div className="flex items-center gap-2 p-3 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800">
           <div className="text-red-600 dark:text-red-400">
             {(() => {
-              const icon = displayedIcons.find(i => i.name === selectedIcon);
-              if (icon) {
-                const IconComponent = icon.component;
-                return <IconComponent className="w-6 h-6" />;
-              }
-              return null;
+              const IconComponent = getIconByName(selectedIcon);
+              return <IconComponent className="w-6 h-6" />;
             })()}
           </div>
           <span className="text-sm font-medium text-red-700 dark:text-red-300">
@@ -99,24 +95,18 @@ const IconSelector = ({ selectedIcon, onSelect, onBlur }: IconSelectorProps) => 
                   key={icon.name}
                   type="button"
                   onClick={() => handleIconClick(icon.name)}
-                  className={`group relative p-3 rounded-lg transition-all ${
+                  className={`relative p-3 rounded-lg transition-all flex items-center justify-center ${
                     isSelected
                       ? 'bg-red-600 text-white scale-110'
-                      : 'bg-white dark:bg-stone-700 text-stone-600 dark:text-stone-400 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-600 dark:hover:text-red-400'
+                      : 'bg-white dark:bg-stone-700 text-stone-600 dark:text-stone-400'
                   } border ${
                     isSelected
                       ? 'border-red-600'
-                      : 'border-stone-200 dark:border-stone-700 hover:border-red-400'
+                      : 'border-stone-200 dark:border-stone-700'
                   }`}
                   title={icon.name}
                 >
                   <IconComponent className="w-6 h-6" />
-
-                  {/* Tooltip on hover */}
-                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-stone-900 dark:bg-stone-700 text-white text-xs rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50 shadow-lg">
-                    {icon.name}
-                    <div className="text-stone-400 text-xs">{icon.library}</div>
-                  </div>
                 </button>
               );
             })}

@@ -197,7 +197,7 @@ const InstallModal: React.FC<InstallModalProps> = ({
                 {/* Status Text */}
                 <div className="text-center">
                   {status === 'idle' && (
-                    <p className="text-gray-600 dark:text-stone-400 text-sm font-medium">Audio QR Ready</p>
+                    <p className="text-gray-600 dark:text-stone-400 text-sm font-medium">Preparing...</p>
                   )}
                   {status === 'encoding' && (
                     <p className="text-red-600 dark:text-red-400 text-sm sm:text-base font-semibold">Preparing Audio QR...</p>

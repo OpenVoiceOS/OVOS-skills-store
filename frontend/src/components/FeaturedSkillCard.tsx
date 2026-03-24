@@ -52,6 +52,7 @@ const FeaturedSkillCard = ({
               <RiVerifiedBadgeFill
                 className="w-5 h-5 text-gray-900 dark:text-gray-100 flex-shrink-0 mt-0.5"
                 title="Official Open Voice OS Plugin"
+                aria-label="Official Open Voice OS Plugin"
               />
             )}
           </div>

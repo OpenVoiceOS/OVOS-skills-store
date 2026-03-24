@@ -344,7 +344,6 @@
         "nap",
         "naptime",
         "sleep",
-        "do-not-disturb",
         "do-not-disturb"
       ]
     },
@@ -717,7 +716,7 @@
         "media": [],
         "gui": []
       },
-      "icon": "FaHome",
+      "icon": "SiHomeassistant",
       "images": [
         "https://raw.githubusercontent.com/OpenVoiceOS/ovos-PHAL-plugin-homeassistant/dev/demo/demo.gif"
       ],
@@ -1175,13 +1174,6 @@
         "What would Bender say?"
       ],
       "tags": []
-    },
-    {
-      "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-      "extends": [
-        "config:recommended"
-      ],
-      "icon": "FaQuestion"
     }
   ]
 }

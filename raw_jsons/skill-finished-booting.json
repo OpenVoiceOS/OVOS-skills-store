@@ -10,7 +10,7 @@
     "media": [],
     "gui": []
   },
-  "icon": "FaSpinner",
+  "icon": "FaCheck",
   "images": [],
   "name": "Finished Booting",
   "description": "Skill to speak when OVOS is ready",

@@ -38,11 +38,21 @@ const SkillCard = ({
   // Get the icon component from react-icons
   const IconComponent = getIconByName(icon);
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if ((e.key === 'Enter' || e.key === ' ') && onClick) {
+      e.preventDefault();
+      onClick();
+    }
+  };
+
   return (
     <>
       <div
         onClick={onClick}
-        className="bg-white dark:bg-stone-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-200 dark:border-stone-700 flex flex-col cursor-pointer hover:scale-105 h-64"
+        onKeyDown={handleKeyDown}
+        role={onClick ? "button" : undefined}
+        tabIndex={onClick ? 0 : undefined}
+        className="bg-white dark:bg-stone-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-200 dark:border-stone-700 flex flex-col cursor-pointer hover:scale-105 h-64 focus:outline-none focus:ring-2 focus:ring-red-500"
       >
         {/* Header with icon */}
         <div className="h-20 bg-gray-100 dark:bg-stone-700 p-2 flex items-center justify-center flex-shrink-0 border-b border-gray-200 dark:border-stone-600">

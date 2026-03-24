@@ -7,7 +7,7 @@ const Footer = () => {
           <div>
             <div className="mb-4">
               <h3 className="text-lg font-bold text-gray-900 dark:text-white">
-                OVOS Skills Store
+                Plugin Marketplace
               </h3>
             </div>
             <p className="text-sm text-gray-600 dark:text-stone-400">
@@ -66,7 +66,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-200 dark:border-stone-700 pt-8">
           <p className="text-center text-sm text-gray-600 dark:text-stone-400">
-            © 2026 OpenVoiceOS Skills Store. All rights reserved.
+            © 2026 Plugin Marketplace. All rights reserved.
           </p>
         </div>
       </div>

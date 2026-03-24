@@ -122,7 +122,10 @@ export const AVAILABLE_ICONS: IconOption[] = [
 
   // System & Control
   { name: 'FaPowerOff', component: FaSolid.FaPowerOff, library: 'FontAwesome', keywords: ['power', 'shutdown', 'off', 'control'] },
+  { name: 'FaCheck', component: FaSolid.FaCheck, library: 'FontAwesome', keywords: ['check', 'complete', 'done', 'finish', 'success'] },
+  { name: 'FaCheckCircle', component: FaSolid.FaCheckCircle, library: 'FontAwesome', keywords: ['check', 'complete', 'done', 'finish', 'success'] },
   { name: 'FaSpinner', component: FaSolid.FaSpinner, library: 'FontAwesome', keywords: ['spinner', 'loading', 'app', 'launcher', 'wait'] },
+  { name: 'FaRocket', component: FaSolid.FaRocket, library: 'FontAwesome', keywords: ['rocket', 'launch', 'app', 'start', 'boost'] },
   { name: 'FaDesktop', component: FaSolid.FaDesktop, library: 'FontAwesome', keywords: ['desktop', 'computer', 'screen', 'display'] },
   { name: 'FaFolder', component: FaSolid.FaFolder, library: 'FontAwesome', keywords: ['folder', 'directory', 'file', 'files'] },
   { name: 'FaFolderOpen', component: FaSolid.FaFolderOpen, library: 'FontAwesome', keywords: ['folder', 'open', 'directory', 'files'] },
