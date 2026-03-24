@@ -4,20 +4,26 @@
   "package_name": "neon-homeassistant-skill",
   "extra_plugins": {
     "core": [],
-    "PHAL": ["ovos-PHAL-plugin-homeassistant"],
+    "PHAL": [
+      "ovos-PHAL-plugin-homeassistant"
+    ],
     "listener": [],
     "audio": [],
     "media": [],
     "gui": []
   },
-  "icon": "https://static-00.iconduck.com/assets.00/home-assistant-icon-2048x2048-ar79ra8x.png",
-  "images": ["https://raw.githubusercontent.com/OpenVoiceOS/ovos-PHAL-plugin-homeassistant/dev/demo/demo.gif"],
+  "icon": "SiHomeassistant",
+  "images": [
+    "https://raw.githubusercontent.com/OpenVoiceOS/ovos-PHAL-plugin-homeassistant/dev/demo/demo.gif"
+  ],
   "name": "Home Assistant",
   "description": "Home Assistant Voice Control",
   "examples": [],
   "tags": [
     "OVOS",
     "IOT",
-    "Home automation", "HA", "Home Assistant"
+    "Home automation",
+    "HA",
+    "Home Assistant"
   ]
 }

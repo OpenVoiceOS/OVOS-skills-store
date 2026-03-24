@@ -10,7 +10,7 @@
     "media": [],
     "gui": []
   },
-  "icon": "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-soundcloud/dev/ui/soundcloud.png",
+  "icon": "SiSoundcloud",
   "name": "Soundcloud Skill",
   "description": "SoundCloud skill for OCP. Search SoundCloud by voice.",
   "examples": [

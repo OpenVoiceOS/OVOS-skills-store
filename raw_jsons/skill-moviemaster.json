@@ -10,7 +10,7 @@
     "media": [],
     "gui": []
   },
-  "icon": "https://github.com/OpenVoiceOS/ovos-skill-moviemaster/raw/main/PrimaryLogo_Green.png",
+  "icon": "FaFilm",
   "images": [],
   "name": "Movie Master",
   "description": "Find information about movies, actors, and production details. Easily find information about a movie with your voice.",

@@ -10,7 +10,7 @@
     "media": [],
     "gui": []
   },
-  "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/info-circle.svg",
+  "icon": "FaInfoCircle",
   "images": [],
   "name": "Device IP Address",
   "description": "Network connection information",

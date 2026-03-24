@@ -10,7 +10,7 @@
     "media": [],
     "gui": []
   },
-  "icon": "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/volume-down.svg",
+  "icon": "FaVolumeDown",
   "name": "Volume Control",
   "description": "Control the volume of your system with verbal commands.",
   "examples": [

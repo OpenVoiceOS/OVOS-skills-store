@@ -6,11 +6,15 @@
     "core": [],
     "PHAL": [],
     "listener": [],
-    "audio": ["ovos-ocp-youtube-plugin"],
-    "media": ["ovos-ocp-youtube-plugin"],
+    "audio": [
+      "ovos-ocp-youtube-plugin"
+    ],
+    "media": [
+      "ovos-ocp-youtube-plugin"
+    ],
     "gui": []
   },
-  "icon": "https://raw.githubusercontent.com/OpenVoiceOS/skill-ovos-youtube/dev/ui/ytube.jpg",
+  "icon": "SiYoutube",
   "name": "Simple Youtube Skill",
   "description": "Youtube videos. Search youtube by voice!",
   "examples": [

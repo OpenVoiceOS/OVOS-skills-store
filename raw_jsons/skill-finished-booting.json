@@ -10,7 +10,7 @@
     "media": [],
     "gui": []
   },
-  "icon": "https://media.istockphoto.com/id/900472250/vector/load-completed-progress-the-boot-icon-the-completion-of-the-bo.jpg?s=612x612&w=0&k=20&c=8glpzxvyiDftflv3lnyNbhIV46GohSSf_0YOE4x9l1s=",
+  "icon": "FaCheck",
   "images": [],
   "name": "Finished Booting",
   "description": "Skill to speak when OVOS is ready",

@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { Skill } from '../types';
+import { getIconByName } from '../utils/icons';
+import { RiVerifiedBadgeFill } from 'react-icons/ri';
 
 interface SkillInfoModalProps {
   skill: Skill | null;
@@ -31,6 +33,10 @@ const SkillInfoModal = ({ skill, isOpen, onClose, onInstall }: SkillInfoModalPro
 
   if (!isOpen || !skill || !mounted) return null;
 
+  // Get the icon component from react-icons
+  const IconComponent = getIconByName(skill.icon);
+  const isOfficial = skill.skill_id?.endsWith('.openvoiceos') ?? false;
+
   const modalContent = (
     <>
       {/* Backdrop */}
@@ -42,29 +48,31 @@ const SkillInfoModal = ({ skill, isOpen, onClose, onInstall }: SkillInfoModalPro
       {/* Modal */}
       <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
         <div
-          className="bg-white dark:bg-gray-900 rounded-lg shadow-xl max-w-2xl w-full my-auto border border-gray-200 dark:border-gray-700 flex flex-col max-h-[90vh]"
+          className="bg-white dark:bg-stone-900 rounded-lg shadow-xl max-w-2xl w-full my-auto border border-gray-200 dark:border-stone-700 flex flex-col max-h-[90vh]"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="border-b border-gray-200 dark:border-gray-700 p-4 sm:p-5 flex-shrink-0">
+          <div className="border-b border-gray-200 dark:border-stone-700 p-4 sm:p-5 flex-shrink-0">
             <div className="flex items-start justify-between gap-3 sm:gap-4">
               <div className="flex items-start gap-3 sm:gap-4 flex-1 min-w-0">
-                {skill.icon && (
-                  <img
-                    src={skill.icon}
-                    alt={skill.name}
-                    className="w-12 h-12 sm:w-16 sm:h-16 rounded object-contain bg-gray-100 dark:bg-gray-800 p-2 flex-shrink-0"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                    }}
-                  />
-                )}
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded bg-gray-100 dark:bg-stone-800 p-2 flex-shrink-0 flex items-center justify-center text-gray-600 dark:text-stone-300">
+                  <IconComponent className="w-full h-full" />
+                </div>
                 <div className="min-w-0 flex-1">
-                  <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white line-clamp-2">
-                    {skill.name || 'Unknown Skill'}
-                  </h2>
+                  <div className="flex items-start gap-2">
+                    <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white line-clamp-2 flex-1">
+                      {skill.name || 'Unknown Skill'}
+                    </h2>
+                    {isOfficial && (
+                      <RiVerifiedBadgeFill
+                        className="w-5 h-5 sm:w-6 sm:h-6 text-gray-900 dark:text-gray-100 flex-shrink-0 mt-1"
+                        title="Official Open Voice OS Plugin"
+                        aria-label="Official Open Voice OS Plugin"
+                      />
+                    )}
+                  </div>
                   {skill.package_name && (
-                    <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1 truncate">
+                    <p className="text-xs sm:text-sm text-gray-500 dark:text-stone-400 mt-1 truncate">
                       {skill.package_name}
                     </p>
                   )}
@@ -72,7 +80,7 @@ const SkillInfoModal = ({ skill, isOpen, onClose, onInstall }: SkillInfoModalPro
               </div>
               <button
                 onClick={onClose}
-                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded transition-colors flex-shrink-0"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-stone-300 p-1 rounded transition-colors flex-shrink-0"
                 aria-label="Close"
               >
                 <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,7 +98,7 @@ const SkillInfoModal = ({ skill, isOpen, onClose, onInstall }: SkillInfoModalPro
                 <h3 className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-2 uppercase tracking-wide">
                   Description
                 </h3>
-                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-700 dark:text-stone-300 leading-relaxed">
                   {skill.description}
                 </p>
               </div>
@@ -102,7 +110,7 @@ const SkillInfoModal = ({ skill, isOpen, onClose, onInstall }: SkillInfoModalPro
                 <h3 className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-2 uppercase tracking-wide">
                   Skill ID
                 </h3>
-                <div className="bg-gray-50 dark:bg-gray-800 p-2.5 sm:p-3 rounded border border-gray-200 dark:border-gray-700">
+                <div className="bg-gray-50 dark:bg-stone-800 p-2.5 sm:p-3 rounded border border-gray-200 dark:border-stone-700">
                   <p className="text-xs sm:text-sm font-mono text-gray-900 dark:text-white break-all">
                     {skill.skill_id}
                   </p>
@@ -120,7 +128,7 @@ const SkillInfoModal = ({ skill, isOpen, onClose, onInstall }: SkillInfoModalPro
                   {skill.tags.map((tag: string, idx: number) => (
                     <span
                       key={idx}
-                      className="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-2 sm:px-3 py-1 rounded text-xs sm:text-sm border border-gray-200 dark:border-gray-700"
+                      className="bg-gray-100 dark:bg-stone-800 text-gray-700 dark:text-stone-300 px-2 sm:px-3 py-1 rounded text-xs sm:text-sm border border-gray-200 dark:border-stone-700"
                     >
                       {tag}
                     </span>
@@ -139,15 +147,15 @@ const SkillInfoModal = ({ skill, isOpen, onClose, onInstall }: SkillInfoModalPro
                   {skill.examples.slice(0, 15).map((example: string, idx: number) => (
                     <div
                       key={idx}
-                      className="bg-gray-50 dark:bg-gray-800 p-2.5 sm:p-3 rounded border border-gray-200 dark:border-gray-700"
+                      className="bg-gray-50 dark:bg-stone-800 p-2.5 sm:p-3 rounded border border-gray-200 dark:border-stone-700"
                     >
-                      <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">
+                      <p className="text-xs sm:text-sm text-gray-700 dark:text-stone-300">
                         {example}
                       </p>
                     </div>
                   ))}
                   {skill.examples.length > 15 && (
-                    <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 text-center py-2">
+                    <p className="text-xs sm:text-sm text-gray-500 dark:text-stone-400 text-center py-2">
                       +{skill.examples.length - 15} more examples
                     </p>
                   )}
@@ -163,7 +171,7 @@ const SkillInfoModal = ({ skill, isOpen, onClose, onInstall }: SkillInfoModalPro
                     <h3 className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-1 uppercase tracking-wide">
                       Author
                     </h3>
-                    <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">{skill.author}</p>
+                    <p className="text-xs sm:text-sm text-gray-700 dark:text-stone-300">{skill.author}</p>
                   </div>
                 )}
                 {skill.version && (
@@ -171,7 +179,7 @@ const SkillInfoModal = ({ skill, isOpen, onClose, onInstall }: SkillInfoModalPro
                     <h3 className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-1 uppercase tracking-wide">
                       Version
                     </h3>
-                    <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">{skill.version}</p>
+                    <p className="text-xs sm:text-sm text-gray-700 dark:text-stone-300">{skill.version}</p>
                   </div>
                 )}
               </div>
@@ -179,14 +187,14 @@ const SkillInfoModal = ({ skill, isOpen, onClose, onInstall }: SkillInfoModalPro
           </div>
 
           {/* Footer */}
-          <div className="border-t border-gray-200 dark:border-gray-700 p-3 sm:p-4 bg-gray-50 dark:bg-gray-800/50 flex-shrink-0">
+          <div className="border-t border-gray-200 dark:border-stone-700 p-3 sm:p-4 bg-gray-50 dark:bg-stone-800/50 flex-shrink-0">
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
               {skill.source && (
                 <a
                   href={skill.source}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 bg-gray-900 hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 text-white font-medium py-2 sm:py-2.5 px-3 sm:px-4 rounded transition-colors text-center text-sm sm:text-base"
+                  className="flex-1 bg-gray-900 hover:bg-gray-800 dark:bg-stone-700 dark:hover:bg-stone-600 text-white font-medium py-2 sm:py-2.5 px-3 sm:px-4 rounded transition-colors text-center text-sm sm:text-base"
                 >
                   View Source
                 </a>
@@ -201,7 +209,7 @@ const SkillInfoModal = ({ skill, isOpen, onClose, onInstall }: SkillInfoModalPro
               )}
               <button
                 onClick={onClose}
-                className="px-4 sm:px-6 bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-white font-medium py-2 sm:py-2.5 rounded transition-colors border border-gray-300 dark:border-gray-600 text-sm sm:text-base"
+                className="px-4 sm:px-6 bg-white dark:bg-stone-900 hover:bg-gray-100 dark:hover:bg-stone-800 text-gray-900 dark:text-white font-medium py-2 sm:py-2.5 rounded transition-colors border border-gray-300 dark:border-stone-600 text-sm sm:text-base"
               >
                 Close
               </button>

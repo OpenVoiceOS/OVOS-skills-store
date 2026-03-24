@@ -8,6 +8,7 @@ import {
 } from '../utils/validation';
 import { openSubmissionIssue, buildSkillJson } from '../utils/submitSkill';
 import { getPredefinedCategories, getCategoryIcon } from '../utils/categories';
+import IconSelector from './IconSelector';
 
 const LICENSES = [
   { value: '', label: 'Select a license (optional)' },
@@ -27,7 +28,7 @@ const initialFormState: SkillSubmission = {
   description: '',
   examples: [''],
   tags: [],
-  icon: '',
+  icon: 'FaQuestion',
   images: [],
   license: '',
 };
@@ -121,10 +122,10 @@ const SubmitPage = () => {
     `w-full px-4 py-2.5 rounded-lg border ${
       getError(field as keyof SubmissionErrors)
         ? 'border-red-500 focus:ring-red-500'
-        : 'border-gray-200 dark:border-gray-600 focus:ring-red-500'
-    } bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:border-transparent transition-all`;
+        : 'border-gray-200 dark:border-stone-600 focus:ring-red-500'
+    } bg-white dark:bg-stone-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-stone-400 focus:outline-none focus:ring-2 focus:border-transparent transition-all`;
 
-  const labelClasses = 'block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5';
+  const labelClasses = 'block text-sm font-medium text-gray-700 dark:text-stone-300 mb-1.5';
 
   return (
     <div className="max-w-3xl mx-auto">
@@ -132,16 +133,16 @@ const SubmitPage = () => {
         <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
           Submit a Skill
         </h1>
-        <p className="text-gray-600 dark:text-gray-400">
+        <p className="text-gray-600 dark:text-stone-400">
           Share your skill with the OVOS community. Fill out the form below and submit via GitHub.
         </p>
       </div>
 
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+      <div className="bg-white dark:bg-stone-800 rounded-xl shadow-lg border border-gray-200 dark:border-stone-700 overflow-hidden">
         <div className="p-6 space-y-6">
           {/* Basic Information */}
           <section>
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-stone-700">
               Basic Information
             </h2>
 
@@ -164,6 +165,21 @@ const SubmitPage = () => {
                 )}
               </div>
 
+              {/* Icon Selector */}
+              <div>
+                <label className={labelClasses}>
+                  Skill Icon <span className="text-red-500">*</span>
+                </label>
+                <IconSelector
+                  selectedIcon={formData.icon}
+                  onSelect={(iconName) => handleChange('icon', iconName)}
+                  onBlur={() => handleBlur('icon')}
+                />
+                {getError('icon') && (
+                  <p className="mt-1 text-sm text-red-500">{getError('icon')}</p>
+                )}
+              </div>
+
               {/* Source Repository - moved up for auto-fill */}
               <div>
                 <label className={labelClasses}>
@@ -180,7 +196,7 @@ const SubmitPage = () => {
                 {getError('source') && (
                   <p className="mt-1 text-sm text-red-500">{getError('source')}</p>
                 )}
-                <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                <p className="mt-1 text-xs text-gray-500 dark:text-stone-400">
                   Skill ID and package name will be auto-filled from this URL
                 </p>
               </div>
@@ -201,7 +217,7 @@ const SubmitPage = () => {
                 {getError('skill_id') && (
                   <p className="mt-1 text-sm text-red-500">{getError('skill_id')}</p>
                 )}
-                <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                <p className="mt-1 text-xs text-gray-500 dark:text-stone-400">
                   Format: repo-name.username (auto-filled from GitHub URL)
                 </p>
               </div>
@@ -222,7 +238,7 @@ const SubmitPage = () => {
                 {getError('package_name') && (
                   <p className="mt-1 text-sm text-red-500">{getError('package_name')}</p>
                 )}
-                <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                <p className="mt-1 text-xs text-gray-500 dark:text-stone-400">
                   The pip package name for installation
                 </p>
               </div>
@@ -244,7 +260,7 @@ const SubmitPage = () => {
                   {getError('description') && (
                     <p className="text-sm text-red-500">{getError('description')}</p>
                   )}
-                  <p className="text-xs text-gray-500 dark:text-gray-400 ml-auto">
+                  <p className="text-xs text-gray-500 dark:text-stone-400 ml-auto">
                     {formData.description.length}/500
                   </p>
                 </div>
@@ -254,10 +270,10 @@ const SubmitPage = () => {
 
           {/* Voice Command Examples */}
           <section>
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-stone-700">
               Voice Command Examples <span className="text-red-500">*</span>
             </h2>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            <p className="text-sm text-gray-600 dark:text-stone-400 mb-4">
               Add at least 1 example voice command that users can say to activate your skill.
             </p>
 
@@ -303,10 +319,10 @@ const SubmitPage = () => {
 
           {/* Category Tags */}
           <section>
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-stone-700">
               Category Tags <span className="text-red-500">*</span>
             </h2>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            <p className="text-sm text-gray-600 dark:text-stone-400 mb-4">
               Select categories or add custom tags to describe your skill.
             </p>
 
@@ -320,7 +336,7 @@ const SubmitPage = () => {
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${
                     formData.tags.includes(tag)
                       ? 'bg-red-600 border-red-600 text-white'
-                      : 'bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-red-400'
+                      : 'bg-white dark:bg-stone-700 border-gray-200 dark:border-stone-600 text-gray-700 dark:text-stone-300 hover:border-red-400'
                   }`}
                 >
                   {getCategoryIcon(tag)}
@@ -343,7 +359,7 @@ const SubmitPage = () => {
                 type="button"
                 onClick={addCustomTag}
                 disabled={!customTag.trim()}
-                className="px-4 py-2 bg-red-600 hover:bg-red-700 disabled:bg-gray-300 dark:disabled:bg-gray-600 text-white disabled:text-gray-500 rounded-lg font-medium transition-colors"
+                className="px-4 py-2 bg-red-600 hover:bg-red-700 disabled:bg-stone-300 dark:disabled:bg-stone-600 text-white disabled:text-stone-500 rounded-lg font-medium transition-colors"
               >
                 Add
               </button>
@@ -378,38 +394,11 @@ const SubmitPage = () => {
 
           {/* Optional Fields */}
           <section>
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-stone-700">
               Optional Information
             </h2>
 
             <div className="space-y-4">
-              {/* Icon URL */}
-              <div>
-                <label className={labelClasses}>Icon URL</label>
-                <input
-                  type="url"
-                  value={formData.icon || ''}
-                  onChange={e => handleChange('icon', e.target.value)}
-                  onBlur={() => handleBlur('icon')}
-                  placeholder="https://example.com/icon.svg"
-                  className={inputClasses('icon')}
-                />
-                {getError('icon') && (
-                  <p className="mt-1 text-sm text-red-500">{getError('icon')}</p>
-                )}
-                {formData.icon && !getError('icon') && (
-                  <div className="mt-2 flex items-center gap-2">
-                    <img
-                      src={formData.icon}
-                      alt="Skill icon preview"
-                      className="w-8 h-8 rounded"
-                      onError={e => (e.currentTarget.style.display = 'none')}
-                    />
-                    <span className="text-xs text-gray-500">Icon preview</span>
-                  </div>
-                )}
-              </div>
-
               {/* License */}
               <div>
                 <label className={labelClasses}>License</label>
@@ -433,7 +422,7 @@ const SubmitPage = () => {
             <button
               type="button"
               onClick={() => setShowPreview(!showPreview)}
-              className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white font-medium text-sm transition-colors"
+              className="flex items-center gap-2 text-gray-600 dark:text-stone-400 hover:text-gray-900 dark:hover:text-white font-medium text-sm transition-colors"
             >
               <svg
                 className={`w-4 h-4 transition-transform ${showPreview ? 'rotate-90' : ''}`}
@@ -447,7 +436,7 @@ const SubmitPage = () => {
             </button>
 
             {showPreview && (
-              <pre className="mt-3 p-4 bg-gray-100 dark:bg-gray-900 rounded-lg text-sm text-gray-800 dark:text-gray-200 overflow-x-auto border border-gray-200 dark:border-gray-700">
+              <pre className="mt-3 p-4 bg-gray-100 dark:bg-gray-900 rounded-lg text-sm text-gray-800 dark:text-gray-200 overflow-x-auto border border-gray-200 dark:border-stone-700">
                 {JSON.stringify(buildSkillJson(formData), null, 2)}
               </pre>
             )}
@@ -455,9 +444,9 @@ const SubmitPage = () => {
         </div>
 
         {/* Submit Footer */}
-        <div className="px-6 py-4 bg-gray-50 dark:bg-gray-800/50 border-t border-gray-200 dark:border-gray-700">
+        <div className="px-6 py-4 bg-gray-50 dark:bg-stone-800/50 border-t border-gray-200 dark:border-stone-700">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-gray-500 dark:text-gray-400">
+            <p className="text-sm text-gray-500 dark:text-stone-400">
               Clicking submit will open a GitHub issue with your skill data.
             </p>
             <button
@@ -467,7 +456,7 @@ const SubmitPage = () => {
               className={`px-6 py-2.5 rounded-lg font-medium transition-colors ${
                 canSubmit
                   ? 'bg-red-600 hover:bg-red-700 text-white'
-                  : 'bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-not-allowed'
+                  : 'bg-stone-300 dark:bg-stone-600 text-stone-500 dark:text-stone-400 cursor-not-allowed opacity-60'
               }`}
             >
               Submit via GitHub
