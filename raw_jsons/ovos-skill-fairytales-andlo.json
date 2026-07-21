@@ -26,5 +26,6 @@
     "media": [],
     "gui": []
   },
-  "author": "andlo"
+  "author": "andlo",
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-fairytales/master/story-512.png"
 }
