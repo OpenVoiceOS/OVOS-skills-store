@@ -1,25 +1,25 @@
-# Welcome to the OVOS Skills Store!
+# OVOS Skills Store
 
-This is OpenVoiceOS' Skill Store, where OVOS community developers can submit their skills. It's also where the OVOS dev team hosts our own skills!
+OVOS Skills Store is the skill store for OpenVoiceOS. OVOS community developers submit their skills here. The OVOS development team also hosts its own skills here.
 
-## Submitting a skill
+## Submit a skill
 
-Submitting a Skill is easy, and relatively painless, though a few steps need to be completed before your Skill can be accepted:
+To submit a skill, complete these steps:
 
-1. You must create a JSON file for your Skill. Learn more about the [skill.json specification](https://openvoiceos.github.io/ovos-technical-manual/skill_json/)
+1. Create a JSON file for your skill. See the [skill.json specification](https://openvoiceos.github.io/ovos-technical-manual/skill_json/) for the format.
+2. License your skill under an OSI-approved open-source license, or release it into the public domain. The OVOS development team grants exceptions only by special permission, and only when a skill integrates OVOS with software that is extremely valuable to users, extremely popular, privacy-respecting, and cannot be integrated any other way (for example, a well-known streaming service or a video game console with no open-source alternative). The team closes submissions of utility skills under a proprietary license as invalid.
+3. Submit a pull request to [OpenVoiceOS/OVOS-skills-store](https://github.com/OpenVoiceOS/OVOS-skills-store).
 
-2. Your skill must be licensed under an OSI-approved open-source license, or released into the public domain, except by special permission from the OVOS dev team. Such permission is unlikely to be granted except in cases where your Skill integrates OVOS with software that is a) extremely valuable to users, b) extremely popular, c) privacy-respecting, and d) cannot be integrated any other way. (We're talking about things like a big-name streaming service, or integrating with a video game console. Big things with no open-source alternative. Submissions containing utility Skills under a proprietary license will be summarily closed as invalid.)
-
-3. Submit a Pull Request to [OpenVoiceOS/OVOS-skills-store](https://github.com/OpenVoiceOS/OVOS-skills-store)
-
-Once you have completed these steps, your Skill submission will be reviewed as soon as possible by one or more OVOS developers or authorized Skill Reviewers.
-
-Once your Skill has been reviewed, and the pull request is merged, your Skill should immediately be listed on the OVOS Skills Store!
+An OVOS developer or an authorized skill reviewer reviews each submission. Once a reviewer merges the pull request, the store lists the skill.
 
 ## Marketplace
 
-A json feed is automatically published at [https://openvoiceos.github.io/OVOS-skills-store/skills.json](https://openvoiceos.github.io/OVOS-skills-store/skills.json) to be consumed by 3rd party UIs or applications
+The store publishes a JSON feed at [skills.json](https://openvoiceos.github.io/OVOS-skills-store/skills.json). Third-party user interfaces and applications can consume this feed.
 
-> **WORK IN PROGRESS** this store gets automatically published at https://openvoiceos.github.io/OVOS-skills-store/ via github pages
+GitHub Pages publishes the store at [openvoiceos.github.io/OVOS-skills-store](https://openvoiceos.github.io/OVOS-skills-store/).
 
-setting up your own marketplace is as easy as forking this repository!
+To set up your own marketplace, fork this repository.
+
+## Related projects
+
+- [OpenVoiceOS/ovos-technical-manual](https://github.com/OpenVoiceOS/ovos-technical-manual) — documents the skill.json specification and other OVOS interfaces.
