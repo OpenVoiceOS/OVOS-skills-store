@@ -1,0 +1,32 @@
+{
+  "skill_id": "ovos-skill-geometry-practice.andlo",
+  "source": "https://github.com/andlo/ovos-skill-geometry-practice",
+  "package_name": "ovos-skill-geometry-practice",
+  "name": "Geometry Practice",
+  "description": "Geometry practice - quizzes and teach-then-practice for glossary terms, formulas, and Pythagoras' theorem. Fully offline.",
+  "examples": [
+    "quiz me on geometry terms",
+    "quiz me on area and perimeter",
+    "quiz me on pythagoras",
+    "teach me about terms",
+    "quiz me on what you taught me"
+  ],
+  "tags": [
+    "geometry",
+    "education",
+    "math",
+    "quiz"
+  ],
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-geometry-practice/main/icon.png",
+  "images": [],
+  "license": "gpl-3.0",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "author": "andlo"
+}
