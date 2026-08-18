@@ -1,0 +1,37 @@
+{
+  "skill_id": "ovos-skill-math-practice.andlo",
+  "source": "https://github.com/andlo/ovos-skill-math-practice",
+  "package_name": "ovos-skill-math-practice",
+  "name": "Math Practice",
+  "description": "Math practice for kids - counting, times table recitation, and interactive quizzes across addition, subtraction, multiplication, division, and percentages. Fully offline.",
+  "examples": [
+    "count to ten",
+    "say the 5 times table",
+    "quiz me on the 3 times table",
+    "quiz me on percentages",
+    "quiz me on hard addition",
+    "quiz me on mixed operators",
+    "quiz me on estimation",
+    "quiz me on decimal addition",
+    "give me a full math quiz"
+  ],
+  "tags": [
+    "math",
+    "education",
+    "times tables",
+    "quiz",
+    "kids"
+  ],
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-math-practice/main/icon.png",
+  "images": [],
+  "license": "gpl-3.0",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "author": "andlo"
+}
