@@ -1,0 +1,31 @@
+{
+  "skill_id": "ovos-skill-convert.andlo",
+  "source": "https://github.com/andlo/ovos-skill-convert",
+  "package_name": "ovos-skill-convert",
+  "name": "Unit Converter",
+  "description": "Local, offline unit conversion - no cloud dependency, no API key. Covers length, mass, temperature, time, speed, area, volume, angle, density, pressure, force, energy, power, torque, acceleration, concentration, computer, and flow.",
+  "examples": [
+    "convert 10 centimeters to inches",
+    "how many feet is 2 meters",
+    "convert 100 celsius to fahrenheit",
+    "how many pounds is 5 kilograms"
+  ],
+  "tags": [
+    "utility",
+    "converter",
+    "units",
+    "measurement"
+  ],
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-convert/main/icon.png",
+  "images": [],
+  "license": "gpl-3.0",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "author": "andlo"
+}
