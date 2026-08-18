@@ -1,0 +1,30 @@
+{
+  "skill_id": "ovos-skill-metronome.andlo",
+  "source": "https://github.com/andlo/ovos-skill-metronome",
+  "package_name": "ovos-skill-metronome",
+  "name": "Metronome",
+  "description": "A metronome - set a tempo in BPM and get an audible click track with an accented downbeat. Fully deterministic and offline: generated click tones, not recordings.",
+  "examples": [
+    "set a metronome to 120 bpm",
+    "start a metronome",
+    "stop the metronome"
+  ],
+  "tags": [
+    "music",
+    "metronome",
+    "tempo",
+    "practice"
+  ],
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-metronome/main/icon.png",
+  "images": [],
+  "license": "gpl-3.0",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "author": "andlo"
+}
