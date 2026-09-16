@@ -1,0 +1,29 @@
+{
+  "skill_id": "ovos-skill-nato-alphabet.andlo",
+  "source": "https://github.com/andlo/ovos-skill-nato-alphabet",
+  "package_name": "ovos-skill-nato-alphabet",
+  "name": "NATO Alphabet",
+  "description": "Spells a word using the NATO/ICAO phonetic alphabet - Alfa, Bravo, Charlie. Fully offline, pure lookup table.",
+  "examples": [
+    "spell Andreas",
+    "how do you spell hello"
+  ],
+  "tags": [
+    "spelling",
+    "nato",
+    "phonetic alphabet",
+    "utility"
+  ],
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-nato-alphabet/main/icon.png",
+  "images": [],
+  "license": "gpl-3.0",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "author": "andlo"
+}
