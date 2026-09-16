@@ -1,0 +1,29 @@
+{
+  "skill_id": "ovos-skill-calculator.andlo",
+  "source": "https://github.com/andlo/ovos-skill-calculator",
+  "package_name": "ovos-skill-calculator",
+  "name": "Calculator",
+  "description": "A basic calculator - add, subtract, multiply, divide, percentages, squares, square roots. Fully offline.",
+  "examples": [
+    "what is 15 times 23",
+    "what is the square root of 144",
+    "what is 20 percent of 150"
+  ],
+  "tags": [
+    "calculator",
+    "math",
+    "arithmetic"
+  ],
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-calculator/main/icon.png",
+  "images": [],
+  "license": "gpl-3.0",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "author": "andlo"
+}
