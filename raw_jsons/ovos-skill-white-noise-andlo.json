@@ -1,0 +1,31 @@
+{
+  "skill_id": "ovos-skill-white-noise.andlo",
+  "source": "https://github.com/andlo/ovos-skill-white-noise",
+  "package_name": "ovos-skill-white-noise",
+  "name": "White Noise",
+  "description": "An ambient noise machine - white, pink, and brown noise for sleep or focus. Fully offline, all generated, nothing recorded.",
+  "examples": [
+    "play white noise",
+    "play pink noise",
+    "stop the noise"
+  ],
+  "tags": [
+    "ambient",
+    "sleep",
+    "focus",
+    "white noise",
+    "relaxation"
+  ],
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-white-noise/main/icon.png",
+  "images": [],
+  "license": "gpl-3.0",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "author": "andlo"
+}
