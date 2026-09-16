@@ -1,0 +1,30 @@
+{
+  "skill_id": "ovos-skill-rhythm-box.andlo",
+  "source": "https://github.com/andlo/ovos-skill-rhythm-box",
+  "package_name": "ovos-skill-rhythm-box",
+  "name": "Rhythm Box",
+  "description": "A simple drum-machine skill - loops a beat pattern (rock, four-on-the-floor) at a chosen tempo. Fully offline, generated drum sounds.",
+  "examples": [
+    "play a rock beat at 100 bpm",
+    "start a drum loop",
+    "stop the beat"
+  ],
+  "tags": [
+    "music",
+    "drums",
+    "rhythm",
+    "beat"
+  ],
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-rhythm-box/main/icon.png",
+  "images": [],
+  "license": "gpl-3.0",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "author": "andlo"
+}
