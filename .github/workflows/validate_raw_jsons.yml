@@ -1,0 +1,44 @@
+name: Validate Skill Entries
+
+# Runs the store's submission validator on every raw_jsons/ entry that a pull
+# request adds or changes, so a pull request that adds a skill gets a check
+# before merge.
+
+on:
+  pull_request:
+    paths:
+      - 'raw_jsons/**'
+      - 'scripts/apply_submission.py'
+      - 'scripts/validate_raw_jsons.py'
+      - '.github/workflows/validate_raw_jsons.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: List added or changed entries
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git diff --name-only --diff-filter=AMR "$BASE_SHA"...HEAD -- 'raw_jsons/*.json' > "$RUNNER_TEMP/entries.txt"
+          echo "Entries to validate:"
+          cat "$RUNNER_TEMP/entries.txt"
+
+      - name: Validate entries
+        run: |
+          mapfile -t entries < "$RUNNER_TEMP/entries.txt"
+          python scripts/validate_raw_jsons.py "${entries[@]}"
