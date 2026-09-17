@@ -1,0 +1,30 @@
+{
+  "skill_id": "ovos-skill-intercom.andlo",
+  "source": "https://github.com/andlo/ovos-skill-intercom",
+  "package_name": "ovos-skill-intercom",
+  "name": "Intercom",
+  "description": "LAN intercom - send a spoken message to a named OVOS device on the same network. Speak-only, never executes commands on the receiving device.",
+  "examples": [
+    "set intercom name to living room",
+    "set intercom code to four seven two nine",
+    "send a message to the bedroom"
+  ],
+  "tags": [
+    "intercom",
+    "multi-device",
+    "messaging",
+    "lan"
+  ],
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-intercom/main/icon.png",
+  "images": [],
+  "license": "gpl-3.0",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "author": "andlo"
+}
