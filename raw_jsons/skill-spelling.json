@@ -13,6 +13,12 @@
   "icon": "FaBookReader",
   "name": "Spelling",
   "description": "Let OVOS help you spell words. OVOS can spell any word which is understood by speech-to-text. The proper spelling is pronounced on all platforms, as well as displayed by devices such as the Mark 1.",
+  "examples": [
+    "spell hello",
+    "how do you spell serendipity",
+    "what is the spelling of onomatopoeia",
+    "spell the word rhythm"
+  ],
   "category": "Information",
   "tags": [
     "spell",
