@@ -2,7 +2,8 @@ name: Validate Skill Entries
 
 # Runs the store's submission validator on every raw_jsons/ entry that a pull
 # request adds or changes, so a pull request that adds a skill gets a check
-# before merge.
+# before merge, and then over the WHOLE directory, so a change to the rules
+# cannot quietly invalidate entries it does not touch.
 
 on:
   pull_request:
@@ -10,6 +11,7 @@ on:
       - 'raw_jsons/**'
       - 'scripts/apply_submission.py'
       - 'scripts/validate_raw_jsons.py'
+      - 'scripts/check_all_raw_jsons.py'
       - '.github/workflows/validate_raw_jsons.yml'
 
 permissions:
@@ -42,3 +44,6 @@ jobs:
         run: |
           mapfile -t entries < "$RUNNER_TEMP/entries.txt"
           python scripts/validate_raw_jsons.py "${entries[@]}"
+
+      - name: Validate every committed entry
+        run: python scripts/check_all_raw_jsons.py
