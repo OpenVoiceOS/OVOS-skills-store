@@ -1,0 +1,31 @@
+{
+  "skill_id": "ovos-skill-fairytales.andlo",
+  "source": "https://github.com/andlo/ovos-skill-fairytales",
+  "package_name": "ovos-skill-fairytales",
+  "name": "Fairy Tales",
+  "description": "Tells fairy tales by Hans Christian Andersen and the Brothers Grimm, in English, Danish, German, Spanish, French, Italian, Dutch and Portuguese (Grimm only in Portuguese).",
+  "examples": [
+    "tell me a story about Cinderella",
+    "read me a fairy tale",
+    "continue the story"
+  ],
+  "tags": [
+    "entertainment",
+    "stories",
+    "fairytales",
+    "andersen",
+    "grimm"
+  ],
+  "images": [],
+  "license": "gpl-3.0",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "author": "andlo",
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-fairytales/master/story-512.png"
+}
