@@ -1,0 +1,31 @@
+{
+  "skill_id": "ovos-skill-holidays.andlo",
+  "source": "https://github.com/andlo/ovos-skill-holidays",
+  "package_name": "ovos-skill-holidays",
+  "name": "Holidays",
+  "description": "Public holidays, Easter, and calendar-date math. Fully offline, computed live via the holidays library.",
+  "examples": [
+    "is today a holiday",
+    "when is christmas",
+    "how many days until easter",
+    "what day of the week is march 3rd"
+  ],
+  "tags": [
+    "holidays",
+    "calendar",
+    "date",
+    "easter"
+  ],
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-holidays/main/icon.png",
+  "images": [],
+  "license": "gpl-3.0",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "author": "andlo"
+}
