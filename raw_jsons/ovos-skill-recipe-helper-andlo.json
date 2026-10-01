@@ -1,0 +1,31 @@
+{
+  "skill_id": "ovos-skill-recipe-helper.andlo",
+  "source": "https://github.com/andlo/ovos-skill-recipe-helper",
+  "package_name": "ovos-skill-recipe-helper",
+  "name": "Recipe Helper",
+  "description": "Offline recipes from the Wikibooks Cookbook. English, Danish and German are built in; other languages are answered through on-demand offline translation. No internet connection needed.",
+  "examples": [
+    "how do I make pancakes",
+    "what do I need for carbonara",
+    "give me a recipe for bobotie"
+  ],
+  "tags": [
+    "recipes",
+    "cooking",
+    "food",
+    "offline",
+    "reference"
+  ],
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-recipe-helper/main/icon.png",
+  "images": [],
+  "license": "gpl-3.0",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "author": "andlo"
+}
