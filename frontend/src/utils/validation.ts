@@ -1,10 +1,13 @@
 import type { SkillSubmission, SubmissionErrors } from '../types';
 import { AVAILABLE_ICONS } from './icons';
 
-// Validate skill_id format: lowercase, hyphens, with domain suffix
+// Validate skill_id format: lowercase, hyphens or underscores, with domain suffix.
+// Matches the ICON_NAME_RE-adjacent pattern in scripts/apply_submission.py,
+// which accepts an underscore for a skill_id derived from a Python package
+// name (e.g. neon_homeassistant_skill.mikejgray).
 export function validateSkillId(value: string): string | undefined {
   if (!value) return 'Skill ID is required';
-  if (!/^[a-z0-9-]+\.[a-z0-9.-]+$/.test(value)) {
+  if (!/^[a-z0-9_-]+\.[a-z0-9._-]+$/.test(value)) {
     return 'Format: skill-name.domain (e.g., skill-weather.openvoiceos)';
   }
   return undefined;

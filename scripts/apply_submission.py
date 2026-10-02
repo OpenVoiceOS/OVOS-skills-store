@@ -69,11 +69,20 @@ REQUIRED_FIELDS = {
         'item_type': str,
         'message': 'tags must be a list with at least 1 tag',
     },
+    'icon': {
+        'type': str,
+        'pattern': ICON_NAME_RE.pattern,
+        # The renderer resolves `icon` against the react-icons registry
+        # (SkillCard.tsx, FeaturedSkillCard.tsx, SkillInfoModal.tsx all go
+        # through getIconByName) and shows a question mark for anything else,
+        # a URL included. No committed entry carries a URL, so this field
+        # takes the same rule the submission form already enforces.
+        'message': 'icon must be a react-icons name, e.g. FaMicrophone',
+    },
 }
 
 # Optional fields with their types
 OPTIONAL_FIELDS = {
-    'icon': str,
     'images': list,
     'license': str,
     'extra_plugins': dict,
@@ -147,28 +156,6 @@ def validate_submission(data: dict) -> list:
     if 'license' in data and data['license']:
         if data['license'].lower() not in ALLOWED_LICENSES:
             errors.append(f"license must be one of: {', '.join(ALLOWED_LICENSES)}")
-
-    # Validate the icon if present. The store renders `icon` as a react-icons
-    # component name (SkillCard.tsx resolves it against react-icons, and
-    # IconSelector.tsx offers those names on the submission form), so
-    # "FaMicrophone" and "MdWallpaper" are the convention every committed
-    # entry uses. A URL is still accepted, because entries predating the
-    # marketplace migration used one.
-    if 'icon' in data and data['icon']:
-        icon = data['icon']
-        if not isinstance(icon, str):
-            errors.append("icon must be a string")
-        elif ICON_NAME_RE.match(icon):
-            pass
-        else:
-            try:
-                result = urlparse(icon)
-                if not all([result.scheme, result.netloc]):
-                    errors.append("icon must be a react-icons name "
-                                  "(e.g. FaMicrophone) or a valid URL")
-            except Exception:
-                errors.append("icon must be a react-icons name "
-                              "(e.g. FaMicrophone) or a valid URL")
 
     # Validate images URLs if present
     if 'images' in data and data['images']:
