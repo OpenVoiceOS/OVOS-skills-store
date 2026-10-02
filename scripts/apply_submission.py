@@ -22,10 +22,17 @@ class ValidationError(Exception):
 
 
 # Required fields with their validators
+# A react-icons component name: a two-or-more letter set prefix (Fa, Md, Si,
+# Ri, Fi, ...) followed by the icon name in CamelCase.
+ICON_NAME_RE = re.compile(r'^[A-Z][a-z]{1,3}[A-Z][A-Za-z0-9]+$')
+
 REQUIRED_FIELDS = {
     'skill_id': {
         'type': str,
-        'pattern': r'^[a-z0-9-]+\.[a-z0-9.-]+$',
+        'pattern': r'^[a-z0-9_-]+\.[a-z0-9._-]+$',
+        # underscores are legal: a skill id is often derived from a Python
+        # package name, and neon_homeassistant_skill.mikejgray is a real
+        # committed entry the old pattern rejected.
         'message': 'skill_id must be lowercase with format: skill-name.domain',
     },
     'source': {
@@ -141,14 +148,27 @@ def validate_submission(data: dict) -> list:
         if data['license'].lower() not in ALLOWED_LICENSES:
             errors.append(f"license must be one of: {', '.join(ALLOWED_LICENSES)}")
 
-    # Validate icon URL if present
+    # Validate the icon if present. The store renders `icon` as a react-icons
+    # component name (SkillCard.tsx resolves it against react-icons, and
+    # IconSelector.tsx offers those names on the submission form), so
+    # "FaMicrophone" and "MdWallpaper" are the convention every committed
+    # entry uses. A URL is still accepted, because entries predating the
+    # marketplace migration used one.
     if 'icon' in data and data['icon']:
-        try:
-            result = urlparse(data['icon'])
-            if not all([result.scheme, result.netloc]):
-                errors.append("icon must be a valid URL")
-        except Exception:
-            errors.append("icon must be a valid URL")
+        icon = data['icon']
+        if not isinstance(icon, str):
+            errors.append("icon must be a string")
+        elif ICON_NAME_RE.match(icon):
+            pass
+        else:
+            try:
+                result = urlparse(icon)
+                if not all([result.scheme, result.netloc]):
+                    errors.append("icon must be a react-icons name "
+                                  "(e.g. FaMicrophone) or a valid URL")
+            except Exception:
+                errors.append("icon must be a react-icons name "
+                              "(e.g. FaMicrophone) or a valid URL")
 
     # Validate images URLs if present
     if 'images' in data and data['images']:

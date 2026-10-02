@@ -19,5 +19,10 @@
     "start recording",
     "new recording named {file_name}"
   ],
-  "tags": []
+  "tags": [
+    "recording",
+    "audio",
+    "voice memo",
+    "dictation"
+  ]
 }
